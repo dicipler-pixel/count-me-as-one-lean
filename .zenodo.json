@@ -1,0 +1,25 @@
+{
+  "title": "Count Me as One: the figure-eight knot, the trefoil, and the machine-checked anchors that bind them (paper, Lean proofs, mixer, film, and the article Tying the Knot)",
+  "upload_type": "publication",
+  "publication_type": "preprint",
+  "creators": [
+    {"name": "Beasley, Jeromie"}
+  ],
+  "description": "<p><b>Count Me as One</b> by Jeromie Beasley: the paper (PDF and HTML), the 3D mixer, the film of the moving knot, and the figure-eight anchors Lean 4 library behind it.</p><p>The Lean library is core Lean 4 (v4.34.1, no Mathlib): 80 theorems, 0 sorry, 11 false controls rejected, and an 80-node / 82-edge relations graph whose every edge carries a witness theorem. It covers Thurston's gluing equation for the figure-eight knot complement and its factorisation on the symmetric slice into the regular (z^2 - z + 1) and golden (z^2 - z - 1) branches, Riley's representation, the chirality of the trefoil and the amphichirality of the figure-eight, the monodromies and their trace ladders, and the A-polynomial.</p><p>Included with it is the public article <b>Tying the Knot: What Every Culture Binds, and Why</b>: the knot ceremonies and symbols of each culture, the Inka khipu as accounts and memory, the history of the loom, the women who wove the Apollo core rope memory, and what the mathematics of knots says about them.</p>",
+  "keywords": [
+    "figure-eight knot",
+    "trefoil knot",
+    "Thurston gluing equation",
+    "ideal tetrahedra",
+    "Riley representation",
+    "chirality",
+    "A-polynomial",
+    "Lean 4",
+    "formal verification",
+    "khipu",
+    "knot traditions",
+    "core rope memory"
+  ],
+  "license": "MIT",
+  "language": "eng"
+}
