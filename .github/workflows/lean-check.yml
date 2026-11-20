@@ -1,6 +1,6 @@
 # Build every module, replay every proof in the independent kernel checker,
 # audit the axioms of every theorem, and confirm every false control is rejected.
-# Core Lean 4 only (no Mathlib), so the whole run takes a few minutes.
+# Lean v4.36.0-rc2 with Mathlib (pinned in lake-manifest.json); Mathlib comes from its build cache.
 name: Lean proof check
 
 on:
@@ -14,7 +14,7 @@ permissions:
 jobs:
   check:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 150
     steps:
       - uses: actions/checkout@v5
         with:
@@ -25,7 +25,11 @@ jobs:
           curl -sSfL https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh -o "$RUNNER_TEMP/elan-init.sh"
           bash "$RUNNER_TEMP/elan-init.sh" -y --default-toolchain "$(cat lean-toolchain)"
           echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
-      - name: Full harness (build, kernel replay, axiom audit, inventory, false controls, hashes)
+      - name: Fetch Mathlib and its build cache
+        run: |
+          lake exe cache get
+          git diff --exit-code lake-manifest.json
+      - name: Full harness (build, kernel replay, axiom audit, inventory, false controls, relations, hashes)
         run: python3 scripts/verify.py
       - name: Keep the evidence
         if: always()

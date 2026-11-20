@@ -1,34 +1,129 @@
 {
+  "roots": [
+    "FigureEightAnchors",
+    "DiracTimeD25",
+    "CMaOBridge",
+    "D28"
+  ],
+  "root_files": [
+    "FigureEightAnchors.lean",
+    "DiracTimeD25.lean",
+    "D28.lean"
+  ],
   "modules": [
     {
       "module": "FigureEightAnchors.Eisenstein",
-      "path": "FigureEightAnchors/Eisenstein.lean"
+      "path": "FigureEightAnchors/Eisenstein.lean",
+      "group": "CMaO"
     },
     {
       "module": "FigureEightAnchors.Gluing",
-      "path": "FigureEightAnchors/Gluing.lean"
+      "path": "FigureEightAnchors/Gluing.lean",
+      "group": "CMaO"
     },
     {
       "module": "FigureEightAnchors.Riley",
-      "path": "FigureEightAnchors/Riley.lean"
+      "path": "FigureEightAnchors/Riley.lean",
+      "group": "CMaO"
     },
     {
       "module": "FigureEightAnchors.Chirality",
-      "path": "FigureEightAnchors/Chirality.lean"
+      "path": "FigureEightAnchors/Chirality.lean",
+      "group": "CMaO"
     },
     {
       "module": "FigureEightAnchors.Monodromy",
-      "path": "FigureEightAnchors/Monodromy.lean"
+      "path": "FigureEightAnchors/Monodromy.lean",
+      "group": "CMaO"
     },
     {
       "module": "FigureEightAnchors.Ladder",
-      "path": "FigureEightAnchors/Ladder.lean"
+      "path": "FigureEightAnchors/Ladder.lean",
+      "group": "CMaO"
     },
     {
       "module": "FigureEightAnchors.APoly",
-      "path": "FigureEightAnchors/APoly.lean"
+      "path": "FigureEightAnchors/APoly.lean",
+      "group": "CMaO"
+    },
+    {
+      "module": "DiracTimeD25.ChiralEta",
+      "path": "DiracTimeD25/ChiralEta.lean",
+      "group": "D25"
+    },
+    {
+      "module": "DiracTimeD25.AlexanderWall",
+      "path": "DiracTimeD25/AlexanderWall.lean",
+      "group": "D25"
+    },
+    {
+      "module": "DiracTimeD25.CircleOdometer",
+      "path": "DiracTimeD25/CircleOdometer.lean",
+      "group": "D25"
+    },
+    {
+      "module": "DiracTimeD25.BhlBoundaryTest",
+      "path": "DiracTimeD25/BhlBoundaryTest.lean",
+      "group": "D27"
+    },
+    {
+      "module": "CMaOBridge",
+      "path": "CMaOBridge.lean",
+      "group": "Bridge"
+    },
+    {
+      "module": "D28.Easy",
+      "path": "D28/Easy.lean",
+      "group": "D28"
+    },
+    {
+      "module": "D28.Algebra",
+      "path": "D28/Algebra.lean",
+      "group": "D28"
+    },
+    {
+      "module": "D28.RawDiff",
+      "path": "D28/RawDiff.lean",
+      "group": "D28"
+    },
+    {
+      "module": "D28.FastModel",
+      "path": "D28/FastModel.lean",
+      "group": "D28"
+    },
+    {
+      "module": "D28.RawDiffPos",
+      "path": "D28/RawDiffPos.lean",
+      "group": "D28"
+    },
+    {
+      "module": "D28.FastPsi",
+      "path": "D28/FastPsi.lean",
+      "group": "D28"
+    },
+    {
+      "module": "D28.Qq2Table",
+      "path": "D28/Qq2Table.lean",
+      "group": "D28"
+    },
+    {
+      "module": "D28.Eq15",
+      "path": "D28/Eq15.lean",
+      "group": "D28"
+    },
+    {
+      "module": "D28.Eq17",
+      "path": "D28/Eq17.lean",
+      "group": "D28"
     }
   ],
-  "expected_theorems": 80,
-  "expected_false_controls": 11
+  "expected_theorems": 280,
+  "expected_theorems_by_group": {
+    "CMaO": 80,
+    "D25": 38,
+    "D27": 76,
+    "Bridge": 7,
+    "D28": 79
+  },
+  "expected_false_controls": 25
 }

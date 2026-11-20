@@ -1,5 +1,19 @@
 name = "FigureEightAnchors"
-defaultTargets = ["FigureEightAnchors"]
+defaultTargets = ["FigureEightAnchors", "DiracTimeD25", "CMaOBridge", "D28"]
+
+[[require]]
+name = "mathlib"
+git = "https://github.com/leanprover-community/mathlib4"
+rev = "e8ba86fa9744dd8d90f48c1752bc735f61a4ca81"
 
 [[lean_lib]]
 name = "FigureEightAnchors"
+
+[[lean_lib]]
+name = "DiracTimeD25"
+
+[[lean_lib]]
+name = "CMaOBridge"
+
+[[lean_lib]]
+name = "D28"

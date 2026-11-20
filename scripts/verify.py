@@ -1,6 +1,10 @@
 #!/usr/bin/env python3
 # SCRIPT: FIG8-ANCHORS-VERIFY-01
-"""Full harness for figure-eight-anchors-lean (core Lean 4, no Mathlib).
+"""Full harness for the combined Count Me as One v1 + D25/D27 project.
+
+Libraries: FigureEightAnchors (CMaO v1, core Lean 4 only, unchanged), DiracTimeD25 (D25 chiral
+eta / Alexander walls / circle odometer, D27 BHL q-series; Mathlib) and CMaOBridge (theorems that
+join the two by proof). Every stage below runs over every module listed in config.json.
 
 Why each check proves what it claims:
 1. Build. `lake build` compiles every module; a type error stops it.
@@ -10,7 +14,8 @@ Why each check proves what it claims:
    {propext, Classical.choice, Quot.sound}. This excludes sorry (sorryAx), any
    project axiom, and native_decide (Lean.ofReduceBool).
 4. Source scan. No `sorry`, `admit`, `native_decide` or `axiom` anywhere.
-5. Inventory. The theorem count must match config.json, so nothing drops silently.
+5. Inventory. The theorem count must match config.json, in total AND per group
+   (CMaO / D25 / D27 / Bridge), so nothing drops silently.
 6. False controls. Each FalseControls/*.lean states something false; it must FAIL
    to compile for a mathematical reason, which shows the checker can say no.
 7. Hashes. SHA-256 of every source file and of RELATIONS.json goes in the report.
@@ -49,6 +54,7 @@ report["checks"]["kernel_replay"] = replay
 print("kernel replay:", "PASS" if all(replay.values()) else "FAIL")
 
 names, scan_bad = [], []
+group_of = {}
 for m in CFG["modules"]:
     src = (ROOT / m["path"]).read_text()
     code = re.sub(r"/-.*?-/", "", src, flags=re.S); code = re.sub(r"--.*", "", code)
@@ -59,12 +65,13 @@ for m in CFG["modules"]:
     prefix = ".".join(spaces)
     for n in THM.findall(code):
         names.append((m["module"], prefix + "." + n if prefix else n))
+        group_of[names[-1][1]] = m["group"]
 report["checks"]["source_scan_clean"] = not scan_bad
 if scan_bad: ok = False; print("scan FAIL", scan_bad)
 print("source scan:", "PASS" if not scan_bad else "FAIL")
 
 audit = ROOT / "verification" / "Audit.lean"
-audit.write_text("\n".join(["import FigureEightAnchors"] + ["#print axioms " + n for _, n in names]) + "\n")
+audit.write_text("\n".join(["import " + r for r in CFG["roots"]] + ["#print axioms " + n for _, n in names]) + "\n")
 r = run(["lake", "env", "lean", str(audit)])
 out = r.stdout + r.stderr
 blocks = re.split(r"(?=^')", out, flags=re.M)
@@ -86,10 +93,15 @@ if not report["checks"]["axiom_audit"]:
 print("axiom audit:", "PASS" if report["checks"]["axiom_audit"] else "FAIL", "(%d theorems)" % len(axiom_table))
 print("  axiom-free theorems:", sum(1 for v in axiom_table.values() if not v))
 
-inv_ok = len(names) == CFG["expected_theorems"]
-report["checks"]["inventory"] = {"found": len(names), "expected": CFG["expected_theorems"], "ok": inv_ok}
+by_group = {g: sum(1 for v in group_of.values() if v == g) for g in CFG["expected_theorems_by_group"]}
+dupes = sorted({n for _, n in names if sum(1 for _, k in names if k == n) > 1})
+inv_ok = (len(names) == CFG["expected_theorems"] and by_group == CFG["expected_theorems_by_group"]
+          and set(group_of.values()) <= set(CFG["expected_theorems_by_group"]) and not dupes)
+report["checks"]["inventory"] = {"found": len(names), "expected": CFG["expected_theorems"],
+    "by_group": by_group, "expected_by_group": CFG["expected_theorems_by_group"], "duplicates": dupes, "ok": inv_ok}
 if not inv_ok: ok = False
 print("inventory:", len(names), "theorems,", "PASS" if inv_ok else "FAIL")
+print("  by group:", ", ".join("%s %d/%d" % (g, by_group[g], e) for g, e in CFG["expected_theorems_by_group"].items()))
 
 fc = {}
 for f in sorted((ROOT / "FalseControls").glob("*.lean")):
@@ -143,7 +155,10 @@ print("relations:", len(nodeset), "nodes,", len(rel["edges"]), "edges,", "PASS" 
 for pr in problems: print("   ", pr)
 
 hashes = {}
-for p in sorted(list(ROOT.glob("FigureEightAnchors/*.lean")) + [ROOT / "FigureEightAnchors.lean"] + list(ROOT.glob("FalseControls/*.lean"))):
+for p in sorted(set(list(ROOT.glob("FigureEightAnchors/*.lean")) + list(ROOT.glob("DiracTimeD25/*.lean"))
+                   + [ROOT / m["path"] for m in CFG["modules"]] + [ROOT / f for f in CFG["root_files"]]
+                   + list(ROOT.glob("FalseControls/*.lean")) + [ROOT / "RELATIONS.json", ROOT / "lakefile.toml",
+                   ROOT / "lake-manifest.json", ROOT / "lean-toolchain"])):
     hashes[str(p.relative_to(ROOT))] = hashlib.sha256(p.read_bytes()).hexdigest()
 report["sha256"] = hashes
 report["lean_version"] = run(["lean", "--version"]).stdout.strip()

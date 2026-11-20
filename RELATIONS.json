@@ -426,6 +426,1036 @@
    "rules": [
     "rule1"
    ]
+  },
+  "DiracTimeD25.eta_eq_roots": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "DiracTimeD25.eta_eq_card_sub_card": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "DiracTimeD25.charpoly_neg_eq": {
+   "rules": [
+    "rule1",
+    "rule3"
+   ]
+  },
+  "DiracTimeD25.eta_neg": {
+   "rules": [
+    "rule1",
+    "rule3"
+   ]
+  },
+  "DiracTimeD25.eta_one": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "DiracTimeD25.eta_eq_zero_of_anticommute": {
+   "rules": [
+    "rule1",
+    "rule3"
+   ]
+  },
+  "DiracTimeD25.eta_eq_zero_of_chiral": {
+   "rules": [
+    "rule1",
+    "rule3"
+   ]
+  },
+  "DiracTimeD25.eta_eq_zero_of_unitary_conj": {
+   "rules": [
+    "rule1",
+    "rule3"
+   ]
+  },
+  "DiracTimeD25.eta_eq_zero_of_unitary_chiral": {
+   "rules": [
+    "rule1",
+    "rule3"
+   ]
+  },
+  "DiracTimeD25.pauliSymbol_isHermitian": {
+   "rules": [
+    "rule1",
+    "rule3"
+   ]
+  },
+  "DiracTimeD25.\u03c3\u2083_mul_self": {
+   "rules": [
+    "rule1",
+    "rule3"
+   ]
+  },
+  "DiracTimeD25.\u03c3\u2083_pauliSymbol_\u03c3\u2083": {
+   "rules": [
+    "rule1",
+    "rule3"
+   ]
+  },
+  "DiracTimeD25.pauli_eta_eq_zero": {
+   "rules": [
+    "rule1",
+    "rule3"
+   ]
+  },
+  "DiracTimeD25.circ_ne_zero": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "DiracTimeD25.alex31_poly": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "DiracTimeD25.alex41_poly": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "DiracTimeD25.circ_add_inv": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "DiracTimeD25.alex31_circle": {
+   "rules": [
+    "rule1",
+    "rule3"
+   ]
+  },
+  "DiracTimeD25.alex41_circle": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "DiracTimeD25.cos_two_pi_eq_half_iff": {
+   "rules": [
+    "rule1",
+    "rule3"
+   ]
+  },
+  "DiracTimeD25.alex31_circle_eq_zero_iff": {
+   "rules": [
+    "rule1",
+    "rule3"
+   ]
+  },
+  "DiracTimeD25.alex31_circle_eq_zero_iff'": {
+   "rules": [
+    "rule1",
+    "rule3"
+   ]
+  },
+  "DiracTimeD25.alex31_poly_circle_eq_zero_iff": {
+   "rules": [
+    "rule1",
+    "rule3"
+   ]
+  },
+  "DiracTimeD25.one_le_alex41_real": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "DiracTimeD25.alex41_real_pos": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "DiracTimeD25.alex41_circle_ne_zero": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "DiracTimeD25.alex41_poly_circle_ne_zero": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "DiracTimeD25.alex31_wall_at_sixth": {
+   "rules": [
+    "rule1",
+    "rule3"
+   ]
+  },
+  "DiracTimeD25.etaCircle_of_not_int": {
+   "rules": [
+    "rule1",
+    "rule2"
+   ]
+  },
+  "DiracTimeD25.etaCircle_intCast": {
+   "rules": [
+    "rule1",
+    "rule2"
+   ]
+  },
+  "DiracTimeD25.floor_sub_floor_eq": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "DiracTimeD25.odometer_identity": {
+   "rules": [
+    "rule1",
+    "rule2"
+   ]
+  },
+  "DiracTimeD25.mem_crossings_iff": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "DiracTimeD25.floor_sub_floor_eq_card_crossings": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "DiracTimeD25.card_crossings_eq_odometer": {
+   "rules": [
+    "rule1",
+    "rule2"
+   ]
+  },
+  "DiracTimeD25.etaCircle_add_one": {
+   "rules": [
+    "rule1",
+    "rule2"
+   ]
+  },
+  "DiracTimeD25.floor_add_one_sub_floor": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "DiracTimeD25.etaCircle_quarter": {
+   "rules": [
+    "rule1",
+    "rule2"
+   ]
+  },
+  "DiracTimeD25.BHL.length_rep": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "DiracTimeD25.BHL.getD_rep": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "DiracTimeD25.BHL.getD_rep_of_lt": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "DiracTimeD25.BHL.listSum_map_range": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "DiracTimeD25.BHL.rep_ext": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "DiracTimeD25.BHL.rep_add": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "DiracTimeD25.BHL.rep_X_pow_mul": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "DiracTimeD25.BHL.rep_one_add_X_pow_mul": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "DiracTimeD25.BHL.rep_mul": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "DiracTimeD25.BHL.rep_monomial": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "DiracTimeD25.BHL.rep_congr": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "DiracTimeD25.BHL.coeff_eq_of_rep_eq": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "DiracTimeD25.BHL.rep_one": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "DiracTimeD25.BHL.rep_zero": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "DiracTimeD25.BHL.rep_two": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "DiracTimeD25.BHL.rep_sub": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "DiracTimeD25.BHL.rep_rescale_neg_one": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "DiracTimeD25.BHL.rep_expand_two": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "DiracTimeD25.BHL.rep_sum": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "DiracTimeD25.BHL.hasSum_seriesOf": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "DiracTimeD25.BHL.coeff_seriesOf_eq_partial": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "DiracTimeD25.BHL.rep_seriesOf": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "DiracTimeD25.BHL.coeff_X_pow_mul_of_lt": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "DiracTimeD25.BHL.negPoch_succ": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "DiracTimeD25.BHL.one_sub_X_pow_mul_geomInv": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "DiracTimeD25.BHL.qq2_mul_qq2Inv": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "DiracTimeD25.BHL.qq2Inv_succ": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "DiracTimeD25.BHL.phiTerm_lowerOrd": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "DiracTimeD25.BHL.MTerm_lowerOrd": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "DiracTimeD25.BHL.psiTerm_lowerOrd": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "DiracTimeD25.BHL.ftTerm_lowerOrd": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "DiracTimeD25.BHL.hasSum_phi0": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "DiracTimeD25.BHL.hasSum_bhlM": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "DiracTimeD25.BHL.hasSum_psi": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "DiracTimeD25.BHL.hasSum_falseTheta": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "DiracTimeD25.BHL.coeff_mul_of_coeff_eq_one": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "DiracTimeD25.BHL.coeff_prod_tail": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "DiracTimeD25.BHL.coeff_negPoch_stable": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "DiracTimeD25.BHL.coeff_negInf": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "DiracTimeD25.BHL.hasProd_negInf": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "DiracTimeD25.BHL.rep_negPoch": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "DiracTimeD25.BHL.rep_geomInv": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "DiracTimeD25.BHL.rep_qq2Inv": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "DiracTimeD25.BHL.rep_phiTerm": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "DiracTimeD25.BHL.rep_MTerm": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "DiracTimeD25.BHL.rep_psiTerm": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "DiracTimeD25.BHL.rep_ftTerm": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "DiracTimeD25.BHL.rep_seriesOf_model": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "DiracTimeD25.BHL.rep_phi0": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "DiracTimeD25.BHL.rep_bhlM": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "DiracTimeD25.BHL.rep_psi": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "DiracTimeD25.BHL.rep_falseTheta": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "DiracTimeD25.BHL.rep_negInf": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "DiracTimeD25.BHL.coeff_two_mul": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "DiracTimeD25.BHL.coeff_add_rescale_neg": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "DiracTimeD25.BHL.coeff_odd_add_rescale_neg": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "DiracTimeD25.BHL.coeff_even_add_rescale_neg": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "DiracTimeD25.BHL.coeff_lhs15_even": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "DiracTimeD25.BHL.coeff_lhs15_odd": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "DiracTimeD25.BHL.coeff_lhs15_zero": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "DiracTimeD25.BHL.lhs15_eq_iff": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "DiracTimeD25.BHL.coeff_zero_psi": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "DiracTimeD25.BHL.eq15_iff_coeff": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "DiracTimeD25.BHL.rep_lhs15": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "DiracTimeD25.BHL.eq15_mod_q49": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "DiracTimeD25.BHL.eq15_reduced_le23": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "DiracTimeD25.BHL.eq17_mod_q49": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "DiracTimeD25.BHL.rep17_phi0": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "DiracTimeD25.BHL.rep17_bhlM": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "DiracTimeD25.BHL.rep17_phi0_sub_bhlM": {
+   "rules": [
+    "rule1",
+    "rule2"
+   ]
+  },
+  "DiracTimeD25.BHL.rep17_psi": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "DiracTimeD25.BHL.rep17_negInf": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "DiracTimeD25.BHL.rep17_falseTheta": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "DiracTimeD25.BHL.coeff_one_phi0": {
+   "rules": [
+    "rule1",
+    "rule2"
+   ]
+  },
+  "DiracTimeD25.BHL.coeff_one_bhlM": {
+   "rules": [
+    "rule1",
+    "rule2"
+   ]
+  },
+  "DiracTimeD25.BHL.phi0_ne_bhlM": {
+   "rules": [
+    "rule1",
+    "rule2"
+   ]
+  },
+  "DiracTimeD25.Bridge.wall_regular_poly": {
+   "rules": [
+    "rule1",
+    "rule3"
+   ]
+  },
+  "DiracTimeD25.Bridge.wall_solves_edge": {
+   "rules": [
+    "rule1",
+    "rule3"
+   ]
+  },
+  "DiracTimeD25.Bridge.wall_half": {
+   "rules": [
+    "rule1",
+    "rule3"
+   ]
+  },
+  "DiracTimeD25.Bridge.wall_cubed": {
+   "rules": [
+    "rule1",
+    "rule3"
+   ]
+  },
+  "DiracTimeD25.Bridge.sixth_solves_edge": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "DiracTimeD25.Bridge.alex31_eq_seifert": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "DiracTimeD25.Bridge.alex41_eq_seifert": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "D28.dirac_cmao_LM6": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "D28.etaCircle_three_quarter": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "D28.etaCircle_five_quarter": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "D28.odometer_no_crossing": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "D28.odometer_one_crossing": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "D28.moser_fibre_orders": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "D28.orbifold_euler": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "D28.lens_L21": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "D28.shell_sum": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "D28.sqrt5_sq": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "D28.q1_ratio": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "D28.golden_sq": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "D28.golden_pow_ten": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "D28.golden_pow_ten_add_inv": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "D28.q1_char_roots": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "D28.alexT34_torus_formula": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "D28.alexT34_cos": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "D28.alexT34_factor": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "D28.alexT34_factor_ring": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "D28.circ_sq": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "D28.alexT34_circle_eq_zero_iff": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "D28.alexT34_circle_eq_zero_iff_fract": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "D28.lt23_values": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "D28.lt34_values": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "D28.lt23_window": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "D28.pauliSymbol_det": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "D28.pauliSymbol_det_eq_zero_iff": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "D28.blockPauli_isHermitian": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "D28.block\u03c3\u2083_mul_self": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "D28.block\u03c3\u2083_blockPauli": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "D28.blockPauli_eta_eq_zero": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "D28.negPoch_eq_prod_Icc": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "D28.rawDiff_term": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "D28.fShift_eq": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "D28.fAdd_eq": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "D28.mShift_getD": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "D28.mOnePlus_eq": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "D28.fOnePlus_eq": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "D28.fNegPoch_eq": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "D28.fSum_eq": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "D28.rep_phi0_fast": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "D28.rep_bhlM_fast": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "D28.rep_falseTheta_fast": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "D28.rep_negInf_fast": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "D28.rep129_phi0_sub_bhlM_pos": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "D28.phi0_sub_bhlM_pos": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "D28.length_geomPre": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "D28.getD_geomPre_stable": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "D28.getD_geomPre": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "D28.rep_geomInv_mul": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "D28.rep_qq2Inv_fast": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "D28.rep_psi_fast": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "D28.fSum_congr": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "D28.fQq2Inv_259_1": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "D28.fQq2Inv_259_2": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "D28.fQq2Inv_259_3": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "D28.fQq2Inv_259_4": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "D28.fQq2Inv_259_5": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "D28.fQq2Inv_259_6": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "D28.fQq2Inv_259_7": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "D28.fQq2Inv_259_8": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "D28.fQq2Inv_259_9": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "D28.fQq2Inv_259_10": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "D28.fQq2Inv_259_11": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "D28.fQq2Inv_259_12": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "D28.fQq2Inv_259_13": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "D28.fQq2Inv_259_14": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "D28.fQq2Inv_259_15": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "D28.fQq2Inv_259_16": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "D28.fQq2Inv_259_17": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "D28.fQq2Inv_259_tab": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "D28.rep259_psi_tab": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "D28.rep_eq15_reduced_le128": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "D28.eq15_reduced_le128": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "D28.rep_eq15_reduced_le64": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "D28.eq15_reduced_le64": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "D28.eq15_mod_q259": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "D28.rep129_eq17": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "D28.eq17_le128": {
+   "rules": [
+    "rule1"
+   ]
   }
  },
  "external": {
@@ -438,7 +1468,11 @@
   "X:ramanujan-challenge-lean": "dicipler-pixel/ramanujan-challenge-lean (153 theorems, Problem 2.1 closed).",
   "X:Hessian-July": "His July 13 2026 paper on the figure-eight A-polynomial (rebuilt 8 Aug as 'Axis-Aligned Tangent Cones at the Singular Points of the Figure-Eight A-Polynomial, and the Amphichiral Involution'): corrected discriminant, ramification vs nodes, palindromic involution = amphichirality.",
   "X:Borot-Eynard": "Borot and Eynard, arXiv:1205.2261: for 4_1 the involution (m,l) -> (m,1/l) coincides with the amphichiral symmetry; ramification points at m^2 = (3 +- sqrt5)/2, l = 1 and m^2 = (-1 +- i sqrt3)/2, l = -1.",
-  "X:votkp-chiral-vortex": "votkp-lean old-Grok-chats salvage: 'chiral vortex knot of memory' = the VOTKP electron chain (section F)."
+  "X:votkp-chiral-vortex": "votkp-lean old-Grok-chats salvage: 'chiral vortex knot of memory' = the VOTKP electron chain (section F).",
+  "X:DT-audit": "Ink, dirac_builds_audit_v1 (Dirac Time / VOTKP old-chats pipeline): the three exact DT-O14 survivors -- chiral eta killing law, Alexander wall criterion on S^1, circle odometer DT-E15.",
+  "X:BHL2010": "K. Bringmann, K. Hikami, J. Lovejoy, 'On the modularity of the unified WRT invariants of certain Seifert manifolds' (M(2,3,8), M(2,3,4) from +-2 surgery on the trefoil), Thms 1.1-1.2, Eqs. (1.3)-(1.7).",
+  "X:APS": "Atiyah-Patodi-Singer spectral asymmetry: eta(D) = signed eigenvalue count; finite-dimensional version formalized here.",
+  "X:D28-statements": "Ink, D28 new_lean_statements_v1: exact claims of combined_paper_v1.tex not previously proved in Lean."
  },
  "edges": [
   {
@@ -1014,6 +2048,1098 @@
    "kind": "external",
    "witness": "FigureEightAnchors.APoly.node_at_one",
    "note": "The nodes his July paper shows have axis-aligned tangent cones."
+  },
+  {
+   "from": "DiracTimeD25.charpoly_neg_eq",
+   "to": "DiracTimeD25.eta_neg",
+   "kind": "mirror",
+   "witness": "DiracTimeD25.eta_neg",
+   "note": "Orientation reversal D -> -D negates every eigenvalue, so eta(-D) = -eta(D)."
+  },
+  {
+   "from": "DiracTimeD25.eta_eq_card_sub_card",
+   "to": "DiracTimeD25.eta_eq_roots",
+   "kind": "same-value",
+   "witness": "DiracTimeD25.eta_eq_card_sub_card",
+   "note": "eta as #positive - #negative eigenvalues equals the signed count of charpoly roots: one integer, two constructions."
+  },
+  {
+   "from": "DiracTimeD25.eta_eq_zero_of_chiral",
+   "to": "DiracTimeD25.eta_one",
+   "kind": "contrast",
+   "witness": "DiracTimeD25.eta_one",
+   "note": "A chiral D (Gamma D Gamma = -D) is killed, eta = 0; the identity has eta = n: the killing law is not vacuous."
+  },
+  {
+   "from": "DiracTimeD25.eta_eq_zero_of_chiral",
+   "to": "DiracTimeD25.eta_eq_zero_of_unitary_chiral",
+   "kind": "generalizes",
+   "witness": "DiracTimeD25.eta_eq_zero_of_unitary_chiral",
+   "note": "Unitary chiral grading is a special case of the involutive one."
+  },
+  {
+   "from": "DiracTimeD25.eta_eq_zero_of_chiral",
+   "to": "DiracTimeD25.pauli_eta_eq_zero",
+   "kind": "evaluates-in",
+   "witness": "DiracTimeD25.pauli_eta_eq_zero",
+   "note": "Killing law evaluated at the 2x2 Pauli symbol with Gamma = sigma_3."
+  },
+  {
+   "from": "DiracTimeD25.eta_eq_zero_of_chiral",
+   "to": "X:APS",
+   "kind": "anchor",
+   "witness": "DiracTimeD25.eta_eq_zero_of_chiral",
+   "note": "Spectral asymmetry vanishes under a chiral grading (finite-dimensional APS eta)."
+  },
+  {
+   "from": "DiracTimeD25.eta_eq_zero_of_chiral",
+   "to": "X:DT-audit",
+   "kind": "external",
+   "witness": "DiracTimeD25.eta_eq_zero_of_chiral",
+   "note": "DT-O14 survivor 1 (killing law and sign flip)."
+  },
+  {
+   "from": "DiracTimeD25.eta_neg",
+   "to": "FigureEightAnchors.Chirality.chiral_31",
+   "kind": "analogy-only",
+   "witness": "DiracTimeD25.eta_neg",
+   "note": "Both are orientation-sign statements (spectral eta flips under D -> -D; the trefoil Seifert form is not congruent to its mirror). NO Lean theorem links them."
+  },
+  {
+   "from": "DiracTimeD25.alex31_circle_eq_zero_iff",
+   "to": "DiracTimeD25.alex41_circle_ne_zero",
+   "kind": "contrast",
+   "witness": "DiracTimeD25.alex41_circle_ne_zero",
+   "note": "The chiral trefoil has walls on S^1 at alpha = +-1/6 (mod 1); the amphichiral figure-eight has none, Delta_41 = 3 - 2cos >= 1."
+  },
+  {
+   "from": "DiracTimeD25.one_le_alex41_real",
+   "to": "DiracTimeD25.alex41_circle",
+   "kind": "boundary",
+   "witness": "DiracTimeD25.one_le_alex41_real",
+   "note": "Delta_41 on S^1 never drops below 1: the figure-eight stays strictly off the wall."
+  },
+  {
+   "from": "DiracTimeD25.alex31_circle_eq_zero_iff",
+   "to": "X:DT-audit",
+   "kind": "external",
+   "witness": "DiracTimeD25.alex31_circle_eq_zero_iff",
+   "note": "DT-O14 survivor 2 (Alexander wall criterion)."
+  },
+  {
+   "from": "DiracTimeD25.alex31_poly",
+   "to": "FigureEightAnchors.Chirality.alex_31",
+   "kind": "same-polynomial",
+   "witness": "DiracTimeD25.Bridge.alex31_eq_seifert",
+   "note": "D25's t*Delta_31(t) = t^2 - t + 1 is CMaO's Seifert-matrix polynomial alex V31 = (1, -1, 1)."
+  },
+  {
+   "from": "DiracTimeD25.alex41_poly",
+   "to": "FigureEightAnchors.Chirality.alex_41",
+   "kind": "same-polynomial",
+   "witness": "DiracTimeD25.Bridge.alex41_eq_seifert",
+   "note": "D25's t*Delta_41(t) = -t^2 + 3t - 1 is CMaO's alex V41 = (-1, 3, -1)."
+  },
+  {
+   "from": "FigureEightAnchors.Gluing.regular_solves_edge",
+   "to": "DiracTimeD25.Bridge.wall_solves_edge",
+   "kind": "evaluates-in",
+   "witness": "DiracTimeD25.Bridge.wall_solves_edge",
+   "note": "CMaO's ring-generic edge theorem evaluated in C at every trefoil wall on S^1."
+  },
+  {
+   "from": "FigureEightAnchors.Gluing.regular_half",
+   "to": "DiracTimeD25.Bridge.wall_half",
+   "kind": "evaluates-in",
+   "witness": "DiracTimeD25.Bridge.wall_half",
+   "note": "Each tetrahedron contributes -1 at a trefoil wall."
+  },
+  {
+   "from": "FigureEightAnchors.Gluing.regular_cubed",
+   "to": "DiracTimeD25.Bridge.wall_cubed",
+   "kind": "evaluates-in",
+   "witness": "DiracTimeD25.Bridge.wall_cubed",
+   "note": "A trefoil wall is a sixth root of unity, z^3 = -1."
+  },
+  {
+   "from": "DiracTimeD25.Bridge.wall_cubed",
+   "to": "FigureEightAnchors.Eis.w_cubed",
+   "kind": "same-root",
+   "witness": "DiracTimeD25.Bridge.wall_cubed",
+   "note": "The S^1 walls of the trefoil satisfy w^3 = -1 like the Eisenstein root w = exp(i pi/3)."
+  },
+  {
+   "from": "DiracTimeD25.alex31_wall_at_sixth",
+   "to": "DiracTimeD25.Bridge.sixth_solves_edge",
+   "kind": "same-root",
+   "witness": "DiracTimeD25.Bridge.sixth_solves_edge",
+   "note": "The wall at alpha = 1/6 is Thurston's regular shape exp(i pi/3)."
+  },
+  {
+   "from": "DiracTimeD25.alex31_poly",
+   "to": "DiracTimeD25.Bridge.wall_regular_poly",
+   "kind": "proof-step",
+   "witness": "DiracTimeD25.Bridge.wall_regular_poly",
+   "note": "A wall Delta_31 = 0 gives z^2 - z + 1 = 0 via t*Delta_31(t) = t^2 - t + 1."
+  },
+  {
+   "from": "DiracTimeD25.odometer_identity",
+   "to": "DiracTimeD25.etaCircle_quarter",
+   "kind": "kept-difference",
+   "witness": "DiracTimeD25.etaCircle_quarter",
+   "note": "The eta boundary term is kept, and is nonzero (1/2 at a = 1/4)."
+  },
+  {
+   "from": "DiracTimeD25.etaCircle_add_one",
+   "to": "DiracTimeD25.floor_add_one_sub_floor",
+   "kind": "contrast",
+   "witness": "DiracTimeD25.floor_add_one_sub_floor",
+   "note": "eta is 1-periodic while the floor count jumps by exactly 1: windings counted, boundary measured."
+  },
+  {
+   "from": "DiracTimeD25.odometer_identity",
+   "to": "X:DT-audit",
+   "kind": "external",
+   "witness": "DiracTimeD25.odometer_identity",
+   "note": "DT-E15 circle-odometer identity (DT-O14 survivor 3)."
+  },
+  {
+   "from": "DiracTimeD25.BHL.coeff_one_phi0",
+   "to": "DiracTimeD25.BHL.coeff_one_bhlM",
+   "kind": "kept-difference",
+   "witness": "DiracTimeD25.BHL.phi0_ne_bhlM",
+   "note": "Signed boundary: coeff_q1 phi0 = 2 vs coeff_q1 M = 1, so phi0 - M is a kept, nonzero difference."
+  },
+  {
+   "from": "DiracTimeD25.BHL.rep17_phi0_sub_bhlM",
+   "to": "DiracTimeD25.BHL.phi0_ne_bhlM",
+   "kind": "kept-difference",
+   "witness": "DiracTimeD25.BHL.rep17_phi0_sub_bhlM",
+   "note": "Raw difference phi0 - M tabulated exactly through q^16."
+  },
+  {
+   "from": "DiracTimeD25.BHL.eq15_iff_coeff",
+   "to": "DiracTimeD25.BHL.eq15_mod_q49",
+   "kind": "proof-step",
+   "witness": "DiracTimeD25.BHL.eq15_reduced_le23",
+   "note": "All-degree parity reduction of Eq. (1.5), then exact check through q^48."
+  },
+  {
+   "from": "DiracTimeD25.BHL.eq15_mod_q49",
+   "to": "X:BHL2010",
+   "kind": "anchor",
+   "witness": "DiracTimeD25.BHL.eq15_mod_q49",
+   "note": "BHL Eq. (1.5) 2q^2 phi0(q^2) = psi(q) + psi(-q), exact through q^48."
+  },
+  {
+   "from": "DiracTimeD25.BHL.eq17_mod_q49",
+   "to": "X:BHL2010",
+   "kind": "anchor",
+   "witness": "DiracTimeD25.BHL.eq17_mod_q49",
+   "note": "BHL Eq. (1.7) 2 + 2q^2 M(q) = (-q)_inf + false theta, exact through q^48."
+  },
+  {
+   "from": "DiracTimeD25.BHL.phi0_ne_bhlM",
+   "to": "X:BHL2010",
+   "kind": "external",
+   "witness": "DiracTimeD25.BHL.phi0_ne_bhlM",
+   "note": "Strict separation of the two BHL q-series at q^1; the WRT Laplace-transform link (Eqs. 2.1-2.6) is NOT formalized."
+  },
+  {
+   "from": "D28.dirac_cmao_LM6",
+   "to": "X:D28-statements",
+   "kind": "external",
+   "witness": "D28.dirac_cmao_LM6",
+   "note": "N37: Dirac Time L = -M^-6 is CMaO L*M^6 = -1."
+  },
+  {
+   "from": "D28.odometer_no_crossing",
+   "to": "D28.odometer_one_crossing",
+   "kind": "contrast",
+   "witness": "D28.odometer_one_crossing",
+   "note": "N22: no crossing yet Delta eta = -1; one crossing yet Delta eta = 0, so Delta eta != 2 SF."
+  },
+  {
+   "from": "DiracTimeD25.etaCircle_quarter",
+   "to": "D28.odometer_no_crossing",
+   "kind": "proof-step",
+   "witness": "D28.odometer_no_crossing",
+   "note": "Uses eta(1/4) = 1/2."
+  },
+  {
+   "from": "DiracTimeD25.etaCircle_add_one",
+   "to": "D28.etaCircle_five_quarter",
+   "kind": "proof-step",
+   "witness": "D28.etaCircle_five_quarter",
+   "note": "eta is 1-periodic: eta(5/4) = eta(1/4)."
+  },
+  {
+   "from": "D28.etaCircle_three_quarter",
+   "to": "D28.odometer_no_crossing",
+   "kind": "proof-step",
+   "witness": "D28.odometer_no_crossing",
+   "note": "Uses eta(3/4) = -1/2."
+  },
+  {
+   "from": "D28.etaCircle_five_quarter",
+   "to": "D28.odometer_one_crossing",
+   "kind": "proof-step",
+   "witness": "D28.odometer_one_crossing",
+   "note": "Uses eta(5/4) = 1/2."
+  },
+  {
+   "from": "D28.moser_fibre_orders",
+   "to": "X:BHL2010",
+   "kind": "anchor",
+   "witness": "D28.moser_fibre_orders",
+   "note": "N31: +-2 surgery on the trefoil gives exceptional fibre orders 4 and 8 (M(2,3,4), M(2,3,8))."
+  },
+  {
+   "from": "D28.moser_fibre_orders",
+   "to": "D28.orbifold_euler",
+   "kind": "same-value",
+   "witness": "D28.orbifold_euler",
+   "note": "N33: fibre orders 4, 8 give orbifold Euler characteristics 1/12 and -1/24."
+  },
+  {
+   "from": "D28.lens_L21",
+   "to": "D28.moser_fibre_orders",
+   "kind": "contrast",
+   "witness": "D28.lens_L21",
+   "note": "N33: lens control L(2,1), q^2 = -1 mod p."
+  },
+  {
+   "from": "D28.shell_sum",
+   "to": "X:D28-statements",
+   "kind": "external",
+   "witness": "D28.shell_sum",
+   "note": "N41: S^2 shell sum 2n^2."
+  },
+  {
+   "from": "D28.golden_pow_ten",
+   "to": "X:Q1",
+   "kind": "anchor",
+   "witness": "D28.golden_pow_ten",
+   "note": "K16: phi^10 = (123 + 55 sqrt5)/2, the Q1 convergence ratio."
+  },
+  {
+   "from": "D28.q1_ratio",
+   "to": "D28.golden_pow_ten",
+   "kind": "same-value",
+   "witness": "D28.q1_ratio",
+   "note": "K16: the Q1 companion-root ratio (297+135 sqrt5)/(135 sqrt5-297) equals phi^10."
+  },
+  {
+   "from": "D28.q1_char_roots",
+   "to": "D28.q1_ratio",
+   "kind": "same-root",
+   "witness": "D28.q1_char_roots",
+   "note": "K16: the two companion roots (-297 +- 135 sqrt5)/4 whose ratio is phi^10."
+  },
+  {
+   "from": "D28.golden_pow_ten",
+   "to": "D28.golden_pow_ten_add_inv",
+   "kind": "proof-step",
+   "witness": "D28.golden_pow_ten_add_inv",
+   "note": "phi^10 + phi^-10 = 123."
+  },
+  {
+   "from": "FigureEightAnchors.Ladder.golden_squared",
+   "to": "D28.golden_sq",
+   "kind": "same-polynomial",
+   "witness": "D28.golden_sq",
+   "note": "phi^2 = phi + 1 in R (CMaO golden ladder)."
+  },
+  {
+   "from": "D28.alexT34_factor_ring",
+   "to": "DiracTimeD25.alex31_poly_circle_eq_zero_iff",
+   "kind": "same-polynomial",
+   "witness": "D28.alexT34_circle_eq_zero_iff",
+   "note": "N15: Delta_{T(3,4)} = (t^2 - t + 1)(t^4 - t^2 + 1): the trefoil factor carries the walls at +-1/6."
+  },
+  {
+   "from": "D28.alexT34_circle_eq_zero_iff",
+   "to": "D28.alexT34_circle_eq_zero_iff_fract",
+   "kind": "proof-step",
+   "witness": "D28.alexT34_circle_eq_zero_iff_fract",
+   "note": "N15: the six unit-circle walls of 8_19 = T(3,4)."
+  },
+  {
+   "from": "D28.alexT34_cos",
+   "to": "D28.alexT34_circle_eq_zero_iff",
+   "kind": "same-polynomial",
+   "witness": "D28.alexT34_cos",
+   "note": "N15: on S^1, z^-3 Delta = 2cos3x - 2cos2x + 1 = (2cos x - 1)(4cos^2 x - 3)."
+  },
+  {
+   "from": "D28.alexT34_torus_formula",
+   "to": "D28.alexT34_factor",
+   "kind": "same-polynomial",
+   "witness": "D28.alexT34_factor",
+   "note": "N15: torus-knot formula and its trefoil factorisation of one polynomial."
+  },
+  {
+   "from": "D28.lt23_window",
+   "to": "DiracTimeD25.alex31_circle_eq_zero_iff",
+   "kind": "boundary",
+   "witness": "D28.lt23_window",
+   "note": "N16/N17: the trefoil Litherland window jumps exactly at the Alexander walls alpha = 1/6, 5/6."
+  },
+  {
+   "from": "D28.lt23_values",
+   "to": "D28.lt34_values",
+   "kind": "contrast",
+   "witness": "D28.lt34_values",
+   "note": "N16/N17: Litherland counts for T(2,3) and T(3,4)."
+  },
+  {
+   "from": "D28.lt23_values",
+   "to": "X:D28-statements",
+   "kind": "external",
+   "witness": "D28.lt23_values",
+   "note": "Litherland 1979: the count equals the Levine-Tristram signature (cited, not formalised)."
+  },
+  {
+   "from": "DiracTimeD25.pauli_eta_eq_zero",
+   "to": "D28.blockPauli_eta_eq_zero",
+   "kind": "generalizes",
+   "witness": "D28.blockPauli_eta_eq_zero",
+   "note": "N11: the 2x2 killing law extended to any block-diagonal sum of flat-torus symbols."
+  },
+  {
+   "from": "DiracTimeD25.eta_eq_zero_of_chiral",
+   "to": "D28.blockPauli_eta_eq_zero",
+   "kind": "evaluates-in",
+   "witness": "D28.blockPauli_eta_eq_zero",
+   "note": "Killing law with Gamma = blockdiag(sigma_3)."
+  },
+  {
+   "from": "D28.pauliSymbol_det_eq_zero_iff",
+   "to": "DiracTimeD25.pauliSymbol_isHermitian",
+   "kind": "contrast",
+   "witness": "D28.pauliSymbol_det_eq_zero_iff",
+   "note": "N10: zero modes of the flat-torus symbol only at a = b = 0 (codimension two)."
+  },
+  {
+   "from": "D28.rawDiff_term",
+   "to": "DiracTimeD25.BHL.rep17_phi0_sub_bhlM",
+   "kind": "kept-difference",
+   "witness": "D28.rawDiff_term",
+   "note": "N30: term identity behind the raw difference phi0 - M."
+  },
+  {
+   "from": "DiracTimeD25.BHL.eq17_mod_q49",
+   "to": "D28.eq17_le128",
+   "kind": "generalizes",
+   "witness": "D28.eq17_le128",
+   "note": "BHL Eq. (1.7) extended from q^48 to q^128."
+  },
+  {
+   "from": "D28.eq17_le128",
+   "to": "X:BHL2010",
+   "kind": "anchor",
+   "witness": "D28.eq17_le128",
+   "note": "BHL Eq. (1.7) exact through q^128."
+  },
+  {
+   "from": "DiracTimeD25.BHL.eq15_reduced_le23",
+   "to": "D28.eq15_reduced_le128",
+   "kind": "generalizes",
+   "witness": "D28.eq15_reduced_le128",
+   "note": "BHL Eq. (1.5) reduced form extended from k <= 23 to k <= 128."
+  },
+  {
+   "from": "D28.eq15_reduced_le128",
+   "to": "X:BHL2010",
+   "kind": "anchor",
+   "witness": "D28.eq15_reduced_le128",
+   "note": "BHL Eq. (1.5) reduced, exact for k <= 128."
+  },
+  {
+   "from": "D28.eq15_reduced_le128",
+   "to": "D28.eq15_reduced_le64",
+   "kind": "generalizes",
+   "witness": "D28.eq15_reduced_le64",
+   "note": "k <= 64 as a corollary of k <= 128."
+  },
+  {
+   "from": "DiracTimeD25.BHL.eq15_mod_q49",
+   "to": "D28.eq15_mod_q259",
+   "kind": "generalizes",
+   "witness": "D28.eq15_mod_q259",
+   "note": "BHL Eq. (1.5) unreduced, extended from q^48 to q^258."
+  },
+  {
+   "from": "D28.eq15_reduced_le128",
+   "to": "D28.eq15_mod_q259",
+   "kind": "proof-step",
+   "witness": "D28.eq15_mod_q259",
+   "note": "Reduced form k <= 128 plus all-degree parity lemmas give Eq. (1.5) mod q^259."
+  },
+  {
+   "from": "D28.eq15_mod_q259",
+   "to": "X:BHL2010",
+   "kind": "anchor",
+   "witness": "D28.eq15_mod_q259",
+   "note": "BHL Eq. (1.5) 2q^2 phi0(q^2) = psi(q) + psi(-q), exact through q^258."
+  },
+  {
+   "from": "D28.rep_geomInv_mul",
+   "to": "D28.rep_qq2Inv_fast",
+   "kind": "proof-step",
+   "witness": "D28.rep_qq2Inv_fast",
+   "note": "1/(1-q^a) as the recurrence g_k = f_k + g_(k-a)."
+  },
+  {
+   "from": "DiracTimeD25.BHL.rep17_phi0_sub_bhlM",
+   "to": "D28.phi0_sub_bhlM_pos",
+   "kind": "kept-difference",
+   "witness": "D28.phi0_sub_bhlM_pos",
+   "note": "N30: the raw difference phi0 - M stays positive through q^128 (was q^16)."
+  },
+  {
+   "from": "D28.rawDiff_term",
+   "to": "D28.phi0_sub_bhlM_pos",
+   "kind": "kept-difference",
+   "witness": "D28.phi0_sub_bhlM_pos",
+   "note": "N30: term identity and finite positivity of the same raw difference."
+  },
+  {
+   "from": "D28.fNegPoch_eq",
+   "to": "D28.rep_bhlM_fast",
+   "kind": "proof-step",
+   "witness": "D28.rep_bhlM_fast",
+   "note": "Linear-time model of (-q)_m, proved equal to the D27 model."
+  },
+  {
+   "from": "DiracTimeD25.eta_eq_zero_of_anticommute",
+   "to": "DiracTimeD25.eta_eq_zero_of_chiral",
+   "kind": "proof-step",
+   "witness": "DiracTimeD25.eta_eq_zero_of_chiral",
+   "note": "Cited in the proof of eta_eq_zero_of_chiral."
+  },
+  {
+   "from": "DiracTimeD25.eta_eq_zero_of_anticommute",
+   "to": "DiracTimeD25.eta_eq_zero_of_unitary_conj",
+   "kind": "proof-step",
+   "witness": "DiracTimeD25.eta_eq_zero_of_unitary_conj",
+   "note": "Its proof cites eta_eq_zero_of_anticommute."
+  },
+  {
+   "from": "DiracTimeD25.\u03c3\u2083_mul_self",
+   "to": "DiracTimeD25.pauli_eta_eq_zero",
+   "kind": "proof-step",
+   "witness": "DiracTimeD25.pauli_eta_eq_zero",
+   "note": "Cited in the proof of pauli_eta_eq_zero."
+  },
+  {
+   "from": "DiracTimeD25.\u03c3\u2083_pauliSymbol_\u03c3\u2083",
+   "to": "DiracTimeD25.pauli_eta_eq_zero",
+   "kind": "proof-step",
+   "witness": "DiracTimeD25.pauli_eta_eq_zero",
+   "note": "Cited in the proof of pauli_eta_eq_zero."
+  },
+  {
+   "from": "DiracTimeD25.circ_ne_zero",
+   "to": "DiracTimeD25.alex31_poly_circle_eq_zero_iff",
+   "kind": "proof-step",
+   "witness": "DiracTimeD25.alex31_poly_circle_eq_zero_iff",
+   "note": "Cited in the proof of alex31_poly_circle_eq_zero_iff."
+  },
+  {
+   "from": "DiracTimeD25.circ_add_inv",
+   "to": "DiracTimeD25.alex31_circle",
+   "kind": "proof-step",
+   "witness": "DiracTimeD25.alex31_circle",
+   "note": "Cited in the proof of alex31_circle."
+  },
+  {
+   "from": "DiracTimeD25.cos_two_pi_eq_half_iff",
+   "to": "DiracTimeD25.alex31_circle_eq_zero_iff",
+   "kind": "proof-step",
+   "witness": "DiracTimeD25.alex31_circle_eq_zero_iff",
+   "note": "Cited in the proof of alex31_circle_eq_zero_iff."
+  },
+  {
+   "from": "DiracTimeD25.alex31_circle_eq_zero_iff",
+   "to": "DiracTimeD25.alex31_circle_eq_zero_iff'",
+   "kind": "proof-step",
+   "witness": "DiracTimeD25.alex31_circle_eq_zero_iff'",
+   "note": "Its proof cites alex31_circle_eq_zero_iff."
+  },
+  {
+   "from": "DiracTimeD25.alex41_real_pos",
+   "to": "DiracTimeD25.alex41_circle_ne_zero",
+   "kind": "proof-step",
+   "witness": "DiracTimeD25.alex41_circle_ne_zero",
+   "note": "Cited in the proof of alex41_circle_ne_zero."
+  },
+  {
+   "from": "DiracTimeD25.circ_ne_zero",
+   "to": "DiracTimeD25.alex41_poly_circle_ne_zero",
+   "kind": "proof-step",
+   "witness": "DiracTimeD25.alex41_poly_circle_ne_zero",
+   "note": "Its proof cites circ_ne_zero."
+  },
+  {
+   "from": "DiracTimeD25.etaCircle_of_not_int",
+   "to": "DiracTimeD25.odometer_identity",
+   "kind": "proof-step",
+   "witness": "DiracTimeD25.odometer_identity",
+   "note": "Cited in the proof of odometer_identity."
+  },
+  {
+   "from": "DiracTimeD25.etaCircle_intCast",
+   "to": "DiracTimeD25.etaCircle_add_one",
+   "kind": "proof-step",
+   "witness": "DiracTimeD25.etaCircle_add_one",
+   "note": "Cited in the proof of etaCircle_add_one."
+  },
+  {
+   "from": "DiracTimeD25.floor_sub_floor_eq",
+   "to": "DiracTimeD25.odometer_identity",
+   "kind": "proof-step",
+   "witness": "DiracTimeD25.odometer_identity",
+   "note": "Cited in the proof of odometer_identity."
+  },
+  {
+   "from": "DiracTimeD25.mem_crossings_iff",
+   "to": "DiracTimeD25.floor_sub_floor_eq_card_crossings",
+   "kind": "proof-step",
+   "witness": "DiracTimeD25.floor_sub_floor_eq_card_crossings",
+   "note": "Cited in the proof of floor_sub_floor_eq_card_crossings."
+  },
+  {
+   "from": "DiracTimeD25.odometer_identity",
+   "to": "DiracTimeD25.card_crossings_eq_odometer",
+   "kind": "proof-step",
+   "witness": "DiracTimeD25.card_crossings_eq_odometer",
+   "note": "Its proof cites odometer_identity."
+  },
+  {
+   "from": "DiracTimeD25.BHL.length_rep",
+   "to": "DiracTimeD25.BHL.rep_ext",
+   "kind": "proof-step",
+   "witness": "DiracTimeD25.BHL.rep_ext",
+   "note": "Cited in the proof of rep_ext."
+  },
+  {
+   "from": "DiracTimeD25.BHL.getD_rep",
+   "to": "DiracTimeD25.BHL.getD_rep_of_lt",
+   "kind": "proof-step",
+   "witness": "DiracTimeD25.BHL.getD_rep_of_lt",
+   "note": "Cited in the proof of getD_rep_of_lt."
+  },
+  {
+   "from": "DiracTimeD25.BHL.listSum_map_range",
+   "to": "DiracTimeD25.BHL.rep_mul",
+   "kind": "proof-step",
+   "witness": "DiracTimeD25.BHL.rep_mul",
+   "note": "Cited in the proof of rep_mul."
+  },
+  {
+   "from": "DiracTimeD25.BHL.rep_add",
+   "to": "DiracTimeD25.BHL.rep_sum",
+   "kind": "proof-step",
+   "witness": "DiracTimeD25.BHL.rep_sum",
+   "note": "Cited in the proof of rep_sum."
+  },
+  {
+   "from": "DiracTimeD25.BHL.rep_X_pow_mul",
+   "to": "DiracTimeD25.BHL.rep_phiTerm",
+   "kind": "proof-step",
+   "witness": "DiracTimeD25.BHL.rep_phiTerm",
+   "note": "Cited in the proof of rep_phiTerm."
+  },
+  {
+   "from": "DiracTimeD25.BHL.rep_one_add_X_pow_mul",
+   "to": "DiracTimeD25.BHL.rep_negPoch",
+   "kind": "proof-step",
+   "witness": "DiracTimeD25.BHL.rep_negPoch",
+   "note": "Cited in the proof of rep_negPoch."
+  },
+  {
+   "from": "DiracTimeD25.BHL.rep_monomial",
+   "to": "DiracTimeD25.BHL.rep_one",
+   "kind": "proof-step",
+   "witness": "DiracTimeD25.BHL.rep_one",
+   "note": "Cited in the proof of rep_one."
+  },
+  {
+   "from": "DiracTimeD25.BHL.rep_congr",
+   "to": "DiracTimeD25.BHL.rep_seriesOf",
+   "kind": "proof-step",
+   "witness": "DiracTimeD25.BHL.rep_seriesOf",
+   "note": "Cited in the proof of rep_seriesOf."
+  },
+  {
+   "from": "DiracTimeD25.BHL.coeff_eq_of_rep_eq",
+   "to": "DiracTimeD25.BHL.eq15_mod_q49",
+   "kind": "proof-step",
+   "witness": "DiracTimeD25.BHL.eq15_mod_q49",
+   "note": "Cited in the proof of eq15_mod_q49."
+  },
+  {
+   "from": "DiracTimeD25.BHL.rep_zero",
+   "to": "DiracTimeD25.BHL.rep_sum",
+   "kind": "proof-step",
+   "witness": "DiracTimeD25.BHL.rep_sum",
+   "note": "Cited in the proof of rep_sum."
+  },
+  {
+   "from": "DiracTimeD25.BHL.rep_two",
+   "to": "DiracTimeD25.BHL.rep_lhs15",
+   "kind": "proof-step",
+   "witness": "DiracTimeD25.BHL.rep_lhs15",
+   "note": "Cited in the proof of rep_lhs15."
+  },
+  {
+   "from": "DiracTimeD25.BHL.rep_sub",
+   "to": "DiracTimeD25.BHL.rep17_phi0_sub_bhlM",
+   "kind": "proof-step",
+   "witness": "DiracTimeD25.BHL.rep17_phi0_sub_bhlM",
+   "note": "Cited in the proof of rep17_phi0_sub_bhlM."
+  },
+  {
+   "from": "DiracTimeD25.BHL.rep_rescale_neg_one",
+   "to": "DiracTimeD25.BHL.eq15_mod_q49",
+   "kind": "proof-step",
+   "witness": "DiracTimeD25.BHL.eq15_mod_q49",
+   "note": "Cited in the proof of eq15_mod_q49."
+  },
+  {
+   "from": "DiracTimeD25.BHL.rep_expand_two",
+   "to": "DiracTimeD25.BHL.rep_lhs15",
+   "kind": "proof-step",
+   "witness": "DiracTimeD25.BHL.rep_lhs15",
+   "note": "Cited in the proof of rep_lhs15."
+  },
+  {
+   "from": "DiracTimeD25.BHL.hasSum_seriesOf",
+   "to": "DiracTimeD25.BHL.hasSum_phi0",
+   "kind": "proof-step",
+   "witness": "DiracTimeD25.BHL.hasSum_phi0",
+   "note": "Cited in the proof of hasSum_phi0."
+  },
+  {
+   "from": "DiracTimeD25.BHL.coeff_seriesOf_eq_partial",
+   "to": "DiracTimeD25.BHL.rep_seriesOf",
+   "kind": "proof-step",
+   "witness": "DiracTimeD25.BHL.rep_seriesOf",
+   "note": "Cited in the proof of rep_seriesOf."
+  },
+  {
+   "from": "DiracTimeD25.BHL.coeff_X_pow_mul_of_lt",
+   "to": "DiracTimeD25.BHL.phiTerm_lowerOrd",
+   "kind": "proof-step",
+   "witness": "DiracTimeD25.BHL.phiTerm_lowerOrd",
+   "note": "Cited in the proof of phiTerm_lowerOrd."
+  },
+  {
+   "from": "DiracTimeD25.BHL.negPoch_succ",
+   "to": "DiracTimeD25.BHL.rep_negPoch",
+   "kind": "proof-step",
+   "witness": "DiracTimeD25.BHL.rep_negPoch",
+   "note": "Cited in the proof of rep_negPoch."
+  },
+  {
+   "from": "DiracTimeD25.BHL.one_sub_X_pow_mul_geomInv",
+   "to": "DiracTimeD25.BHL.qq2_mul_qq2Inv",
+   "kind": "proof-step",
+   "witness": "DiracTimeD25.BHL.qq2_mul_qq2Inv",
+   "note": "Cited in the proof of qq2_mul_qq2Inv."
+  },
+  {
+   "from": "DiracTimeD25.BHL.qq2Inv_succ",
+   "to": "DiracTimeD25.BHL.rep_qq2Inv",
+   "kind": "proof-step",
+   "witness": "DiracTimeD25.BHL.rep_qq2Inv",
+   "note": "Cited in the proof of rep_qq2Inv."
+  },
+  {
+   "from": "DiracTimeD25.BHL.MTerm_lowerOrd",
+   "to": "DiracTimeD25.BHL.hasSum_bhlM",
+   "kind": "proof-step",
+   "witness": "DiracTimeD25.BHL.hasSum_bhlM",
+   "note": "Cited in the proof of hasSum_bhlM."
+  },
+  {
+   "from": "DiracTimeD25.BHL.psiTerm_lowerOrd",
+   "to": "DiracTimeD25.BHL.hasSum_psi",
+   "kind": "proof-step",
+   "witness": "DiracTimeD25.BHL.hasSum_psi",
+   "note": "Cited in the proof of hasSum_psi."
+  },
+  {
+   "from": "DiracTimeD25.BHL.ftTerm_lowerOrd",
+   "to": "DiracTimeD25.BHL.hasSum_falseTheta",
+   "kind": "proof-step",
+   "witness": "DiracTimeD25.BHL.hasSum_falseTheta",
+   "note": "Cited in the proof of hasSum_falseTheta."
+  },
+  {
+   "from": "DiracTimeD25.BHL.coeff_mul_of_coeff_eq_one",
+   "to": "DiracTimeD25.BHL.coeff_prod_tail",
+   "kind": "proof-step",
+   "witness": "DiracTimeD25.BHL.coeff_prod_tail",
+   "note": "Cited in the proof of coeff_prod_tail."
+  },
+  {
+   "from": "DiracTimeD25.BHL.coeff_negPoch_stable",
+   "to": "DiracTimeD25.BHL.coeff_negInf",
+   "kind": "proof-step",
+   "witness": "DiracTimeD25.BHL.coeff_negInf",
+   "note": "Cited in the proof of coeff_negInf."
+  },
+  {
+   "from": "DiracTimeD25.BHL.coeff_mul_of_coeff_eq_one",
+   "to": "DiracTimeD25.BHL.hasProd_negInf",
+   "kind": "proof-step",
+   "witness": "DiracTimeD25.BHL.hasProd_negInf",
+   "note": "Its proof cites coeff_mul_of_coeff_eq_one."
+  },
+  {
+   "from": "DiracTimeD25.BHL.rep_geomInv",
+   "to": "DiracTimeD25.BHL.rep_qq2Inv",
+   "kind": "proof-step",
+   "witness": "DiracTimeD25.BHL.rep_qq2Inv",
+   "note": "Cited in the proof of rep_qq2Inv."
+  },
+  {
+   "from": "DiracTimeD25.BHL.rep_MTerm",
+   "to": "DiracTimeD25.BHL.rep_bhlM",
+   "kind": "proof-step",
+   "witness": "DiracTimeD25.BHL.rep_bhlM",
+   "note": "Cited in the proof of rep_bhlM."
+  },
+  {
+   "from": "DiracTimeD25.BHL.rep_psiTerm",
+   "to": "DiracTimeD25.BHL.rep_psi",
+   "kind": "proof-step",
+   "witness": "DiracTimeD25.BHL.rep_psi",
+   "note": "Cited in the proof of rep_psi."
+  },
+  {
+   "from": "DiracTimeD25.BHL.rep_ftTerm",
+   "to": "DiracTimeD25.BHL.rep_falseTheta",
+   "kind": "proof-step",
+   "witness": "DiracTimeD25.BHL.rep_falseTheta",
+   "note": "Cited in the proof of rep_falseTheta."
+  },
+  {
+   "from": "DiracTimeD25.BHL.rep_seriesOf_model",
+   "to": "DiracTimeD25.BHL.rep_phi0",
+   "kind": "proof-step",
+   "witness": "DiracTimeD25.BHL.rep_phi0",
+   "note": "Cited in the proof of rep_phi0."
+  },
+  {
+   "from": "DiracTimeD25.BHL.rep_negInf",
+   "to": "DiracTimeD25.BHL.eq17_mod_q49",
+   "kind": "proof-step",
+   "witness": "DiracTimeD25.BHL.eq17_mod_q49",
+   "note": "Cited in the proof of eq17_mod_q49."
+  },
+  {
+   "from": "DiracTimeD25.BHL.coeff_two_mul",
+   "to": "DiracTimeD25.BHL.coeff_lhs15_even",
+   "kind": "proof-step",
+   "witness": "DiracTimeD25.BHL.coeff_lhs15_even",
+   "note": "Cited in the proof of coeff_lhs15_even."
+  },
+  {
+   "from": "DiracTimeD25.BHL.coeff_add_rescale_neg",
+   "to": "DiracTimeD25.BHL.coeff_odd_add_rescale_neg",
+   "kind": "proof-step",
+   "witness": "DiracTimeD25.BHL.coeff_odd_add_rescale_neg",
+   "note": "Cited in the proof of coeff_odd_add_rescale_neg."
+  },
+  {
+   "from": "DiracTimeD25.BHL.coeff_even_add_rescale_neg",
+   "to": "DiracTimeD25.BHL.lhs15_eq_iff",
+   "kind": "proof-step",
+   "witness": "DiracTimeD25.BHL.lhs15_eq_iff",
+   "note": "Cited in the proof of lhs15_eq_iff."
+  },
+  {
+   "from": "DiracTimeD25.BHL.coeff_lhs15_odd",
+   "to": "DiracTimeD25.BHL.lhs15_eq_iff",
+   "kind": "proof-step",
+   "witness": "DiracTimeD25.BHL.lhs15_eq_iff",
+   "note": "Cited in the proof of lhs15_eq_iff."
+  },
+  {
+   "from": "DiracTimeD25.BHL.coeff_lhs15_zero",
+   "to": "DiracTimeD25.BHL.lhs15_eq_iff",
+   "kind": "proof-step",
+   "witness": "DiracTimeD25.BHL.lhs15_eq_iff",
+   "note": "Cited in the proof of lhs15_eq_iff."
+  },
+  {
+   "from": "DiracTimeD25.BHL.coeff_zero_psi",
+   "to": "DiracTimeD25.BHL.eq15_iff_coeff",
+   "kind": "proof-step",
+   "witness": "DiracTimeD25.BHL.eq15_iff_coeff",
+   "note": "Cited in the proof of eq15_iff_coeff."
+  },
+  {
+   "from": "DiracTimeD25.BHL.rep17_phi0",
+   "to": "DiracTimeD25.BHL.rep17_phi0_sub_bhlM",
+   "kind": "proof-step",
+   "witness": "DiracTimeD25.BHL.rep17_phi0_sub_bhlM",
+   "note": "Cited in the proof of rep17_phi0_sub_bhlM."
+  },
+  {
+   "from": "DiracTimeD25.BHL.rep17_bhlM",
+   "to": "DiracTimeD25.BHL.rep17_phi0_sub_bhlM",
+   "kind": "proof-step",
+   "witness": "DiracTimeD25.BHL.rep17_phi0_sub_bhlM",
+   "note": "Cited in the proof of rep17_phi0_sub_bhlM."
+  },
+  {
+   "from": "DiracTimeD25.BHL.rep_psi",
+   "to": "DiracTimeD25.BHL.rep17_psi",
+   "kind": "proof-step",
+   "witness": "DiracTimeD25.BHL.rep17_psi",
+   "note": "Its proof cites rep_psi."
+  },
+  {
+   "from": "DiracTimeD25.BHL.rep_negInf",
+   "to": "DiracTimeD25.BHL.rep17_negInf",
+   "kind": "proof-step",
+   "witness": "DiracTimeD25.BHL.rep17_negInf",
+   "note": "Its proof cites rep_negInf."
+  },
+  {
+   "from": "DiracTimeD25.BHL.rep_falseTheta",
+   "to": "DiracTimeD25.BHL.rep17_falseTheta",
+   "kind": "proof-step",
+   "witness": "DiracTimeD25.BHL.rep17_falseTheta",
+   "note": "Its proof cites rep_falseTheta."
+  },
+  {
+   "from": "DiracTimeD25.alex31_poly",
+   "to": "DiracTimeD25.Bridge.alex31_eq_seifert",
+   "kind": "proof-step",
+   "witness": "DiracTimeD25.Bridge.alex31_eq_seifert",
+   "note": "Its proof cites alex31_poly."
+  },
+  {
+   "from": "DiracTimeD25.alex41_poly",
+   "to": "DiracTimeD25.Bridge.alex41_eq_seifert",
+   "kind": "proof-step",
+   "witness": "DiracTimeD25.Bridge.alex41_eq_seifert",
+   "note": "Its proof cites alex41_poly."
+  },
+  {
+   "from": "D28.sqrt5_sq",
+   "to": "D28.q1_ratio",
+   "kind": "proof-step",
+   "witness": "D28.q1_ratio",
+   "note": "Cited in the proof of q1_ratio."
+  },
+  {
+   "from": "D28.circ_sq",
+   "to": "D28.alexT34_circle_eq_zero_iff",
+   "kind": "proof-step",
+   "witness": "D28.alexT34_circle_eq_zero_iff",
+   "note": "Cited in the proof of alexT34_circle_eq_zero_iff."
+  },
+  {
+   "from": "D28.pauliSymbol_det",
+   "to": "D28.pauliSymbol_det_eq_zero_iff",
+   "kind": "proof-step",
+   "witness": "D28.pauliSymbol_det_eq_zero_iff",
+   "note": "Cited in the proof of pauliSymbol_det_eq_zero_iff."
+  },
+  {
+   "from": "D28.blockPauli_isHermitian",
+   "to": "D28.blockPauli_eta_eq_zero",
+   "kind": "proof-step",
+   "witness": "D28.blockPauli_eta_eq_zero",
+   "note": "Cited in the proof of blockPauli_eta_eq_zero."
+  },
+  {
+   "from": "D28.block\u03c3\u2083_mul_self",
+   "to": "D28.blockPauli_eta_eq_zero",
+   "kind": "proof-step",
+   "witness": "D28.blockPauli_eta_eq_zero",
+   "note": "Cited in the proof of blockPauli_eta_eq_zero."
+  },
+  {
+   "from": "D28.block\u03c3\u2083_blockPauli",
+   "to": "D28.blockPauli_eta_eq_zero",
+   "kind": "proof-step",
+   "witness": "D28.blockPauli_eta_eq_zero",
+   "note": "Cited in the proof of blockPauli_eta_eq_zero."
+  },
+  {
+   "from": "D28.negPoch_eq_prod_Icc",
+   "to": "D28.rawDiff_term",
+   "kind": "proof-step",
+   "witness": "D28.rawDiff_term",
+   "note": "Cited in the proof of rawDiff_term."
+  },
+  {
+   "from": "D28.fShift_eq",
+   "to": "D28.fOnePlus_eq",
+   "kind": "proof-step",
+   "witness": "D28.fOnePlus_eq",
+   "note": "Cited in the proof of fOnePlus_eq."
+  },
+  {
+   "from": "D28.fAdd_eq",
+   "to": "D28.fOnePlus_eq",
+   "kind": "proof-step",
+   "witness": "D28.fOnePlus_eq",
+   "note": "Cited in the proof of fOnePlus_eq."
+  },
+  {
+   "from": "D28.mShift_getD",
+   "to": "D28.mOnePlus_eq",
+   "kind": "proof-step",
+   "witness": "D28.mOnePlus_eq",
+   "note": "Cited in the proof of mOnePlus_eq."
+  },
+  {
+   "from": "D28.fSum_eq",
+   "to": "D28.rep_phi0_fast",
+   "kind": "proof-step",
+   "witness": "D28.rep_phi0_fast",
+   "note": "Cited in the proof of rep_phi0_fast."
+  },
+  {
+   "from": "D28.rep_falseTheta_fast",
+   "to": "D28.rep129_eq17",
+   "kind": "proof-step",
+   "witness": "D28.rep129_eq17",
+   "note": "Cited in the proof of rep129_eq17."
+  },
+  {
+   "from": "D28.rep_negInf_fast",
+   "to": "D28.rep129_eq17",
+   "kind": "proof-step",
+   "witness": "D28.rep129_eq17",
+   "note": "Cited in the proof of rep129_eq17."
+  },
+  {
+   "from": "D28.rep129_phi0_sub_bhlM_pos",
+   "to": "D28.phi0_sub_bhlM_pos",
+   "kind": "proof-step",
+   "witness": "D28.phi0_sub_bhlM_pos",
+   "note": "Cited in the proof of phi0_sub_bhlM_pos."
+  },
+  {
+   "from": "D28.length_geomPre",
+   "to": "D28.getD_geomPre_stable",
+   "kind": "proof-step",
+   "witness": "D28.getD_geomPre_stable",
+   "note": "Cited in the proof of getD_geomPre_stable."
+  },
+  {
+   "from": "D28.getD_geomPre",
+   "to": "D28.rep_geomInv_mul",
+   "kind": "proof-step",
+   "witness": "D28.rep_geomInv_mul",
+   "note": "Cited in the proof of rep_geomInv_mul."
+  },
+  {
+   "from": "D28.rep_psi_fast",
+   "to": "D28.rep259_psi_tab",
+   "kind": "proof-step",
+   "witness": "D28.rep259_psi_tab",
+   "note": "Cited in the proof of rep259_psi_tab."
+  },
+  {
+   "from": "D28.fSum_congr",
+   "to": "D28.rep259_psi_tab",
+   "kind": "proof-step",
+   "witness": "D28.rep259_psi_tab",
+   "note": "Cited in the proof of rep259_psi_tab."
+  },
+  {
+   "from": "D28.fQq2Inv_259_1",
+   "to": "D28.fQq2Inv_259_2",
+   "kind": "proof-step",
+   "witness": "D28.fQq2Inv_259_2",
+   "note": "Cited in the proof of fQq2Inv_259_2."
+  },
+  {
+   "from": "D28.fQq2Inv_259_3",
+   "to": "D28.fQq2Inv_259_4",
+   "kind": "proof-step",
+   "witness": "D28.fQq2Inv_259_4",
+   "note": "Cited in the proof of fQq2Inv_259_4."
+  },
+  {
+   "from": "D28.fQq2Inv_259_5",
+   "to": "D28.fQq2Inv_259_6",
+   "kind": "proof-step",
+   "witness": "D28.fQq2Inv_259_6",
+   "note": "Cited in the proof of fQq2Inv_259_6."
+  },
+  {
+   "from": "D28.fQq2Inv_259_7",
+   "to": "D28.fQq2Inv_259_8",
+   "kind": "proof-step",
+   "witness": "D28.fQq2Inv_259_8",
+   "note": "Cited in the proof of fQq2Inv_259_8."
+  },
+  {
+   "from": "D28.fQq2Inv_259_9",
+   "to": "D28.fQq2Inv_259_10",
+   "kind": "proof-step",
+   "witness": "D28.fQq2Inv_259_10",
+   "note": "Cited in the proof of fQq2Inv_259_10."
+  },
+  {
+   "from": "D28.fQq2Inv_259_11",
+   "to": "D28.fQq2Inv_259_12",
+   "kind": "proof-step",
+   "witness": "D28.fQq2Inv_259_12",
+   "note": "Cited in the proof of fQq2Inv_259_12."
+  },
+  {
+   "from": "D28.fQq2Inv_259_13",
+   "to": "D28.fQq2Inv_259_14",
+   "kind": "proof-step",
+   "witness": "D28.fQq2Inv_259_14",
+   "note": "Cited in the proof of fQq2Inv_259_14."
+  },
+  {
+   "from": "D28.fQq2Inv_259_15",
+   "to": "D28.fQq2Inv_259_16",
+   "kind": "proof-step",
+   "witness": "D28.fQq2Inv_259_16",
+   "note": "Cited in the proof of fQq2Inv_259_16."
+  },
+  {
+   "from": "D28.fQq2Inv_259_16",
+   "to": "D28.fQq2Inv_259_17",
+   "kind": "proof-step",
+   "witness": "D28.fQq2Inv_259_17",
+   "note": "Its proof cites fQq2Inv_259_16."
+  },
+  {
+   "from": "D28.fQq2Inv_259_tab",
+   "to": "D28.rep259_psi_tab",
+   "kind": "proof-step",
+   "witness": "D28.rep259_psi_tab",
+   "note": "Cited in the proof of rep259_psi_tab."
+  },
+  {
+   "from": "D28.rep_eq15_reduced_le128",
+   "to": "D28.eq15_reduced_le128",
+   "kind": "proof-step",
+   "witness": "D28.eq15_reduced_le128",
+   "note": "Cited in the proof of eq15_reduced_le128."
+  },
+  {
+   "from": "DiracTimeD25.BHL.getD_rep_of_lt",
+   "to": "D28.rep_eq15_reduced_le64",
+   "kind": "proof-step",
+   "witness": "D28.rep_eq15_reduced_le64",
+   "note": "Its proof cites getD_rep_of_lt."
   }
  ],
  "kinds": {

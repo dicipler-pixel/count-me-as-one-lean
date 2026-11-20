@@ -1,17 +1,30 @@
-# figure-eight-anchors-lean
+# count-me-as-one-lean
 
 **Jeromie Beasley**
 
-The established-mathematics anchors behind three working rules for testing ideas:
+The Lean home of **Count Me as One**: the figure-eight knot, the trefoil's turn and one trace ladder, joined to the Dirac anchor (APS rulers, the chiral seed and a signed boundary test).
 
-1. **Anchor broken examples to established math.** Thurston's figure-eight knot complement
-   (two regular ideal tetrahedra) and the genus-one (torus) Seifert surface.
-2. **Keep raw differences as a ruler or weight**, not renormalised away. The relation defect of the
-   knot group and the second (golden) branch of the edge equation are kept as measured objects.
-3. **Preserve the chiral source of asymmetry.** The trefoil's handedness is a real invariant
-   (signature −2); the figure-eight is its own mirror image (explicit certificate).
+Organised by three working rules:
 
-Core Lean 4 (v4.34.1), no Mathlib. **80 theorems, 0 sorry, 11 false controls, 80-node / 82-edge relations graph, all checks pass.**
+1. **Anchor broken examples to established math.** Thurston's figure-eight knot complement (two regular ideal tetrahedra), Riley's representation, the genus-one Seifert surfaces.
+2. **Keep raw differences as a ruler or weight**, not renormalised away: the golden branch of the gluing equation, the Riley relation defect, the APS difference, the odometer drift term, the boundary difference φ₀ − M.
+3. **Preserve the chiral source of asymmetry.** The trefoil's handedness is a proved invariant; the figure-eight is its own mirror image.
+
+One Lake project, one harness (`python3 scripts/verify.py`). Lean `v4.36.0-rc2`, Mathlib `e8ba86fa`.
+**280 theorems, 0 sorry / admit / native_decide / custom axioms, 25 false controls, 280-node / 238-edge relations graph.** The GitHub Actions run on every push is the verdict.
+
+| Library | Content | Theorems |
+|---|---|---|
+| `FigureEightAnchors` | Count Me as One v1: gluing, Riley, monodromy, trace ladder, A-polynomial, chirality. Core Lean only, no Mathlib import, source unchanged from v1 | 80 |
+| `DiracTimeD25` | Chiral η, Alexander walls on the circle, the circle odometer; the Bringmann–Hikami–Lovejoy ±2 trefoil-surgery boundary test | 114 |
+| `CMaOBridge` | Proofs joining the two: every trefoil wall on the unit circle solves Thurston's edge equation; the Alexander polynomials equal the Seifert-matrix ones | 7 |
+| `D28` | Bounded q-series identities (Eq. 1.5 through q²⁵⁸, Eq. 1.7 and positivity of φ₀ − M through q¹²⁸), T(3,4) walls, Litherland counts, odometer drift, shells, the Q1 ratio φ¹⁰ | 79 |
+
+Bounded results are stated as bounded; nothing here is claimed in all degrees unless the theorem says so. Edges of kind `external` or `analogy-only` in `RELATIONS.json` are recorded, not proved.
+
+**Read `RELATIONS.html` first**: the map of how every result connects, rendered from the same `RELATIONS.json` the harness checks.
+
+Release `v1` of this repository is the original 80-theorem core-Lean package (Lean v4.34.1, no Mathlib).
 
 ## The paper and the article
 
@@ -27,7 +40,7 @@ To open the HTML files as pages rather than source, download them and open them 
 
 **Read `RELATIONS.html` first** — the map of how every result connects, rendered from the same `RELATIONS.json` the harness checks.
 
-## What is proved
+## Count Me as One v1: what the core library proves
 
 ### Thurston's gluing equation — `FigureEightAnchors/Gluing.lean`
 The figure-eight complement is glued from two ideal tetrahedra with shapes z, w satisfying

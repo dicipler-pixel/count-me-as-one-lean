@@ -8,67 +8,152 @@
       "FigureEightAnchors.Chirality": true,
       "FigureEightAnchors.Monodromy": true,
       "FigureEightAnchors.Ladder": true,
-      "FigureEightAnchors.APoly": true
+      "FigureEightAnchors.APoly": true,
+      "DiracTimeD25.ChiralEta": true,
+      "DiracTimeD25.AlexanderWall": true,
+      "DiracTimeD25.CircleOdometer": true,
+      "DiracTimeD25.BhlBoundaryTest": true,
+      "CMaOBridge": true,
+      "D28.Easy": true,
+      "D28.Algebra": true,
+      "D28.RawDiff": true,
+      "D28.FastModel": true,
+      "D28.RawDiffPos": true,
+      "D28.FastPsi": true,
+      "D28.Qq2Table": true,
+      "D28.Eq15": true,
+      "D28.Eq17": true
     },
     "source_scan_clean": true,
     "axiom_audit": true,
     "inventory": {
-      "found": 80,
-      "expected": 80,
+      "found": 280,
+      "expected": 280,
+      "by_group": {
+        "CMaO": 80,
+        "D25": 38,
+        "D27": 76,
+        "Bridge": 7,
+        "D28": 79
+      },
+      "expected_by_group": {
+        "CMaO": 80,
+        "D25": 38,
+        "D27": 76,
+        "Bridge": 7,
+        "D28": 79
+      },
+      "duplicates": [],
       "ok": true
     },
     "false_controls": {
+      "Alex41Wall.lean": {
+        "rejected_for_math_reason": true,
+        "message": "/workspace/lean_green/cmao_combined_lean/FalseControls/Alex41Wall.lean:5:51: error: unsolved goals"
+      },
+      "BhlPhi0CoeffOne.lean": {
+        "rejected_for_math_reason": true,
+        "message": "/workspace/lean_green/cmao_combined_lean/FalseControls/BhlPhi0CoeffOne.lean:6:68: error: Tactic `decide` proved that the proposition"
+      },
+      "BhlPhi0EqM.lean": {
+        "rejected_for_math_reason": true,
+        "message": "/workspace/lean_green/cmao_combined_lean/FalseControls/BhlPhi0EqM.lean:5:31: error: Tactic `decide` proved that the proposition"
+      },
+      "D28Eq15IndexShift.lean": {
+        "rejected_for_math_reason": true,
+        "message": "/workspace/lean_green/cmao_combined_lean/FalseControls/D28Eq15IndexShift.lean:6:30: error: Tactic `decide` proved that the proposition"
+      },
+      "D28Eq15IndexShift128.lean": {
+        "rejected_for_math_reason": true,
+        "message": "/workspace/lean_green/cmao_combined_lean/FalseControls/D28Eq15IndexShift128.lean:8:2: error: Tactic `decide` proved that the proposition"
+      },
+      "D28LM6SignFlip.lean": {
+        "rejected_for_math_reason": true,
+        "message": "/workspace/lean_green/cmao_combined_lean/FalseControls/D28LM6SignFlip.lean:3:81: error: unsolved goals"
+      },
+      "D28LitherlandWrong.lean": {
+        "rejected_for_math_reason": true,
+        "message": "/workspace/lean_green/cmao_combined_lean/FalseControls/D28LitherlandWrong.lean:4:32: error: Tactic `decide` proved that the proposition"
+      },
+      "D28MoserSwap.lean": {
+        "rejected_for_math_reason": true,
+        "message": "/workspace/lean_green/cmao_combined_lean/FalseControls/D28MoserSwap.lean:3:59: error: Tactic `decide` proved that the proposition"
+      },
+      "D28OdometerDriftZero.lean": {
+        "rejected_for_math_reason": true,
+        "message": "/workspace/lean_green/cmao_combined_lean/FalseControls/D28OdometerDriftZero.lean:4:70: error: unsolved goals"
+      },
+      "D28RawDiffDegreeZero.lean": {
+        "rejected_for_math_reason": true,
+        "message": "/workspace/lean_green/cmao_combined_lean/FalseControls/D28RawDiffDegreeZero.lean:5:28: error: Tactic `decide` proved that the proposition"
+      },
+      "D28ShellOffByOne.lean": {
+        "rejected_for_math_reason": true,
+        "message": "/workspace/lean_green/cmao_combined_lean/FalseControls/D28ShellOffByOne.lean:3:92: error: Tactic `decide` proved that the proposition"
+      },
+      "D28T34WrongFactor.lean": {
+        "rejected_for_math_reason": true,
+        "message": "/workspace/lean_green/cmao_combined_lean/FalseControls/D28T34WrongFactor.lean:3:111: error: Tactic `decide` proved that the proposition"
+      },
       "EdgeAtTwo.lean": {
         "rejected_for_math_reason": true,
-        "message": "/home/claude/publish/FalseControls/EdgeAtTwo.lean:4:52: error: Tactic `decide` proved that the proposition"
+        "message": "/workspace/lean_green/cmao_combined_lean/FalseControls/EdgeAtTwo.lean:4:52: error: Tactic `decide` proved that the proposition"
+      },
+      "EtaEvenUnderFlip.lean": {
+        "rejected_for_math_reason": true,
+        "message": "/workspace/lean_green/cmao_combined_lean/FalseControls/EtaEvenUnderFlip.lean:8:25: error: Tactic `decide` proved that the proposition"
       },
       "GoldenRegular.lean": {
         "rejected_for_math_reason": true,
-        "message": "/home/claude/publish/FalseControls/GoldenRegular.lean:6:64: error: Tactic `decide` proved that the proposition"
+        "message": "/workspace/lean_green/cmao_combined_lean/FalseControls/GoldenRegular.lean:6:64: error: Tactic `decide` proved that the proposition"
       },
       "GoldenSquaredRegular.lean": {
         "rejected_for_math_reason": true,
-        "message": "/home/claude/publish/FalseControls/GoldenSquaredRegular.lean:4:83: error: Tactic `decide` proved that the proposition"
+        "message": "/workspace/lean_green/cmao_combined_lean/FalseControls/GoldenSquaredRegular.lean:4:83: error: Tactic `decide` proved that the proposition"
       },
       "GoldenWrongSlice.lean": {
         "rejected_for_math_reason": true,
-        "message": "/home/claude/publish/FalseControls/GoldenWrongSlice.lean:6:59: error: Tactic `decide` proved that the proposition"
+        "message": "/workspace/lean_green/cmao_combined_lean/FalseControls/GoldenWrongSlice.lean:6:59: error: Tactic `decide` proved that the proposition"
       },
       "LadderOffByOne.lean": {
         "rejected_for_math_reason": true,
-        "message": "/home/claude/publish/FalseControls/LadderOffByOne.lean:4:51: error: Tactic `decide` proved that the proposition"
+        "message": "/workspace/lean_green/cmao_combined_lean/FalseControls/LadderOffByOne.lean:4:51: error: Tactic `decide` proved that the proposition"
+      },
+      "OdometerNoCorrection.lean": {
+        "rejected_for_math_reason": true,
+        "message": "/workspace/lean_green/cmao_combined_lean/FalseControls/OdometerNoCorrection.lean:5:59: error: unsolved goals"
       },
       "RileyAnyParameter.lean": {
         "rejected_for_math_reason": true,
-        "message": "/home/claude/publish/FalseControls/RileyAnyParameter.lean:5:48: error: Tactic `decide` proved that the proposition"
+        "message": "/workspace/lean_green/cmao_combined_lean/FalseControls/RileyAnyParameter.lean:5:48: error: Tactic `decide` proved that the proposition"
       },
       "SameAlexander.lean": {
         "rejected_for_math_reason": true,
-        "message": "/home/claude/publish/FalseControls/SameAlexander.lean:4:52: error: Tactic `decide` proved that the proposition"
+        "message": "/workspace/lean_green/cmao_combined_lean/FalseControls/SameAlexander.lean:4:52: error: Tactic `decide` proved that the proposition"
       },
       "TrefoilAmphichiral.lean": {
         "rejected_for_math_reason": true,
-        "message": "/home/claude/publish/FalseControls/TrefoilAmphichiral.lean:5:52: error: Tactic `decide` proved that the proposition"
+        "message": "/workspace/lean_green/cmao_combined_lean/FalseControls/TrefoilAmphichiral.lean:5:52: error: Tactic `decide` proved that the proposition"
       },
       "TrefoilAperiodic.lean": {
         "rejected_for_math_reason": true,
-        "message": "/home/claude/publish/FalseControls/TrefoilAperiodic.lean:4:60: error: Tactic `decide` proved that the proposition"
+        "message": "/workspace/lean_green/cmao_combined_lean/FalseControls/TrefoilAperiodic.lean:4:60: error: Tactic `decide` proved that the proposition"
       },
       "TrefoilHyperbolic.lean": {
         "rejected_for_math_reason": true,
-        "message": "/home/claude/publish/FalseControls/TrefoilHyperbolic.lean:4:55: error: Tactic `decide` proved that the proposition"
+        "message": "/workspace/lean_green/cmao_combined_lean/FalseControls/TrefoilHyperbolic.lean:4:55: error: Tactic `decide` proved that the proposition"
       },
       "WSquaredReal.lean": {
         "rejected_for_math_reason": true,
-        "message": "/home/claude/publish/FalseControls/WSquaredReal.lean:4:46: error: Tactic `decide` proved that the proposition"
+        "message": "/workspace/lean_green/cmao_combined_lean/FalseControls/WSquaredReal.lean:4:46: error: Tactic `decide` proved that the proposition"
       }
     },
     "relations_false_control_rejected": true,
     "relations": {
-      "nodes": 80,
-      "edges": 82,
-      "analogy_only_edges": 1,
-      "external_edges": 10,
+      "nodes": 280,
+      "edges": 238,
+      "analogy_only_edges": 2,
+      "external_edges": 17,
       "problems": [],
       "ok": true
     }
@@ -343,14 +428,997 @@
     ],
     "FigureEightAnchors.APoly.node_at_one": [
       "propext"
+    ],
+    "DiracTimeD25.eta_eq_roots": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "DiracTimeD25.eta_eq_card_sub_card": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "DiracTimeD25.charpoly_neg_eq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "DiracTimeD25.eta_neg": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "DiracTimeD25.eta_one": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "DiracTimeD25.eta_eq_zero_of_anticommute": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "DiracTimeD25.eta_eq_zero_of_chiral": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "DiracTimeD25.eta_eq_zero_of_unitary_conj": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "DiracTimeD25.eta_eq_zero_of_unitary_chiral": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "DiracTimeD25.pauliSymbol_isHermitian": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "DiracTimeD25.\u03c3\u2083_mul_self": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "DiracTimeD25.\u03c3\u2083_pauliSymbol_\u03c3\u2083": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "DiracTimeD25.pauli_eta_eq_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "DiracTimeD25.circ_ne_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "DiracTimeD25.alex31_poly": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "DiracTimeD25.alex41_poly": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "DiracTimeD25.circ_add_inv": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "DiracTimeD25.alex31_circle": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "DiracTimeD25.alex41_circle": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "DiracTimeD25.cos_two_pi_eq_half_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "DiracTimeD25.alex31_circle_eq_zero_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "DiracTimeD25.alex31_circle_eq_zero_iff'": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "DiracTimeD25.alex31_poly_circle_eq_zero_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "DiracTimeD25.one_le_alex41_real": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "DiracTimeD25.alex41_real_pos": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "DiracTimeD25.alex41_circle_ne_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "DiracTimeD25.alex41_poly_circle_ne_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "DiracTimeD25.alex31_wall_at_sixth": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "DiracTimeD25.etaCircle_of_not_int": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "DiracTimeD25.etaCircle_intCast": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "DiracTimeD25.floor_sub_floor_eq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "DiracTimeD25.odometer_identity": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "DiracTimeD25.mem_crossings_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "DiracTimeD25.floor_sub_floor_eq_card_crossings": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "DiracTimeD25.card_crossings_eq_odometer": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "DiracTimeD25.etaCircle_add_one": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "DiracTimeD25.floor_add_one_sub_floor": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "DiracTimeD25.etaCircle_quarter": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "DiracTimeD25.BHL.length_rep": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "DiracTimeD25.BHL.getD_rep": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "DiracTimeD25.BHL.getD_rep_of_lt": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "DiracTimeD25.BHL.listSum_map_range": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "DiracTimeD25.BHL.rep_ext": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "DiracTimeD25.BHL.rep_add": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "DiracTimeD25.BHL.rep_X_pow_mul": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "DiracTimeD25.BHL.rep_one_add_X_pow_mul": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "DiracTimeD25.BHL.rep_mul": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "DiracTimeD25.BHL.rep_monomial": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "DiracTimeD25.BHL.rep_congr": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "DiracTimeD25.BHL.coeff_eq_of_rep_eq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "DiracTimeD25.BHL.rep_one": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "DiracTimeD25.BHL.rep_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "DiracTimeD25.BHL.rep_two": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "DiracTimeD25.BHL.rep_sub": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "DiracTimeD25.BHL.rep_rescale_neg_one": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "DiracTimeD25.BHL.rep_expand_two": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "DiracTimeD25.BHL.rep_sum": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "DiracTimeD25.BHL.hasSum_seriesOf": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "DiracTimeD25.BHL.coeff_seriesOf_eq_partial": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "DiracTimeD25.BHL.rep_seriesOf": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "DiracTimeD25.BHL.coeff_X_pow_mul_of_lt": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "DiracTimeD25.BHL.negPoch_succ": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "DiracTimeD25.BHL.one_sub_X_pow_mul_geomInv": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "DiracTimeD25.BHL.qq2_mul_qq2Inv": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "DiracTimeD25.BHL.qq2Inv_succ": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "DiracTimeD25.BHL.phiTerm_lowerOrd": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "DiracTimeD25.BHL.MTerm_lowerOrd": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "DiracTimeD25.BHL.psiTerm_lowerOrd": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "DiracTimeD25.BHL.ftTerm_lowerOrd": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "DiracTimeD25.BHL.hasSum_phi0": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "DiracTimeD25.BHL.hasSum_bhlM": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "DiracTimeD25.BHL.hasSum_psi": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "DiracTimeD25.BHL.hasSum_falseTheta": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "DiracTimeD25.BHL.coeff_mul_of_coeff_eq_one": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "DiracTimeD25.BHL.coeff_prod_tail": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "DiracTimeD25.BHL.coeff_negPoch_stable": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "DiracTimeD25.BHL.coeff_negInf": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "DiracTimeD25.BHL.hasProd_negInf": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "DiracTimeD25.BHL.rep_negPoch": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "DiracTimeD25.BHL.rep_geomInv": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "DiracTimeD25.BHL.rep_qq2Inv": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "DiracTimeD25.BHL.rep_phiTerm": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "DiracTimeD25.BHL.rep_MTerm": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "DiracTimeD25.BHL.rep_psiTerm": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "DiracTimeD25.BHL.rep_ftTerm": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "DiracTimeD25.BHL.rep_seriesOf_model": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "DiracTimeD25.BHL.rep_phi0": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "DiracTimeD25.BHL.rep_bhlM": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "DiracTimeD25.BHL.rep_psi": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "DiracTimeD25.BHL.rep_falseTheta": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "DiracTimeD25.BHL.rep_negInf": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "DiracTimeD25.BHL.coeff_two_mul": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "DiracTimeD25.BHL.coeff_add_rescale_neg": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "DiracTimeD25.BHL.coeff_odd_add_rescale_neg": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "DiracTimeD25.BHL.coeff_even_add_rescale_neg": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "DiracTimeD25.BHL.coeff_lhs15_even": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "DiracTimeD25.BHL.coeff_lhs15_odd": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "DiracTimeD25.BHL.coeff_lhs15_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "DiracTimeD25.BHL.lhs15_eq_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "DiracTimeD25.BHL.coeff_zero_psi": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "DiracTimeD25.BHL.eq15_iff_coeff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "DiracTimeD25.BHL.rep_lhs15": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "DiracTimeD25.BHL.eq15_mod_q49": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "DiracTimeD25.BHL.eq15_reduced_le23": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "DiracTimeD25.BHL.eq17_mod_q49": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "DiracTimeD25.BHL.rep17_phi0": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "DiracTimeD25.BHL.rep17_bhlM": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "DiracTimeD25.BHL.rep17_phi0_sub_bhlM": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "DiracTimeD25.BHL.rep17_psi": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "DiracTimeD25.BHL.rep17_negInf": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "DiracTimeD25.BHL.rep17_falseTheta": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "DiracTimeD25.BHL.coeff_one_phi0": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "DiracTimeD25.BHL.coeff_one_bhlM": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "DiracTimeD25.BHL.phi0_ne_bhlM": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "DiracTimeD25.Bridge.wall_regular_poly": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "DiracTimeD25.Bridge.wall_solves_edge": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "DiracTimeD25.Bridge.wall_half": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "DiracTimeD25.Bridge.wall_cubed": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "DiracTimeD25.Bridge.sixth_solves_edge": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "DiracTimeD25.Bridge.alex31_eq_seifert": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "DiracTimeD25.Bridge.alex41_eq_seifert": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "D28.dirac_cmao_LM6": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "D28.etaCircle_three_quarter": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "D28.etaCircle_five_quarter": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "D28.odometer_no_crossing": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "D28.odometer_one_crossing": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "D28.moser_fibre_orders": [
+      "propext"
+    ],
+    "D28.orbifold_euler": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "D28.lens_L21": [
+      "propext"
+    ],
+    "D28.shell_sum": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "D28.sqrt5_sq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "D28.q1_ratio": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "D28.golden_sq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "D28.golden_pow_ten": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "D28.golden_pow_ten_add_inv": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "D28.q1_char_roots": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "D28.alexT34_torus_formula": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "D28.alexT34_cos": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "D28.alexT34_factor": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "D28.alexT34_factor_ring": [
+      "propext",
+      "Quot.sound"
+    ],
+    "D28.circ_sq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "D28.alexT34_circle_eq_zero_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "D28.alexT34_circle_eq_zero_iff_fract": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "D28.lt23_values": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "D28.lt34_values": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "D28.lt23_window": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "D28.pauliSymbol_det": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "D28.pauliSymbol_det_eq_zero_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "D28.blockPauli_isHermitian": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "D28.block\u03c3\u2083_mul_self": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "D28.block\u03c3\u2083_blockPauli": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "D28.blockPauli_eta_eq_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "D28.negPoch_eq_prod_Icc": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "D28.rawDiff_term": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "D28.fShift_eq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "D28.fAdd_eq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "D28.mShift_getD": [
+      "propext",
+      "Quot.sound"
+    ],
+    "D28.mOnePlus_eq": [
+      "propext",
+      "Quot.sound"
+    ],
+    "D28.fOnePlus_eq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "D28.fNegPoch_eq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "D28.fSum_eq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "D28.rep_phi0_fast": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "D28.rep_bhlM_fast": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "D28.rep_falseTheta_fast": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "D28.rep_negInf_fast": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "D28.rep129_phi0_sub_bhlM_pos": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "D28.phi0_sub_bhlM_pos": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "D28.length_geomPre": [
+      "propext"
+    ],
+    "D28.getD_geomPre_stable": [
+      "propext",
+      "Quot.sound"
+    ],
+    "D28.getD_geomPre": [
+      "propext",
+      "Quot.sound"
+    ],
+    "D28.rep_geomInv_mul": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "D28.rep_qq2Inv_fast": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "D28.rep_psi_fast": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "D28.fSum_congr": [
+      "propext",
+      "Quot.sound"
+    ],
+    "D28.fQq2Inv_259_1": [
+      "propext"
+    ],
+    "D28.fQq2Inv_259_2": [
+      "propext"
+    ],
+    "D28.fQq2Inv_259_3": [
+      "propext"
+    ],
+    "D28.fQq2Inv_259_4": [
+      "propext"
+    ],
+    "D28.fQq2Inv_259_5": [
+      "propext"
+    ],
+    "D28.fQq2Inv_259_6": [
+      "propext"
+    ],
+    "D28.fQq2Inv_259_7": [
+      "propext"
+    ],
+    "D28.fQq2Inv_259_8": [
+      "propext"
+    ],
+    "D28.fQq2Inv_259_9": [
+      "propext"
+    ],
+    "D28.fQq2Inv_259_10": [
+      "propext"
+    ],
+    "D28.fQq2Inv_259_11": [
+      "propext"
+    ],
+    "D28.fQq2Inv_259_12": [
+      "propext"
+    ],
+    "D28.fQq2Inv_259_13": [
+      "propext"
+    ],
+    "D28.fQq2Inv_259_14": [
+      "propext"
+    ],
+    "D28.fQq2Inv_259_15": [
+      "propext"
+    ],
+    "D28.fQq2Inv_259_16": [
+      "propext"
+    ],
+    "D28.fQq2Inv_259_17": [
+      "propext"
+    ],
+    "D28.fQq2Inv_259_tab": [
+      "propext",
+      "Quot.sound"
+    ],
+    "D28.rep259_psi_tab": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "D28.rep_eq15_reduced_le128": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "D28.eq15_reduced_le128": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "D28.rep_eq15_reduced_le64": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "D28.eq15_reduced_le64": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "D28.eq15_mod_q259": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "D28.rep129_eq17": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "D28.eq17_le128": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
     ]
   },
   "sha256": {
+    "CMaOBridge.lean": "7511459a3c26d046f019a7f604fbbd593061792eba7445e60838b378e07f902b",
+    "D28/Algebra.lean": "27d35593bdc0daeb34d8bdc9bcde6aca8190700f0d67f6fd23685a41322ff415",
+    "D28/Easy.lean": "f487d3452b680206d05450f72b827f5e2395edb66c53f800a3204f46990641f0",
+    "D28/Eq15.lean": "e620909b0910d7a7de5a6ce44e8e82cf8560a819d735aa1e3fb5ea5d32eb0cc3",
+    "D28/Eq17.lean": "5a9674774f1289d56f644da03b6bd5c07213c49c2e7196d6d9e38eadd5b3b49a",
+    "D28/FastModel.lean": "0e06ff710b9878afaea6d076c24c9820dc1f2e8ccbe529fad2f9e48fc35f7a18",
+    "D28/FastPsi.lean": "026eb41d4698ec8110d162583982e1aff398172fb38b01320698da6db1d2e8ca",
+    "D28/Qq2Table.lean": "82755589b0900246036bb8871f6d8bef8bacc51c17b17ee1c88217f2effb8d47",
+    "D28/RawDiff.lean": "1c445390923dcf0ac1bbd9ae91485013e08c35e5dcc534875921158bfe15aa6c",
+    "D28/RawDiffPos.lean": "68e3b9ce5db0f85d335fcc090e2069d590b7787938caef42469fb50edd71dc21",
+    "D28.lean": "3a4fb4cc711a00c9ff8736b4fd5b09e94ce93f033a0217e228fa58672ddae910",
+    "DiracTimeD25/AlexanderWall.lean": "ebf51c0d966457154a578f51401ad53871c1b84fdab8c7fec95004437dd5c6f5",
+    "DiracTimeD25/BhlBoundaryTest.lean": "9b805a1a5c48b4b0a06bd4b0a76d18fe147a4d5a4666c7c66c649d4d6e5f5ab4",
+    "DiracTimeD25/ChiralEta.lean": "120ba005ad1b2da39beb2f8e981ddbea06ccd95483f5740367951f59c3aebab2",
+    "DiracTimeD25/CircleOdometer.lean": "f3caaefaa995d594d9febf04e5c0c0758f21d6fb0584415418fee67011b1a78a",
+    "DiracTimeD25.lean": "7df70d5361c216f38a0d60c68365c91e155e6ba343ae52160bae6cc7423cad21",
+    "FalseControls/Alex41Wall.lean": "03183f99ee7c9891251c8a4ce1002823f5049b8126dd805135c13fc29797f0a2",
+    "FalseControls/BhlPhi0CoeffOne.lean": "8f1295e89c75f1bb10620704f293ec19a3b659a6ae57b6aec7c269f35847b8e8",
+    "FalseControls/BhlPhi0EqM.lean": "f733bc45965cc960e8ac596caa7447a977e572720875940fc0fa4c5b83a7cc43",
+    "FalseControls/D28Eq15IndexShift.lean": "39b9d70bd7a95d7e12a2374e46d83da2bbb2535359a0e07f3ee9c7785bbe83ce",
+    "FalseControls/D28Eq15IndexShift128.lean": "23a2291fcd22b9c5439f7a9211c0b5322260effc93e3ed6851f52af11539c31f",
+    "FalseControls/D28LM6SignFlip.lean": "ce79ed3dd0b644bbc0fc78af34c6c6f6252f071c0205c442e295dddbb02b27f6",
+    "FalseControls/D28LitherlandWrong.lean": "c94172bfd518c7f63f65519c69d5963f5967054f4ac3adcce45ec2e9cc4bf341",
+    "FalseControls/D28MoserSwap.lean": "032fa2b441c5d231445692494107425b59e9c77c8b8aaf94e418336b803fd155",
+    "FalseControls/D28OdometerDriftZero.lean": "75d12a6d37e263f9a9d61811b8ac5eb27bde2180630fed445e9ec034ae2123ed",
+    "FalseControls/D28RawDiffDegreeZero.lean": "616fd53672ca947960d7cfca2b2542ce427874692cc369a8c128510e67331498",
+    "FalseControls/D28ShellOffByOne.lean": "de929cf0f9c001c2416491135eadce2c4a657a222a06161eba60a47e8ed3df2d",
+    "FalseControls/D28T34WrongFactor.lean": "3172588db302116c76f00ca66ea629c35365e5c4d24d1f34c2645ca56e5bb5d7",
     "FalseControls/EdgeAtTwo.lean": "0b08d15909e1066691d671db1ae69401c0c842975039c763638aeea5b7c943bf",
+    "FalseControls/EtaEvenUnderFlip.lean": "37cb4768678896135623e972bbfb8749155e22f7e9fc50bce953e7fb34374c16",
     "FalseControls/GoldenRegular.lean": "560d5af14bc7e33aa40ebd323b7a35a3a6b31521a3bb1bb2506853ad143deb65",
     "FalseControls/GoldenSquaredRegular.lean": "52f078a3e6028a299fe6715551e0fd689e4bbecfae065158a64f6041bd2de594",
     "FalseControls/GoldenWrongSlice.lean": "b6f11831fc5c79eb43c9edb467066915dd4d69d77c8d4bf072caf0b23ecc86aa",
     "FalseControls/LadderOffByOne.lean": "521d8110b0528bb2a1247cbf54061953ac5921b7ca15008a71c10764a033a46a",
+    "FalseControls/OdometerNoCorrection.lean": "422d070473fcb2a0c05d351ddcf0914252aed4685e403b6fce26c06beae6152a",
     "FalseControls/RileyAnyParameter.lean": "067c5aebdf8f6f03129b695581b3b3d621687fff56fd22b3596cf7f435765aab",
     "FalseControls/SameAlexander.lean": "84eedf5c9419725b5e3bc22b867c65cae13740080fe7ac4cb662358f203fc437",
     "FalseControls/TrefoilAmphichiral.lean": "50a50a74ff8f19104a5fbef6d428b08e86ce90f48bd9052e9ce3089e110822ea",
@@ -364,8 +1432,12 @@
     "FigureEightAnchors/Ladder.lean": "ddaef0ceeff94b71934b8d6048ff4f0fe44a15e9cdc163d76cf79caa9bb05a47",
     "FigureEightAnchors/Monodromy.lean": "a18241a081cd186ae510e206d724e5a6bd7655ef93be4cf91066d526c10b5ffa",
     "FigureEightAnchors/Riley.lean": "c188898892cbdce4b48910a7a1cef99dd32e1a479379fdabd181ea037cdf2e00",
-    "FigureEightAnchors.lean": "bb732d65638f0c019044bca91077638ad382c00c07b527fb2dbd07ff2fd2e082"
+    "FigureEightAnchors.lean": "bb732d65638f0c019044bca91077638ad382c00c07b527fb2dbd07ff2fd2e082",
+    "RELATIONS.json": "3499ff2ac33185b384e437e7917997771be368dca76fb105be86002dc1ad4090",
+    "lake-manifest.json": "646c350f05a7fc66a28fb3c324f2e5dbcc9bf67712720ef63b2499d691f1adcf",
+    "lakefile.toml": "5efe19ef24f36f793b8905f7aedc4547929e243eacc57d1eae9bb560af044878",
+    "lean-toolchain": "11c697aebe5b539d74f5069e497a588e7dfab1c4eeb74313f28357e351c55ca3"
   },
-  "lean_version": "Lean (version 4.34.1, x86_64-unknown-linux-gnu, commit 5045d0056413266e57c625dcd7c365b10e377c52, Release)",
+  "lean_version": "Lean (version 4.36.0-rc2, x86_64-unknown-linux-gnu, commit b35cb10cf2ced51a2fd1880cfdbf75c71ab7a35a, Release)",
   "all_pass": true
 }
