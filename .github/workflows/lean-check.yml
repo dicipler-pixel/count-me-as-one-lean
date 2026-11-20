@@ -1,0 +1,36 @@
+# Build every module, replay every proof in the independent kernel checker,
+# audit the axioms of every theorem, and confirm every false control is rejected.
+# Core Lean 4 only (no Mathlib), so the whole run takes a few minutes.
+name: Lean proof check
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          persist-credentials: false
+      - name: Install the pinned Lean toolchain
+        run: |
+          set -euo pipefail
+          curl -sSfL https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh -o "$RUNNER_TEMP/elan-init.sh"
+          bash "$RUNNER_TEMP/elan-init.sh" -y --default-toolchain "$(cat lean-toolchain)"
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Full harness (build, kernel replay, axiom audit, inventory, false controls, hashes)
+        run: python3 scripts/verify.py
+      - name: Keep the evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: lean-evidence
+          path: verification/
+          retention-days: 90

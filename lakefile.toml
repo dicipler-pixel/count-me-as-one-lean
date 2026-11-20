@@ -1,0 +1,5 @@
+name = "FigureEightAnchors"
+defaultTargets = ["FigureEightAnchors"]
+
+[[lean_lib]]
+name = "FigureEightAnchors"

@@ -1,0 +1,371 @@
+{
+  "checks": {
+    "build": true,
+    "kernel_replay": {
+      "FigureEightAnchors.Eisenstein": true,
+      "FigureEightAnchors.Gluing": true,
+      "FigureEightAnchors.Riley": true,
+      "FigureEightAnchors.Chirality": true,
+      "FigureEightAnchors.Monodromy": true,
+      "FigureEightAnchors.Ladder": true,
+      "FigureEightAnchors.APoly": true
+    },
+    "source_scan_clean": true,
+    "axiom_audit": true,
+    "inventory": {
+      "found": 80,
+      "expected": 80,
+      "ok": true
+    },
+    "false_controls": {
+      "EdgeAtTwo.lean": {
+        "rejected_for_math_reason": true,
+        "message": "/home/claude/publish/FalseControls/EdgeAtTwo.lean:4:52: error: Tactic `decide` proved that the proposition"
+      },
+      "GoldenRegular.lean": {
+        "rejected_for_math_reason": true,
+        "message": "/home/claude/publish/FalseControls/GoldenRegular.lean:6:64: error: Tactic `decide` proved that the proposition"
+      },
+      "GoldenSquaredRegular.lean": {
+        "rejected_for_math_reason": true,
+        "message": "/home/claude/publish/FalseControls/GoldenSquaredRegular.lean:4:83: error: Tactic `decide` proved that the proposition"
+      },
+      "GoldenWrongSlice.lean": {
+        "rejected_for_math_reason": true,
+        "message": "/home/claude/publish/FalseControls/GoldenWrongSlice.lean:6:59: error: Tactic `decide` proved that the proposition"
+      },
+      "LadderOffByOne.lean": {
+        "rejected_for_math_reason": true,
+        "message": "/home/claude/publish/FalseControls/LadderOffByOne.lean:4:51: error: Tactic `decide` proved that the proposition"
+      },
+      "RileyAnyParameter.lean": {
+        "rejected_for_math_reason": true,
+        "message": "/home/claude/publish/FalseControls/RileyAnyParameter.lean:5:48: error: Tactic `decide` proved that the proposition"
+      },
+      "SameAlexander.lean": {
+        "rejected_for_math_reason": true,
+        "message": "/home/claude/publish/FalseControls/SameAlexander.lean:4:52: error: Tactic `decide` proved that the proposition"
+      },
+      "TrefoilAmphichiral.lean": {
+        "rejected_for_math_reason": true,
+        "message": "/home/claude/publish/FalseControls/TrefoilAmphichiral.lean:5:52: error: Tactic `decide` proved that the proposition"
+      },
+      "TrefoilAperiodic.lean": {
+        "rejected_for_math_reason": true,
+        "message": "/home/claude/publish/FalseControls/TrefoilAperiodic.lean:4:60: error: Tactic `decide` proved that the proposition"
+      },
+      "TrefoilHyperbolic.lean": {
+        "rejected_for_math_reason": true,
+        "message": "/home/claude/publish/FalseControls/TrefoilHyperbolic.lean:4:55: error: Tactic `decide` proved that the proposition"
+      },
+      "WSquaredReal.lean": {
+        "rejected_for_math_reason": true,
+        "message": "/home/claude/publish/FalseControls/WSquaredReal.lean:4:46: error: Tactic `decide` proved that the proposition"
+      }
+    },
+    "relations_false_control_rejected": true,
+    "relations": {
+      "nodes": 80,
+      "edges": 82,
+      "analogy_only_edges": 1,
+      "external_edges": 10,
+      "problems": [],
+      "ok": true
+    }
+  },
+  "axioms": {
+    "FigureEightAnchors.Eis.w_shape": [],
+    "FigureEightAnchors.Eis.w_cubed": [],
+    "FigureEightAnchors.Eis.w_sixth": [],
+    "FigureEightAnchors.Eis.w_not_real": [],
+    "FigureEightAnchors.Eis.mul_comm'": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FigureEightAnchors.Eis.mul_assoc'": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FigureEightAnchors.Eis.norm_mul": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FigureEightAnchors.Eis.mul_conj": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FigureEightAnchors.Eis.four_norm": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FigureEightAnchors.Gluing.edge_symmetric_factor": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FigureEightAnchors.Gluing.regular_solves_edge": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FigureEightAnchors.Gluing.golden_solves_edge": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FigureEightAnchors.Gluing.regular_half": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FigureEightAnchors.Gluing.regular_cubed": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FigureEightAnchors.Gluing.regular_cycle_fixed": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FigureEightAnchors.Gluing.cycle_fixed_regular": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FigureEightAnchors.Gluing.golden_cycle": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FigureEightAnchors.Gluing.eis_edge": [],
+    "FigureEightAnchors.Gluing.eis_half": [],
+    "FigureEightAnchors.Gluing.eis_cycle_fixed": [],
+    "FigureEightAnchors.Gluing.eis_edge_conj": [],
+    "FigureEightAnchors.Gluing.no_integer_regular": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FigureEightAnchors.Gluing.no_integer_golden": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FigureEightAnchors.Riley.A_inv": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FigureEightAnchors.Riley.B_inv": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FigureEightAnchors.Riley.A_parabolic": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FigureEightAnchors.Riley.B_parabolic": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FigureEightAnchors.Riley.relation_defect": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FigureEightAnchors.Riley.relation_of_shape": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FigureEightAnchors.Riley.shape_of_relation": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FigureEightAnchors.Riley.riley_iff_shape": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FigureEightAnchors.Riley.trace_ab": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FigureEightAnchors.Riley.trace_commutator": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FigureEightAnchors.Chirality.alex_41": [],
+    "FigureEightAnchors.Chirality.alex_31": [],
+    "FigureEightAnchors.Chirality.det_41": [],
+    "FigureEightAnchors.Chirality.det_31": [],
+    "FigureEightAnchors.Chirality.S41_indefinite": [],
+    "FigureEightAnchors.Chirality.S31_neg_definite": [],
+    "FigureEightAnchors.Chirality.S31_form": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FigureEightAnchors.Chirality.P41_unimodular": [],
+    "FigureEightAnchors.Chirality.amphichiral_41": [],
+    "FigureEightAnchors.Chirality.det_congr": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FigureEightAnchors.Chirality.chiral_31": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FigureEightAnchors.Chirality.chiral_31_basic": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FigureEightAnchors.Monodromy.V41_inv": [],
+    "FigureEightAnchors.Monodromy.V31_inv": [],
+    "FigureEightAnchors.Monodromy.h41_cat": [],
+    "FigureEightAnchors.Monodromy.h31_form": [],
+    "FigureEightAnchors.Monodromy.h41_hyperbolic": [],
+    "FigureEightAnchors.Monodromy.h31_elliptic": [],
+    "FigureEightAnchors.Monodromy.h41_charpoly": [],
+    "FigureEightAnchors.Monodromy.h31_charpoly": [],
+    "FigureEightAnchors.Monodromy.h31_cubed": [],
+    "FigureEightAnchors.Monodromy.h31_order6": [],
+    "FigureEightAnchors.Monodromy.h41_trace5": [],
+    "FigureEightAnchors.Monodromy.h41_not_periodic": [],
+    "FigureEightAnchors.Ladder.ladder_law": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FigureEightAnchors.Ladder.trefoil_ladder": [],
+    "FigureEightAnchors.Ladder.fig8_ladder": [],
+    "FigureEightAnchors.Ladder.sqrt2_ladder": [],
+    "FigureEightAnchors.Ladder.golden_squared": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FigureEightAnchors.Ladder.regular_squared": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FigureEightAnchors.Ladder.fig8_fifth": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FigureEightAnchors.Ladder.saddle_unit": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FigureEightAnchors.Ladder.catalan_contains_apery": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FigureEightAnchors.Ladder.antipalindromic_rest": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FigureEightAnchors.Ladder.apery_middle": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FigureEightAnchors.Ladder.pell_34": [],
+    "FigureEightAnchors.Ladder.band_edge_merge": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FigureEightAnchors.APoly.A_expanded": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FigureEightAnchors.APoly.palindromic": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FigureEightAnchors.APoly.disc_split": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FigureEightAnchors.APoly.plus_factor": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FigureEightAnchors.APoly.minus_factor": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FigureEightAnchors.APoly.slice_plus": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FigureEightAnchors.APoly.slice_minus": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FigureEightAnchors.APoly.golden_ramifies": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FigureEightAnchors.APoly.regular_ramifies": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FigureEightAnchors.APoly.node_at_one": [
+      "propext"
+    ]
+  },
+  "sha256": {
+    "FalseControls/EdgeAtTwo.lean": "0b08d15909e1066691d671db1ae69401c0c842975039c763638aeea5b7c943bf",
+    "FalseControls/GoldenRegular.lean": "560d5af14bc7e33aa40ebd323b7a35a3a6b31521a3bb1bb2506853ad143deb65",
+    "FalseControls/GoldenSquaredRegular.lean": "52f078a3e6028a299fe6715551e0fd689e4bbecfae065158a64f6041bd2de594",
+    "FalseControls/GoldenWrongSlice.lean": "b6f11831fc5c79eb43c9edb467066915dd4d69d77c8d4bf072caf0b23ecc86aa",
+    "FalseControls/LadderOffByOne.lean": "521d8110b0528bb2a1247cbf54061953ac5921b7ca15008a71c10764a033a46a",
+    "FalseControls/RileyAnyParameter.lean": "067c5aebdf8f6f03129b695581b3b3d621687fff56fd22b3596cf7f435765aab",
+    "FalseControls/SameAlexander.lean": "84eedf5c9419725b5e3bc22b867c65cae13740080fe7ac4cb662358f203fc437",
+    "FalseControls/TrefoilAmphichiral.lean": "50a50a74ff8f19104a5fbef6d428b08e86ce90f48bd9052e9ce3089e110822ea",
+    "FalseControls/TrefoilAperiodic.lean": "2ac38ec5ab936cfa3c86eff6b85700a4dc3e68b121ebbf1336a8cbbdba0e657c",
+    "FalseControls/TrefoilHyperbolic.lean": "5a284b8cf594e247e423a662ec6e7e731be96c0c950236d8f7810349833c0a65",
+    "FalseControls/WSquaredReal.lean": "c1e79528d4bf876474dd1f4ea21554734749ea0edb75a6014dafa074ddc0de9a",
+    "FigureEightAnchors/APoly.lean": "b875063ebac49fe5adca5f9a832bfc9cabb4e59260fa1edd15aad12379801961",
+    "FigureEightAnchors/Chirality.lean": "da3f7014878f95597b8404de8d7ff855bd7105495f852ef5c66b144cc56c2d6f",
+    "FigureEightAnchors/Eisenstein.lean": "8c501290d4d776079461e428638f6bb68f47973f2833cfec51b4aea5adad1a37",
+    "FigureEightAnchors/Gluing.lean": "454df9a09908830b5ef7ebd57c0f02d1626cfc1438d44640a4874a31eeb9f84c",
+    "FigureEightAnchors/Ladder.lean": "ddaef0ceeff94b71934b8d6048ff4f0fe44a15e9cdc163d76cf79caa9bb05a47",
+    "FigureEightAnchors/Monodromy.lean": "a18241a081cd186ae510e206d724e5a6bd7655ef93be4cf91066d526c10b5ffa",
+    "FigureEightAnchors/Riley.lean": "c188898892cbdce4b48910a7a1cef99dd32e1a479379fdabd181ea037cdf2e00",
+    "FigureEightAnchors.lean": "bb732d65638f0c019044bca91077638ad382c00c07b527fb2dbd07ff2fd2e082"
+  },
+  "lean_version": "Lean (version 4.34.1, x86_64-unknown-linux-gnu, commit 5045d0056413266e57c625dcd7c365b10e377c52, Release)",
+  "all_pass": true
+}

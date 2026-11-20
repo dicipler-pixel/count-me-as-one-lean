@@ -1,0 +1,34 @@
+{
+  "modules": [
+    {
+      "module": "FigureEightAnchors.Eisenstein",
+      "path": "FigureEightAnchors/Eisenstein.lean"
+    },
+    {
+      "module": "FigureEightAnchors.Gluing",
+      "path": "FigureEightAnchors/Gluing.lean"
+    },
+    {
+      "module": "FigureEightAnchors.Riley",
+      "path": "FigureEightAnchors/Riley.lean"
+    },
+    {
+      "module": "FigureEightAnchors.Chirality",
+      "path": "FigureEightAnchors/Chirality.lean"
+    },
+    {
+      "module": "FigureEightAnchors.Monodromy",
+      "path": "FigureEightAnchors/Monodromy.lean"
+    },
+    {
+      "module": "FigureEightAnchors.Ladder",
+      "path": "FigureEightAnchors/Ladder.lean"
+    },
+    {
+      "module": "FigureEightAnchors.APoly",
+      "path": "FigureEightAnchors/APoly.lean"
+    }
+  ],
+  "expected_theorems": 80,
+  "expected_false_controls": 11
+}

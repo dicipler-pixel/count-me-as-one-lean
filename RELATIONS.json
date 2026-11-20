@@ -1,0 +1,1037 @@
+{
+ "rules": {
+  "rule1": "anchor broken examples to established math (Thurston, Riley, Seifert, minimal genus-one torus)",
+  "rule2": "keep raw differences as a ruler or weight instead of renormalising them away",
+  "rule3": "preserve the chiral source of asymmetry"
+ },
+ "nodes": {
+  "FigureEightAnchors.Eis.w_shape": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "FigureEightAnchors.Eis.w_cubed": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "FigureEightAnchors.Eis.w_sixth": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "FigureEightAnchors.Eis.w_not_real": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "FigureEightAnchors.Eis.mul_comm'": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "FigureEightAnchors.Eis.mul_assoc'": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "FigureEightAnchors.Eis.norm_mul": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "FigureEightAnchors.Eis.mul_conj": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "FigureEightAnchors.Eis.four_norm": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "FigureEightAnchors.Gluing.edge_symmetric_factor": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "FigureEightAnchors.Gluing.regular_solves_edge": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "FigureEightAnchors.Gluing.regular_half": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "FigureEightAnchors.Gluing.regular_cubed": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "FigureEightAnchors.Gluing.regular_cycle_fixed": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "FigureEightAnchors.Gluing.cycle_fixed_regular": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "FigureEightAnchors.Gluing.eis_edge": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "FigureEightAnchors.Gluing.eis_half": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "FigureEightAnchors.Gluing.eis_cycle_fixed": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "FigureEightAnchors.Gluing.no_integer_regular": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "FigureEightAnchors.Gluing.golden_solves_edge": {
+   "rules": [
+    "rule1",
+    "rule2"
+   ]
+  },
+  "FigureEightAnchors.Gluing.golden_cycle": {
+   "rules": [
+    "rule1",
+    "rule2"
+   ]
+  },
+  "FigureEightAnchors.Gluing.no_integer_golden": {
+   "rules": [
+    "rule1",
+    "rule2"
+   ]
+  },
+  "FigureEightAnchors.Gluing.eis_edge_conj": {
+   "rules": [
+    "rule1",
+    "rule3"
+   ]
+  },
+  "FigureEightAnchors.Riley.A_inv": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "FigureEightAnchors.Riley.B_inv": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "FigureEightAnchors.Riley.A_parabolic": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "FigureEightAnchors.Riley.B_parabolic": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "FigureEightAnchors.Riley.relation_of_shape": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "FigureEightAnchors.Riley.shape_of_relation": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "FigureEightAnchors.Riley.riley_iff_shape": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "FigureEightAnchors.Riley.trace_ab": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "FigureEightAnchors.Riley.trace_commutator": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "FigureEightAnchors.Riley.relation_defect": {
+   "rules": [
+    "rule1",
+    "rule2"
+   ]
+  },
+  "FigureEightAnchors.Chirality.alex_41": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "FigureEightAnchors.Chirality.alex_31": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "FigureEightAnchors.Chirality.det_41": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "FigureEightAnchors.Chirality.det_31": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "FigureEightAnchors.Chirality.det_congr": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "FigureEightAnchors.Chirality.P41_unimodular": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "FigureEightAnchors.Chirality.S41_indefinite": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "FigureEightAnchors.Chirality.amphichiral_41": {
+   "rules": [
+    "rule1",
+    "rule3"
+   ]
+  },
+  "FigureEightAnchors.Chirality.S31_neg_definite": {
+   "rules": [
+    "rule1",
+    "rule3"
+   ]
+  },
+  "FigureEightAnchors.Chirality.S31_form": {
+   "rules": [
+    "rule1",
+    "rule3"
+   ]
+  },
+  "FigureEightAnchors.Chirality.chiral_31": {
+   "rules": [
+    "rule1",
+    "rule3"
+   ]
+  },
+  "FigureEightAnchors.Chirality.chiral_31_basic": {
+   "rules": [
+    "rule1",
+    "rule3"
+   ]
+  },
+  "FigureEightAnchors.Monodromy.V41_inv": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "FigureEightAnchors.Monodromy.V31_inv": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "FigureEightAnchors.Monodromy.h41_cat": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "FigureEightAnchors.Monodromy.h31_form": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "FigureEightAnchors.Monodromy.h41_hyperbolic": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "FigureEightAnchors.Monodromy.h41_charpoly": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "FigureEightAnchors.Monodromy.h31_elliptic": {
+   "rules": [
+    "rule1",
+    "rule3"
+   ]
+  },
+  "FigureEightAnchors.Monodromy.h31_charpoly": {
+   "rules": [
+    "rule1",
+    "rule3"
+   ]
+  },
+  "FigureEightAnchors.Monodromy.h31_cubed": {
+   "rules": [
+    "rule1",
+    "rule3"
+   ]
+  },
+  "FigureEightAnchors.Monodromy.h31_order6": {
+   "rules": [
+    "rule1",
+    "rule3"
+   ]
+  },
+  "FigureEightAnchors.Monodromy.h41_trace5": {
+   "rules": [
+    "rule1",
+    "rule2"
+   ]
+  },
+  "FigureEightAnchors.Monodromy.h41_not_periodic": {
+   "rules": [
+    "rule1",
+    "rule2"
+   ]
+  },
+  "FigureEightAnchors.Ladder.ladder_law": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "FigureEightAnchors.Ladder.fig8_ladder": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "FigureEightAnchors.Ladder.sqrt2_ladder": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "FigureEightAnchors.Ladder.catalan_contains_apery": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "FigureEightAnchors.Ladder.antipalindromic_rest": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "FigureEightAnchors.Ladder.apery_middle": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "FigureEightAnchors.Ladder.pell_34": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "FigureEightAnchors.Ladder.band_edge_merge": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "FigureEightAnchors.Ladder.regular_squared": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "FigureEightAnchors.Ladder.golden_squared": {
+   "rules": [
+    "rule1",
+    "rule2"
+   ]
+  },
+  "FigureEightAnchors.Ladder.fig8_fifth": {
+   "rules": [
+    "rule1",
+    "rule2"
+   ]
+  },
+  "FigureEightAnchors.Ladder.saddle_unit": {
+   "rules": [
+    "rule1",
+    "rule2"
+   ]
+  },
+  "FigureEightAnchors.Ladder.trefoil_ladder": {
+   "rules": [
+    "rule1",
+    "rule3"
+   ]
+  },
+  "FigureEightAnchors.APoly.A_expanded": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "FigureEightAnchors.APoly.disc_split": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "FigureEightAnchors.APoly.plus_factor": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "FigureEightAnchors.APoly.minus_factor": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "FigureEightAnchors.APoly.slice_plus": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "FigureEightAnchors.APoly.slice_minus": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "FigureEightAnchors.APoly.node_at_one": {
+   "rules": [
+    "rule1"
+   ]
+  },
+  "FigureEightAnchors.APoly.palindromic": {
+   "rules": [
+    "rule1",
+    "rule3"
+   ]
+  },
+  "FigureEightAnchors.APoly.golden_ramifies": {
+   "rules": [
+    "rule1",
+    "rule2"
+   ]
+  },
+  "FigureEightAnchors.APoly.regular_ramifies": {
+   "rules": [
+    "rule1"
+   ]
+  }
+ },
+ "external": {
+  "X:Thurston": "W. P. Thurston, Geometry and Topology of Three-Manifolds, ch. 4: figure-eight complement from two regular ideal tetrahedra.",
+  "X:Riley": "R. Riley 1975, parabolic representation of the figure-eight knot group over Z[w].",
+  "X:Q1": "Ramanujan Challenge Q1 (pi PCF): convergence ratio (123+55 sqrt5)/2 = phi^10, saddle in Q(sqrt5) (official Lemma 5; checked in his ladder-paper notes).",
+  "X:Apery": "Apery zeta(3) recurrence, limiting polynomial l^2 - 34 l + 1, roots (sqrt2 -+ 1)^4.",
+  "X:Catalan2.5": "Problem 2.5 (Catalan G), limiting polynomial (l-1)(l^2-34l+1) (official Lemma 17).",
+  "X:Saddle": "Shared saddle quadratic t^2+2t-1=0 of Beukers' Apery integrand and Problem 2.5 (his ladder paper, T = 34 closed 2026-08-31).",
+  "X:ramanujan-challenge-lean": "dicipler-pixel/ramanujan-challenge-lean (153 theorems, Problem 2.1 closed).",
+  "X:Hessian-July": "His July 13 2026 paper on the figure-eight A-polynomial (rebuilt 8 Aug as 'Axis-Aligned Tangent Cones at the Singular Points of the Figure-Eight A-Polynomial, and the Amphichiral Involution'): corrected discriminant, ramification vs nodes, palindromic involution = amphichirality.",
+  "X:Borot-Eynard": "Borot and Eynard, arXiv:1205.2261: for 4_1 the involution (m,l) -> (m,1/l) coincides with the amphichiral symmetry; ramification points at m^2 = (3 +- sqrt5)/2, l = 1 and m^2 = (-1 +- i sqrt3)/2, l = -1.",
+  "X:votkp-chiral-vortex": "votkp-lean old-Grok-chats salvage: 'chiral vortex knot of memory' = the VOTKP electron chain (section F)."
+ },
+ "edges": [
+  {
+   "from": "FigureEightAnchors.Gluing.cycle_fixed_regular",
+   "to": "FigureEightAnchors.Riley.riley_iff_shape",
+   "kind": "same-polynomial",
+   "witness": "FigureEightAnchors.Riley.riley_iff_shape",
+   "note": "Regular-tetrahedron shape (fixed by z -> 1/(1-z)) and Riley parameter obey the same z^2 - z + 1 = 0: geometry and group meet at exp(i pi/3)."
+  },
+  {
+   "from": "FigureEightAnchors.Gluing.regular_cycle_fixed",
+   "to": "FigureEightAnchors.Gluing.cycle_fixed_regular",
+   "kind": "converse",
+   "witness": "FigureEightAnchors.Gluing.cycle_fixed_regular",
+   "note": "Regular <=> cycle-fixed, both directions."
+  },
+  {
+   "from": "FigureEightAnchors.Riley.relation_of_shape",
+   "to": "FigureEightAnchors.Riley.shape_of_relation",
+   "kind": "converse",
+   "witness": "FigureEightAnchors.Riley.riley_iff_shape",
+   "note": "Riley relation <=> shape polynomial."
+  },
+  {
+   "from": "FigureEightAnchors.Gluing.edge_symmetric_factor",
+   "to": "FigureEightAnchors.Gluing.eis_edge",
+   "kind": "evaluates-in",
+   "witness": "FigureEightAnchors.Gluing.eis_edge",
+   "note": "General-ring factorisation evaluated at w in Z[w]."
+  },
+  {
+   "from": "FigureEightAnchors.Gluing.regular_cubed",
+   "to": "FigureEightAnchors.Eis.w_cubed",
+   "kind": "same-root",
+   "witness": "FigureEightAnchors.Eis.w_cubed",
+   "note": "Abstract regular root has z^3 = -1; w in Z[w] realises it."
+  },
+  {
+   "from": "FigureEightAnchors.Gluing.eis_edge",
+   "to": "FigureEightAnchors.Gluing.eis_edge_conj",
+   "kind": "mirror",
+   "witness": "FigureEightAnchors.Gluing.eis_edge_conj",
+   "note": "exp(+i pi/3) and exp(-i pi/3): the two orientations of the same hyperbolic structure."
+  },
+  {
+   "from": "X:Thurston",
+   "to": "FigureEightAnchors.Gluing.edge_symmetric_factor",
+   "kind": "anchor",
+   "witness": "FigureEightAnchors.Gluing.edge_symmetric_factor",
+   "note": "Thurston's edge equation, symmetric slice."
+  },
+  {
+   "from": "X:Riley",
+   "to": "FigureEightAnchors.Riley.riley_iff_shape",
+   "kind": "anchor",
+   "witness": "FigureEightAnchors.Riley.riley_iff_shape",
+   "note": "Riley's representation, relation <=> c^2-c+1=0."
+  },
+  {
+   "from": "FigureEightAnchors.Gluing.golden_solves_edge",
+   "to": "FigureEightAnchors.Gluing.golden_cycle",
+   "kind": "kept-difference",
+   "witness": "FigureEightAnchors.Gluing.golden_cycle",
+   "note": "Golden branch solves the bare edge equation but the cycle gives -1 not +1: that sign is the ruler separating the branches."
+  },
+  {
+   "from": "FigureEightAnchors.Riley.relation_defect",
+   "to": "FigureEightAnchors.Riley.riley_iff_shape",
+   "kind": "kept-difference",
+   "witness": "FigureEightAnchors.Riley.relation_defect",
+   "note": "The relation's failure is exactly [[0,p],[-cp,0]], p = c^2-c+1: the defect is measured, not discarded."
+  },
+  {
+   "from": "FigureEightAnchors.Gluing.golden_solves_edge",
+   "to": "FigureEightAnchors.Ladder.golden_squared",
+   "kind": "square-of",
+   "witness": "FigureEightAnchors.Ladder.golden_squared",
+   "note": "The discarded (flat) branch squared is the figure-eight monodromy polynomial: the broken example is a ruler for the hyperbolic stretch."
+  },
+  {
+   "from": "FigureEightAnchors.Ladder.golden_squared",
+   "to": "FigureEightAnchors.Monodromy.h41_charpoly",
+   "kind": "same-polynomial",
+   "witness": "FigureEightAnchors.Monodromy.h41_charpoly",
+   "note": "w^2 - 3w + 1 = 0 is h41's Cayley-Hamilton polynomial."
+  },
+  {
+   "from": "FigureEightAnchors.Chirality.alex_31",
+   "to": "FigureEightAnchors.Monodromy.h31_charpoly",
+   "kind": "same-polynomial",
+   "witness": "FigureEightAnchors.Monodromy.h31_charpoly",
+   "note": "Trefoil Alexander polynomial = monodromy polynomial t^2 - t + 1."
+  },
+  {
+   "from": "FigureEightAnchors.Monodromy.h31_charpoly",
+   "to": "FigureEightAnchors.Gluing.cycle_fixed_regular",
+   "kind": "same-polynomial",
+   "witness": "FigureEightAnchors.Monodromy.h31_charpoly",
+   "note": "THE CROSS-LINK: the chiral trefoil's monodromy satisfies the regular-tetrahedron polynomial that builds the amphichiral figure-eight's geometry."
+  },
+  {
+   "from": "FigureEightAnchors.Monodromy.h31_order6",
+   "to": "FigureEightAnchors.Eis.w_sixth",
+   "kind": "same-root",
+   "witness": "FigureEightAnchors.Monodromy.h31_order6",
+   "note": "Trefoil monodromy has order 6, like w = exp(i pi/3)."
+  },
+  {
+   "from": "FigureEightAnchors.Chirality.alex_41",
+   "to": "FigureEightAnchors.Monodromy.h41_charpoly",
+   "kind": "same-polynomial",
+   "witness": "FigureEightAnchors.Monodromy.h41_charpoly",
+   "note": "Figure-eight Alexander polynomial = monodromy (cat map) polynomial t^2 - 3t + 1."
+  },
+  {
+   "from": "FigureEightAnchors.Chirality.amphichiral_41",
+   "to": "FigureEightAnchors.Chirality.chiral_31",
+   "kind": "contrast",
+   "witness": "FigureEightAnchors.Chirality.chiral_31",
+   "note": "4_1 is its own mirror; 3_1 provably is not: the asymmetry source survives."
+  },
+  {
+   "from": "FigureEightAnchors.Chirality.chiral_31",
+   "to": "FigureEightAnchors.Monodromy.h31_elliptic",
+   "kind": "contrast",
+   "witness": "FigureEightAnchors.Monodromy.h41_hyperbolic",
+   "note": "Chiral trefoil: elliptic monodromy (band, T=1). Amphichiral figure-eight: hyperbolic (gap, T=3)."
+  },
+  {
+   "from": "FigureEightAnchors.Chirality.S31_form",
+   "to": "FigureEightAnchors.Chirality.chiral_31",
+   "kind": "proof-step",
+   "witness": "FigureEightAnchors.Chirality.chiral_31",
+   "note": "Negative definiteness is what blocks the mirror."
+  },
+  {
+   "from": "FigureEightAnchors.Monodromy.V41_inv",
+   "to": "FigureEightAnchors.Monodromy.h41_cat",
+   "kind": "proof-step",
+   "witness": "FigureEightAnchors.Monodromy.h41_cat",
+   "note": "h = V^-1 V^T needs the inverse."
+  },
+  {
+   "from": "FigureEightAnchors.Monodromy.V31_inv",
+   "to": "FigureEightAnchors.Monodromy.h31_form",
+   "kind": "proof-step",
+   "witness": "FigureEightAnchors.Monodromy.h31_form",
+   "note": "h = V^-1 V^T needs the inverse."
+  },
+  {
+   "from": "FigureEightAnchors.Ladder.ladder_law",
+   "to": "FigureEightAnchors.Ladder.trefoil_ladder",
+   "kind": "ladder-step",
+   "witness": "FigureEightAnchors.Ladder.trefoil_ladder",
+   "note": "T = 1: periodic, period 6."
+  },
+  {
+   "from": "FigureEightAnchors.Ladder.ladder_law",
+   "to": "FigureEightAnchors.Ladder.fig8_ladder",
+   "kind": "ladder-step",
+   "witness": "FigureEightAnchors.Ladder.fig8_ladder",
+   "note": "T = 3: Q(sqrt5)."
+  },
+  {
+   "from": "FigureEightAnchors.Ladder.ladder_law",
+   "to": "FigureEightAnchors.Ladder.sqrt2_ladder",
+   "kind": "ladder-step",
+   "witness": "FigureEightAnchors.Ladder.sqrt2_ladder",
+   "note": "T = 6 -> 34: Q(sqrt2)."
+  },
+  {
+   "from": "FigureEightAnchors.Monodromy.h41_trace5",
+   "to": "FigureEightAnchors.Ladder.fig8_ladder",
+   "kind": "same-value",
+   "witness": "FigureEightAnchors.Ladder.fig8_ladder",
+   "note": "trace(h41^5) = 123 = rung 5 of the T=3 ladder."
+  },
+  {
+   "from": "FigureEightAnchors.Ladder.fig8_fifth",
+   "to": "X:Q1",
+   "kind": "external",
+   "witness": "FigureEightAnchors.Ladder.fig8_fifth",
+   "note": "123 = phi^10 + phi^-10 = Q1's ratio trace (ratio recorded in his ladder-paper notes, not re-derived here)."
+  },
+  {
+   "from": "FigureEightAnchors.Ladder.saddle_unit",
+   "to": "X:Saddle",
+   "kind": "external",
+   "witness": "FigureEightAnchors.Ladder.saddle_unit",
+   "note": "Saddle root sqrt2-1: fourth power and its reciprocal are the Apery/Catalan rails; their sum is 34."
+  },
+  {
+   "from": "FigureEightAnchors.Ladder.sqrt2_ladder",
+   "to": "FigureEightAnchors.Ladder.saddle_unit",
+   "kind": "same-value",
+   "witness": "FigureEightAnchors.Ladder.saddle_unit",
+   "note": "Rung 2 of the T=6 ladder = 34 = t^4 + t^-4."
+  },
+  {
+   "from": "FigureEightAnchors.Ladder.catalan_contains_apery",
+   "to": "X:Catalan2.5",
+   "kind": "external",
+   "witness": "FigureEightAnchors.Ladder.catalan_contains_apery",
+   "note": "Official Lemma 17 polynomial factors through Apery's."
+  },
+  {
+   "from": "FigureEightAnchors.Ladder.catalan_contains_apery",
+   "to": "X:Apery",
+   "kind": "external",
+   "witness": "FigureEightAnchors.Ladder.catalan_contains_apery",
+   "note": "Apery's l^2-34l+1 sits inside Catalan's cubic."
+  },
+  {
+   "from": "FigureEightAnchors.Ladder.antipalindromic_rest",
+   "to": "FigureEightAnchors.Ladder.catalan_contains_apery",
+   "kind": "generalizes",
+   "witness": "FigureEightAnchors.Ladder.antipalindromic_rest",
+   "note": "The rest mode l=1 is forced by odd degree + anti-palindrome (a = 35)."
+  },
+  {
+   "from": "FigureEightAnchors.Ladder.apery_middle",
+   "to": "X:Apery",
+   "kind": "external",
+   "witness": "FigureEightAnchors.Ladder.apery_middle",
+   "note": "34n^3+51n^2+27n+5 = (2n+1)(17n^2+17n+5): sec psi = 17."
+  },
+  {
+   "from": "FigureEightAnchors.Ladder.pell_34",
+   "to": "FigureEightAnchors.Ladder.sqrt2_ladder",
+   "kind": "same-value",
+   "witness": "FigureEightAnchors.Ladder.pell_34",
+   "note": "17^2 - 2*12^2 = 1 and 2*17 = 34."
+  },
+  {
+   "from": "FigureEightAnchors.Ladder.band_edge_merge",
+   "to": "FigureEightAnchors.Ladder.ladder_law",
+   "kind": "boundary",
+   "witness": "FigureEightAnchors.Ladder.band_edge_merge",
+   "note": "|T| = 2: the rails merge (exceptional point), between the trefoil band T=1 and the figure-eight gap T=3."
+  },
+  {
+   "from": "FigureEightAnchors.Ladder.regular_squared",
+   "to": "FigureEightAnchors.Gluing.regular_cubed",
+   "kind": "square-of",
+   "witness": "FigureEightAnchors.Ladder.regular_squared",
+   "note": "Regular root squared is a primitive cube root of unity."
+  },
+  {
+   "from": "FigureEightAnchors.Riley.trace_ab",
+   "to": "FigureEightAnchors.Ladder.ladder_law",
+   "kind": "analogy-only",
+   "witness": "FigureEightAnchors.Riley.trace_ab",
+   "note": "tr(ab) = 2 + c places the Riley pair off the band edge; a structural pointer only, no theorem joins them."
+  },
+  {
+   "from": "FigureEightAnchors.Chirality.chiral_31",
+   "to": "X:votkp-chiral-vortex",
+   "kind": "external",
+   "witness": "FigureEightAnchors.Chirality.chiral_31",
+   "note": "The chiral anchor proved here is the established-math counterpart for his 'chiral vortex knot' asymmetry source; the identification itself is his reading, not proved here."
+  },
+  {
+   "from": "FigureEightAnchors.Eis.w_sixth",
+   "to": "X:ramanujan-challenge-lean",
+   "kind": "external",
+   "witness": "FigureEightAnchors.Eis.w_sixth",
+   "note": "Eisenstein ring is the coefficient ring of Riley's representation; repos linked, no shared Lean import."
+  },
+  {
+   "from": "FigureEightAnchors.Chirality.P41_unimodular",
+   "to": "FigureEightAnchors.Chirality.amphichiral_41",
+   "kind": "proof-step",
+   "witness": "FigureEightAnchors.Chirality.amphichiral_41",
+   "note": "The mirror certificate is an honest change of basis (det -1)."
+  },
+  {
+   "from": "FigureEightAnchors.Chirality.det_congr",
+   "to": "FigureEightAnchors.Chirality.amphichiral_41",
+   "kind": "proof-step",
+   "witness": "FigureEightAnchors.Chirality.det_congr",
+   "note": "Congruence scales det(S) by det(P)^2 = 1: the determinant is a mirror invariant."
+  },
+  {
+   "from": "FigureEightAnchors.Chirality.det_41",
+   "to": "FigureEightAnchors.Chirality.alex_41",
+   "kind": "same-value",
+   "witness": "FigureEightAnchors.Chirality.det_41",
+   "note": "Knot determinant 5 = |Delta_41(-1)| = |-1 - 3 - 1|."
+  },
+  {
+   "from": "FigureEightAnchors.Chirality.det_31",
+   "to": "FigureEightAnchors.Chirality.alex_31",
+   "kind": "same-value",
+   "witness": "FigureEightAnchors.Chirality.det_31",
+   "note": "Knot determinant 3 = |Delta_31(-1)| = |1 + 1 + 1|."
+  },
+  {
+   "from": "FigureEightAnchors.Chirality.S41_indefinite",
+   "to": "FigureEightAnchors.Chirality.S31_neg_definite",
+   "kind": "contrast",
+   "witness": "FigureEightAnchors.Chirality.S31_neg_definite",
+   "note": "Signature 0 (amphichiral allowed) vs -2 (mirror forbidden)."
+  },
+  {
+   "from": "FigureEightAnchors.Chirality.S31_neg_definite",
+   "to": "FigureEightAnchors.Chirality.S31_form",
+   "kind": "generalizes",
+   "witness": "FigureEightAnchors.Chirality.S31_form",
+   "note": "Leading-minor test vs the explicit form on every nonzero integer vector."
+  },
+  {
+   "from": "FigureEightAnchors.Chirality.chiral_31",
+   "to": "FigureEightAnchors.Chirality.chiral_31_basic",
+   "kind": "proof-step",
+   "witness": "FigureEightAnchors.Chirality.chiral_31_basic",
+   "note": "Seifert-matrix form of the chirality obstruction."
+  },
+  {
+   "from": "FigureEightAnchors.Eis.w_shape",
+   "to": "FigureEightAnchors.Gluing.cycle_fixed_regular",
+   "kind": "same-polynomial",
+   "witness": "FigureEightAnchors.Eis.w_shape",
+   "note": "w^2 - w + 1 = 0 is the regular-tetrahedron polynomial in Z[w]."
+  },
+  {
+   "from": "FigureEightAnchors.Eis.w_shape",
+   "to": "FigureEightAnchors.Eis.w_cubed",
+   "kind": "proof-step",
+   "witness": "FigureEightAnchors.Eis.w_cubed",
+   "note": "Shape equation gives w^3 = -1."
+  },
+  {
+   "from": "FigureEightAnchors.Eis.w_cubed",
+   "to": "FigureEightAnchors.Eis.w_sixth",
+   "kind": "square-of",
+   "witness": "FigureEightAnchors.Eis.w_sixth",
+   "note": "(w^3)^2 = 1."
+  },
+  {
+   "from": "FigureEightAnchors.Eis.w_not_real",
+   "to": "FigureEightAnchors.Gluing.no_integer_regular",
+   "kind": "same-root",
+   "witness": "FigureEightAnchors.Gluing.no_integer_regular",
+   "note": "The regular root is not real, so no integer solves z^2 - z + 1 = 0."
+  },
+  {
+   "from": "FigureEightAnchors.Eis.mul_comm'",
+   "to": "FigureEightAnchors.Eis.norm_mul",
+   "kind": "proof-step",
+   "witness": "FigureEightAnchors.Eis.norm_mul",
+   "note": "Ring laws of Z[w] behind the norm identities."
+  },
+  {
+   "from": "FigureEightAnchors.Eis.mul_assoc'",
+   "to": "FigureEightAnchors.Eis.norm_mul",
+   "kind": "proof-step",
+   "witness": "FigureEightAnchors.Eis.norm_mul",
+   "note": "Ring laws of Z[w] behind the norm identities."
+  },
+  {
+   "from": "FigureEightAnchors.Eis.mul_conj",
+   "to": "FigureEightAnchors.Eis.norm_mul",
+   "kind": "proof-step",
+   "witness": "FigureEightAnchors.Eis.mul_conj",
+   "note": "N(x) = x * conj(x): the norm is a squared modulus."
+  },
+  {
+   "from": "FigureEightAnchors.Eis.four_norm",
+   "to": "FigureEightAnchors.Eis.mul_conj",
+   "kind": "kept-difference",
+   "witness": "FigureEightAnchors.Eis.four_norm",
+   "note": "4N = (2a+b)^2 + 3b^2: the 3 is the discriminant |-3| of z^2 - z + 1, kept explicit."
+  },
+  {
+   "from": "FigureEightAnchors.Gluing.eis_half",
+   "to": "FigureEightAnchors.Gluing.regular_half",
+   "kind": "evaluates-in",
+   "witness": "FigureEightAnchors.Gluing.eis_half",
+   "note": "Each tetrahedron contributes -1, evaluated at w."
+  },
+  {
+   "from": "FigureEightAnchors.Gluing.eis_cycle_fixed",
+   "to": "FigureEightAnchors.Gluing.regular_cycle_fixed",
+   "kind": "evaluates-in",
+   "witness": "FigureEightAnchors.Gluing.eis_cycle_fixed",
+   "note": "Cycle-fixed shape, evaluated at w."
+  },
+  {
+   "from": "FigureEightAnchors.Gluing.regular_half",
+   "to": "FigureEightAnchors.Gluing.regular_solves_edge",
+   "kind": "proof-step",
+   "witness": "FigureEightAnchors.Gluing.regular_solves_edge",
+   "note": "(-1)(-1) = 1: two regular tetrahedra close the edge."
+  },
+  {
+   "from": "FigureEightAnchors.Gluing.regular_solves_edge",
+   "to": "FigureEightAnchors.Gluing.golden_solves_edge",
+   "kind": "contrast",
+   "witness": "FigureEightAnchors.Gluing.golden_solves_edge",
+   "note": "Both factors solve the bare edge equation; only the regular one is cycle-fixed."
+  },
+  {
+   "from": "FigureEightAnchors.Gluing.no_integer_regular",
+   "to": "FigureEightAnchors.Gluing.no_integer_golden",
+   "kind": "contrast",
+   "witness": "FigureEightAnchors.Gluing.no_integer_golden",
+   "note": "Neither branch has an integer shape (discriminants -3 and 5)."
+  },
+  {
+   "from": "FigureEightAnchors.Gluing.no_integer_golden",
+   "to": "FigureEightAnchors.Monodromy.h41_not_periodic",
+   "kind": "kept-difference",
+   "witness": "FigureEightAnchors.Monodromy.h41_not_periodic",
+   "note": "Golden roots are irrational units; the cat map never returns to I."
+  },
+  {
+   "from": "FigureEightAnchors.Monodromy.h31_cubed",
+   "to": "FigureEightAnchors.Monodromy.h31_order6",
+   "kind": "square-of",
+   "witness": "FigureEightAnchors.Monodromy.h31_order6",
+   "note": "(h^3)^2 = (-I)^2 = I."
+  },
+  {
+   "from": "FigureEightAnchors.Monodromy.h41_hyperbolic",
+   "to": "FigureEightAnchors.Ladder.band_edge_merge",
+   "kind": "boundary",
+   "witness": "FigureEightAnchors.Monodromy.h41_hyperbolic",
+   "note": "T = 3 > 2: gap side of the band edge."
+  },
+  {
+   "from": "FigureEightAnchors.Riley.A_inv",
+   "to": "FigureEightAnchors.Riley.relation_defect",
+   "kind": "proof-step",
+   "witness": "FigureEightAnchors.Riley.A_inv",
+   "note": "a^-1 is needed to form the word w."
+  },
+  {
+   "from": "FigureEightAnchors.Riley.B_inv",
+   "to": "FigureEightAnchors.Riley.relation_defect",
+   "kind": "proof-step",
+   "witness": "FigureEightAnchors.Riley.B_inv",
+   "note": "b^-1 is needed to form the word w."
+  },
+  {
+   "from": "FigureEightAnchors.Riley.A_parabolic",
+   "to": "FigureEightAnchors.Ladder.band_edge_merge",
+   "kind": "boundary",
+   "witness": "FigureEightAnchors.Riley.A_parabolic",
+   "note": "Meridians sit exactly at trace 2: the parabolic band edge, cusp of the hyperbolic structure."
+  },
+  {
+   "from": "FigureEightAnchors.Riley.B_parabolic",
+   "to": "FigureEightAnchors.Riley.A_parabolic",
+   "kind": "mirror",
+   "witness": "FigureEightAnchors.Riley.B_parabolic",
+   "note": "Upper and lower parabolic meridians."
+  },
+  {
+   "from": "FigureEightAnchors.Riley.trace_commutator",
+   "to": "FigureEightAnchors.Riley.trace_ab",
+   "kind": "proof-step",
+   "witness": "FigureEightAnchors.Riley.trace_commutator",
+   "note": "Peripheral trace data of the Riley pair."
+  },
+  {
+   "from": "FigureEightAnchors.APoly.A_expanded",
+   "to": "FigureEightAnchors.APoly.palindromic",
+   "kind": "proof-step",
+   "witness": "FigureEightAnchors.APoly.palindromic",
+   "note": "Coefficients a, b, a: the polynomial reads the same forwards and backwards in L."
+  },
+  {
+   "from": "FigureEightAnchors.APoly.palindromic",
+   "to": "FigureEightAnchors.Chirality.amphichiral_41",
+   "kind": "same-root",
+   "witness": "FigureEightAnchors.APoly.palindromic",
+   "note": "L -> 1/L on the character curve is the amphichiral symmetry; the Seifert certificate is the same symmetry seen on the surface."
+  },
+  {
+   "from": "FigureEightAnchors.APoly.palindromic",
+   "to": "X:Borot-Eynard",
+   "kind": "external",
+   "witness": "FigureEightAnchors.APoly.palindromic",
+   "note": "Involution = amphichiral symmetry (Borot-Eynard)."
+  },
+  {
+   "from": "FigureEightAnchors.APoly.disc_split",
+   "to": "FigureEightAnchors.APoly.plus_factor",
+   "kind": "proof-step",
+   "witness": "FigureEightAnchors.APoly.plus_factor",
+   "note": "Discriminant = (b+2a)(b-2a)."
+  },
+  {
+   "from": "FigureEightAnchors.APoly.disc_split",
+   "to": "FigureEightAnchors.APoly.minus_factor",
+   "kind": "proof-step",
+   "witness": "FigureEightAnchors.APoly.minus_factor",
+   "note": "Discriminant = (b+2a)(b-2a)."
+  },
+  {
+   "from": "FigureEightAnchors.APoly.plus_factor",
+   "to": "FigureEightAnchors.Ladder.golden_squared",
+   "kind": "same-polynomial",
+   "witness": "FigureEightAnchors.APoly.plus_factor",
+   "note": "The L=+1 ramification factor x^2 - 3x + 1 is the golden branch squared."
+  },
+  {
+   "from": "FigureEightAnchors.APoly.minus_factor",
+   "to": "FigureEightAnchors.Ladder.regular_squared",
+   "kind": "same-polynomial",
+   "witness": "FigureEightAnchors.APoly.minus_factor",
+   "note": "The L=-1 ramification factor x^2 + x + 1 is the regular branch squared."
+  },
+  {
+   "from": "FigureEightAnchors.APoly.plus_factor",
+   "to": "FigureEightAnchors.Monodromy.h41_charpoly",
+   "kind": "same-polynomial",
+   "witness": "FigureEightAnchors.APoly.plus_factor",
+   "note": "Same x^2 - 3x + 1 as the figure-eight monodromy (cat map)."
+  },
+  {
+   "from": "FigureEightAnchors.APoly.slice_plus",
+   "to": "FigureEightAnchors.APoly.golden_ramifies",
+   "kind": "proof-step",
+   "witness": "FigureEightAnchors.APoly.golden_ramifies",
+   "note": "On L = 1, A and dA/dL both equal b + 2a."
+  },
+  {
+   "from": "FigureEightAnchors.APoly.slice_minus",
+   "to": "FigureEightAnchors.APoly.regular_ramifies",
+   "kind": "proof-step",
+   "witness": "FigureEightAnchors.APoly.regular_ramifies",
+   "note": "On L = -1, A and dA/dL are +-(b - 2a)."
+  },
+  {
+   "from": "FigureEightAnchors.Gluing.golden_solves_edge",
+   "to": "FigureEightAnchors.APoly.golden_ramifies",
+   "kind": "kept-difference",
+   "witness": "FigureEightAnchors.APoly.golden_ramifies",
+   "note": "THE THROWN-AWAY BRANCH IS A BRANCH POINT: the golden shape, used as a meridian eigenvalue, is exactly a ramification point of the A-polynomial at L = +1."
+  },
+  {
+   "from": "FigureEightAnchors.Gluing.regular_solves_edge",
+   "to": "FigureEightAnchors.APoly.regular_ramifies",
+   "kind": "same-root",
+   "witness": "FigureEightAnchors.APoly.regular_ramifies",
+   "note": "The regular shape, used as a meridian eigenvalue, is exactly a ramification point at L = -1."
+  },
+  {
+   "from": "FigureEightAnchors.APoly.golden_ramifies",
+   "to": "FigureEightAnchors.APoly.regular_ramifies",
+   "kind": "mirror",
+   "witness": "FigureEightAnchors.APoly.regular_ramifies",
+   "note": "The two shape branches ramify on the two fixed slices L = +1 and L = -1 of the involution."
+  },
+  {
+   "from": "FigureEightAnchors.APoly.node_at_one",
+   "to": "FigureEightAnchors.APoly.golden_ramifies",
+   "kind": "contrast",
+   "witness": "FigureEightAnchors.APoly.node_at_one",
+   "note": "Double factors (x -+ 1)^2 are nodes; simple factors are ramification points."
+  },
+  {
+   "from": "FigureEightAnchors.APoly.golden_ramifies",
+   "to": "X:Hessian-July",
+   "kind": "external",
+   "witness": "FigureEightAnchors.APoly.golden_ramifies",
+   "note": "Recovers his July paper's corrected discriminant and reads its ramification factors as the squared shape branches."
+  },
+  {
+   "from": "FigureEightAnchors.APoly.node_at_one",
+   "to": "X:Hessian-July",
+   "kind": "external",
+   "witness": "FigureEightAnchors.APoly.node_at_one",
+   "note": "The nodes his July paper shows have axis-aligned tangent cones."
+  }
+ ],
+ "kinds": {
+  "same-polynomial": "both sides are governed by one explicit polynomial (proved)",
+  "same-root": "the same algebraic root realised in two places (proved)",
+  "same-value": "the same integer arises from two constructions (proved)",
+  "square-of": "one object is the square of the other (proved)",
+  "converse": "the two statements are the two directions of an iff",
+  "evaluates-in": "a general-ring identity evaluated at a concrete element",
+  "mirror": "orientation reversal",
+  "kept-difference": "a defect or sign kept as a measurement (rule 2)",
+  "contrast": "two objects differing in a proved invariant",
+  "proof-step": "one theorem is used to obtain the other",
+  "ladder-step": "a rung of the trace ladder",
+  "generalizes": "one statement is a special case of the other",
+  "boundary": "marks the band edge between regimes",
+  "anchor": "ties a theorem to a named classical source",
+  "external": "links to his other work or the literature; the link is recorded, not proved here",
+  "analogy-only": "structural pointer with NO theorem behind it -- flagged so it is never cited as proved"
+ }
+}
