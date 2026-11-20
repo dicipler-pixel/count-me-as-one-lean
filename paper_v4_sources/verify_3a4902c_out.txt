@@ -1,0 +1,16 @@
+build: PASS
+kernel replay: PASS
+source scan: PASS
+axiom audit: PASS (280 theorems)
+  axiom-free theorems: 32
+inventory: 280 theorems, PASS
+  by group: CMaO 80/80, D25 38/38, D27 76/76, Bridge 7/7, D28 79/79
+false controls: 25 / 25 rejected, PASS
+relations false control (forged witness + dangling end): rejected
+relations: 280 nodes, 238 edges, PASS
+ALL CHECKS PASS
+
+real	9m19.890s
+user	6m27.269s
+sys	2m29.486s
+exit=0

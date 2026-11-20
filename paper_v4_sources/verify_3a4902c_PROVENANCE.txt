@@ -1,0 +1,8 @@
+Provenance for /workspace/dispatch/verify_3a4902c_out.txt (written by Dispatch, Nov 20 2026 8:45 AM CT)
+Commit: 3a4902ccf187943d220900009da96dd6578aa982 (/workspace/lean_green/cmao_combined_lean)
+Command run (started 8:06 AM CT Nov 20):
+  git archive 3a4902c | tar -x -C /workspace/dispatch/verify_3a4902c
+  ln -s <repo>/.lake/packages <export>/.lake/packages   (prebuilt Mathlib etc. reused; project modules rebuilt)
+  cd <export> && python3 scripts/verify.py
+Result: exit 0, ALL CHECKS PASS, 280 theorems, 25/25 false controls, 280 nodes / 238 edges, real 9m19.9s.
+The export dir was deleted after the run. The out.txt log itself does not print the SHA; this file records it.

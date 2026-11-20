@@ -1,0 +1,38 @@
+=== A. Ramanujan Challenge Q1 (Problem 2.1) companion roots: ratio = phi^10 ===
+  (lam-ls)(lam-ld) = lam**2 + 297*lam/2 - 729/4 ; equals lam^2+(297/2)lam-729/4: True
+  |ld|/ls = (55*sqrt(5) + 123)/2 ; equals (123+55 sqrt5)/2: True ; equals phi^10: True
+  phi^10 + phi^-10 = 123
+  log10(phi^10) = 2.08987640250
+
+=== B. DT-T33 vs CMaO: L = -M^-6  <=>  L*M^6 = -1 (M != 0) ===
+  solve(L*M**6 + 1, L) = [-1/M**6]
+
+=== C. +/-2 surgery on the trefoil: Seifert invariants and base-orbifold Euler characteristic ===
+  right-handed T(2,3), slope +2: fibres (2,3,4), chi_orb = 1/12, spherical (finite pi_1); H_1 = Z/2
+  right-handed T(2,3), slope -2: fibres (2,3,8), chi_orb = -1/24, SL2~ (infinite pi_1); H_1 = Z/2
+  mirror: S^3_p(mK) = -S^3_{-p}(K), so for the LEFT-handed trefoil +2 gives (2,3,8) and -2 gives (2,3,4) (BHL labelling).
+  unknot control: S^3_{+-2}(U) = L(2,1) = RP^3; L(p,q) = -L(p,q) iff q^2 = -1 mod p: True
+
+=== D. 8_19 = T(3,4): Alexander polynomial and unit-circle walls (exact) ===
+  Delta_{T(3,4)}(t) = t**6 - t**5 + t**3 - t + 1
+  2cos3x - 2cos2x + 1 - (2cos x - 1)(4cos^2 x - 3) == 0: True
+  t^-3 Delta(t) at t=e^{ix} equals lhs: True
+  wall angles alpha = x/2pi in [0,1):  [Fraction(1, 12), Fraction(1, 6), Fraction(5, 12), Fraction(7, 12), Fraction(5, 6), Fraction(11, 12)]
+
+=== E. Levine-Tristram signature of T(2,3) on the whole circle (Litherland count, exact rationals) ===
+  sigma_{T(2,3)}(e^{2 pi i a}) = -2 exactly for a in (1/6,5/6) and 0 elsewhere on grid 1/240: True
+  wall at a=1/6 is e^{i pi/3}, root of z^2-z+1 (regular tetrahedron shape): True
+  DT-T38 window: rho on alpha in (1/12,5/12) with character e^{4 pi i alpha} <=> 2alpha in (1/6,5/6): consistent
+
+=== F. Figure-eight anchor (MODEL: floating point) ===
+  V_tet = 3 Lobachevsky(pi/3) = 1.014941606409653625 ; 2 V_tet = 2.02988321281930725
+  SnapPy 3.3.2 4_1: vol 2.0298832128 | all tetrahedra positively oriented | cusp shape [-2.664535259 E-15 + 3.4641016151*I] | CS -5.6244555 E-17 | shapes [0.50000000000 + 0.86602540378*I, 0.50000000000 + 0.86602540378*I]
+  SnapPy 3_1: vol 0 | contains flat tetrahedra (torus knot; not hyperbolic)
+  SnapPy 8_19: vol 0 | contains flat tetrahedra (torus knot; not hyperbolic)
+  SnapPy filling (2, 1): H_1(3_1((2, 1))) = Z/2, H_1(4_1((2, 1))) = Z/2
+  SnapPy filling (-2, 1): H_1(3_1((-2, 1))) = Z/2, H_1(4_1((-2, 1))) = Z/2
+
+=== G. Raw difference ruler phi0 - M: closed form of each term ===
+  n=1: q^n(1-q^n)(-q)_(2n+1) == q^n(1-q^(4n)) prod_(j != n,2n)(1+q^j): True ; has negative coeff: True
+  n=2: q^n(1-q^n)(-q)_(2n+1) == q^n(1-q^(4n)) prod_(j != n,2n)(1+q^j): True ; has negative coeff: True
+  n=3: q^n(1-q^n)(-q)_(2n+1) == q^n(1-q^(4n)) prod_(j != n,2n)(1+q^j): True ; has negative coeff: True

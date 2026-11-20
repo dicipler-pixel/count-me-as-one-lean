@@ -1,0 +1,31 @@
+=== 1. BHL (2010) +/-2 Trefoil Surgery Exact Integer q-Series Check ===
+  Thm 1.1 (Eq 1.5) exact through q^258 (phi0 through q^128): True
+  Thm 1.2 (Eq 1.7) exact through q^128: True
+  phi0[0..10]       = [1, 2, 2, 3, 5, 6, 8, 11, 13, 17, 22]
+  M[0..10]          = [1, 1, 1, 1, 2, 3, 3, 4, 5, 6, 7]
+  (phi0 - M)[0..10] = [0, 1, 1, 2, 3, 3, 5, 7, 8, 11, 15]
+  All (phi0 - M)[k] > 0 for 1 <= k <= 128: True
+  psi[0..12]        = [0, 1, 1, 1, 2, 2, 2, 3, 3, 4, 5, 5, 6]
+
+=== 2. 2D Flat-Torus Dirac Operator Chiral Vanishing Check ===
+  max ||sigma_3 H sigma_3 + H|| = 0.000e+00
+  max |eta_N(D_{T^2}, s=0.5)| over 10 random (alpha,beta,tau), N=20 = 0.000e+00
+
+=== 3. Exact Alexander Wall Loci & Levine-Tristram Signatures (3_1, 4_1, 5_2, 8_19=T(3,4)) ===
+  max |Delta_{8_19}(e^{it}) - (2cos t - 1)(4cos^2 t - 3)| = 3.626e-15
+  T(2,3)=3_1 Levine-Tristram sigma(e^{2pi i alpha}): [('1/12', 0), ('1/4', -2), ('1/2', -2), ('3/4', -2), ('11/12', 0)]
+  T(3,4)=8_19 Levine-Tristram sigma(e^{2pi i alpha}): [('1/24', 0), ('1/8', -2), ('1/4', -4), ('11/24', -6), ('1/2', -6)]
+  5_2 wall angle alpha = arccos(3/4)/(2 pi) = 0.1150267281
+  4_1 min Delta(e^{it}) = 1.0 (no walls, amphicheiral => sigma === 0)
+
+=== 4. 1D Circle Smooth-Drift Counterexample ===
+  No zero-crossing interval [0.25, 0.75]: eta(0.25)=0.5, eta(0.75)=-0.5, Delta eta=-1.0 != 0, d eta/da = -2
+  Full loop [0.25, 1.25]: SF=1, eta(1.25)-eta(0.25)=0.0 != 2*SF=2
+  Exact odometer identity: 0.5*(eta(b1)-eta(b0)) + (b1-b0) = 1.0 == SF = 1
+
+=== 5. Shell Capacity 2n^2 Check ===
+  k=1: S^2 shell sum = 2 (2k^2=2), T^2 box = 9, T^2 L1-ring = 4
+  k=2: S^2 shell sum = 8 (2k^2=8), T^2 box = 25, T^2 L1-ring = 8
+  k=3: S^2 shell sum = 18 (2k^2=18), T^2 box = 49, T^2 L1-ring = 12
+  k=4: S^2 shell sum = 32 (2k^2=32), T^2 box = 81, T^2 L1-ring = 16
+  k=5: S^2 shell sum = 50 (2k^2=50), T^2 box = 121, T^2 L1-ring = 20
