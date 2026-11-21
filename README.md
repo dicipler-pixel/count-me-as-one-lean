@@ -31,7 +31,9 @@ Release `v1` of this repository is the original 80-theorem core-Lean package (Le
 | File | What it is |
 |---|---|
 | [`paper/Count_Me_as_One_Dirac_Anchor_Recovered_v5.pdf`](paper/Count_Me_as_One_Dirac_Anchor_Recovered_v5.pdf) | **Count Me as One, with the Dirac Anchor Recovered** (v5): Part I is Count Me as One; Part II joins it to the APS rulers, the chiral seed and the signed boundary test. Every claim graded; every [T] tag names a theorem in this repository |
-| [`paper/v5/`](paper/v5/) | Its source: the .tex, the plates and the record of the GitHub Actions run it cites |
+| [`paper/Count_Me_as_One_Dirac_Anchor_Recovered_v5.html`](paper/Count_Me_as_One_Dirac_Anchor_Recovered_v5.html) | The same paper as a web page: every formula typeset, the plates, and the full Lean source, harness, CI record and checks script to open in place |
+| [`paper/Count_Me_as_One_Dirac_Anchor_Recovered_Mixer_v5.html`](paper/Count_Me_as_One_Dirac_Anchor_Recovered_Mixer_v5.html) | The v5 mixer: 17 live 3D eyes, one per result of Parts I and II, every readout computed live (walls, chiral η, odometer, signatures, the boundary ruler with Eqs. 1.5 and 1.7 checked in exact integers, surgery controls, repairs, grades, the 280-node relation graph) |
+| [`paper/v5/`](paper/v5/) | Its source: the .tex, the plates, the record of the GitHub Actions run it cites, and the HTML and mixer source |
 | [`checks/cmao_checks_v1.py`](checks/cmao_checks_v1.py) | Re-run of every number in the paper that is not a Lean theorem (exact arithmetic, sympy, mpmath, SnapPy), with its [output](checks/cmao_checks_v1_output.txt) |
 | [`film/source/`](film/source/) | The deterministic 3D renderer for the film and every plate (`render_knots.py`, `plates_part2.py`) |
 | [`paper/Count_Me_as_One_v1_20261120.pdf`](paper/Count_Me_as_One_v1_20261120.pdf) | Count Me as One v1, the paper of Part I on its own |
