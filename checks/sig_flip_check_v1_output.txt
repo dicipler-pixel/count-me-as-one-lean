@@ -1,0 +1,41 @@
+t values: [0.1, 0.2, 0.3, 0.45, 0.5]
+3_1
+  KnotInfo stored sig -2  | writhe braid 3  writhe PD 3
+  LT KnotInfo V       [0, -2, -2, -2, -2]
+  LT spherogram braid [0, 2, 2, 2, 2]
+  LT spherogram PD    [0, 2, 2, 2, 2]
+  Alexander agree (KI vs braid vs PD): True
+8_19
+  KnotInfo stored sig -6  | writhe braid 8  writhe PD 8
+  LT KnotInfo V       [-2, -4, -4, -6, -6]
+  LT spherogram braid [2, 4, 4, 6, 6]
+  LT spherogram PD    [2, 4, 4, 6, 6]
+  Alexander agree (KI vs braid vs PD): True
+13a_3542
+  KnotInfo stored sig 0  | writhe braid 1  writhe PD 1
+  LT KnotInfo V       [0, 0, 0, 0, 0]
+  LT spherogram braid [0, 0, 0, 0, 0]
+  LT spherogram PD    [0, 0, 0, 0, 0]
+  Alexander agree (KI vs braid vs PD): True
+13a_4018
+  KnotInfo stored sig 0  | writhe braid -1  writhe PD -1
+  LT KnotInfo V       [0, 0, 0, 0, 0]
+  LT spherogram braid [0, 0, 0, 0, 0]
+  LT spherogram PD    [0, 0, 0, 0, 0]
+  Alexander agree (KI vs braid vs PD): True
+
+13-crossing window, t = 0.225 (omega = exp(i*pi*0.45)):
+  13a_3542  KnotInfo V: -2  spherogram braid: 2  spherogram mirror: -2
+  13a_4018  KnotInfo V: -2  spherogram braid: 2  spherogram mirror: -2
+  13a_3542 Alexander = Dirac Time polynomial: True
+  13a_4018 Alexander = Dirac Time polynomial: True
+  unit-circle roots as alpha (omega = e^{4 pi i alpha}), upper half: [0.10971, 0.11522]
+
+VERDICT 1: on every knot and every t the spherogram/SnapPy Seifert matrix gives minus the
+  KnotInfo value, with the same diagram (same writhe) and the same Alexander polynomial:
+  the -2/+2 flip is a sign convention of the Seifert matrix, not a change of handedness.
+VERDICT 2: in KnotInfo convention the positive braid [1,1,1] (right-handed trefoil) has
+  sigma = -2 on (1/6,5/6); Dirac Time uses rho = -sigma and KnotInfo signatures, so its
+  rho = +2 window is the right-handed trefoil.
+VERDICT 3: as stored, 13a_3542 and 13a_4018 have the SAME signature function (-2 in the
+  window); only the MIRROR of 13a_4018 reads +2, so the mirror in the DT-O6 pair is required.

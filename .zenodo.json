@@ -7,7 +7,7 @@
       "name": "Beasley, Jeromie"
     }
   ],
-  "description": "<p>Paper (PDF and TeX), Lean 4 proofs (280 theorems, 25 false controls, relations graph of 280 nodes and 238 edges, all checks passing on GitHub Actions), checks script, film and plates renderer, and the public article Tying the Knot, by Jeromie Beasley.</p><p>AI-assisted: the research direction, the questions and the three working rules are Jeromie Beasley's; Part I was written with Claude (Anthropic); Part II was assembled by Ink Between the Stars (a Grok bot) and completed with Claude.</p>",
+  "description": "<p>Paper (PDF and TeX), Lean 4 proofs (280 theorems, 25 false controls, relations graph of 280 nodes and 238 edges, all checks passing on GitHub Actions), checks script, film and plates renderer, and the public article Tying the Knot, by Jeromie Beasley.</p><p>AI-assisted: the research direction, the questions and the three working rules are Jeromie Beasley's; Part I was written with Claude (Anthropic); Part II was assembled by Ink Between the Stars (a Grok bot), which prepared the statements of its Lean libraries; Lean Green PR Machine (a Grok bot) wrote those libraries (DiracTimeD25, CMaOBridge, D28); Part II was completed with Claude.</p>",
   "keywords": [
     "figure-eight knot",
     "trefoil knot",
@@ -23,5 +23,6 @@
     "core rope memory"
   ],
   "license": "MIT",
-  "language": "eng"
+  "language": "eng",
+  "version": "v5.1"
 }

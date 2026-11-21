@@ -1,0 +1,704 @@
+\documentclass[11pt]{article}
+\usepackage{fontspec}
+\usepackage{unicode-math}
+\setmainfont{Latin Modern Roman}
+\setmathfont{Latin Modern Math}
+\setmonofont{DejaVu Sans Mono}[Scale=0.78]
+\usepackage[a4paper,margin=2.4cm]{geometry}
+\usepackage{amsthm}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{xcolor}
+\usepackage{listings}
+\usepackage{fvextra}
+\usepackage[hidelinks]{hyperref}
+\usepackage{enumitem}
+\renewcommand{\labelitemi}{$\bullet$}
+\definecolor{gold}{HTML}{B8860B}
+\definecolor{ground}{HTML}{1F5FA8}
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\grade}[1]{\textsf{\small[#1]}}
+\newcommand{\lean}[1]{\texttt{\small #1}}
+\newcommand{\dtag}[1]{#1}
+\AtBeginDocument{\renewcommand{\setminus}{\mathbin{\backslash}}}
+\lstset{basicstyle=\ttfamily\footnotesize,breaklines=true,columns=fullflexible,frame=single,rulecolor=\color{gray!50},keepspaces=true,showstringspaces=false}
+\fvset{fontsize=\footnotesize,breaklines=true,breakanywhere=true,frame=single,rulecolor=\color{gray!50}}
+\title{\textbf{Count Me as One, with the Dirac Anchor Recovered}\\[4pt]\large The Figure-Eight Knot, the Trefoil's Turn and One Trace Ladder,\\ joined to APS Rulers, the Chiral Seed and a Signed Boundary Test}
+\author{Jeromie Beasley}
+\date{21 November 2026}
+\usepackage{array}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\sloppy\setlength{\emergencystretch}{4em}
+\begin{document}
+\maketitle
+
+\noindent\small\textit{AI-assisted. The research direction, the questions and the three working rules are Jeromie Beasley's. Part~I was written with Claude (Anthropic). Part~II was assembled by Ink Between the Stars (a Grok bot), which also prepared the statements of its Lean libraries; Lean Green PR Machine (a Grok bot) wrote those libraries, DiracTimeD25, CMaOBridge and D28; Part~II was completed with Claude. Every claim carries a grade from the ledger of Section~\ref{sec:ledger}; \textsf{[T]} marks a claim backed by a named Lean theorem in \texttt{count-me-as-one-lean}.}\normalsize
+
+\begin{abstract}
+Two quadratics, $z^2-z+1$ and $z^2-z-1$, split Thurston's gluing equation for the figure-eight knot on its symmetric slice. Part~I (Count Me as One v1, kept whole) follows them through the regular tetrahedron, Riley's representation, the trefoil's order-six monodromy, the cat map, one trace ladder and the ramification points of the $A$-polynomial, as eighty Lean theorems. Part~II joins this map to the recovered APS and Dirac-anchor programme under the same three rules. Every wall of the trefoil's Alexander polynomial on the unit circle is a root of the first quadratic and so solves Thurston's edge equation; this is proved in Lean in a bridge file of the combined project. The figure-eight has no wall because its Alexander roots are the golden branch squared. Chiral pairing forces $\eta=0$ for every flat-torus build of the old chats, and the circle odometer restores the drift term that the old ``$\Delta\eta=2\,$SF'' dropped; both are Lean theorems. The Bringmann--Hikami--Lovejoy pair of $\pm2$ surgeries on the trefoil is written up as a signed-boundary test for Dirac Time's open problem DT-O5: same knot, same crossing number, same $H_1=\mathbb Z/2$, and boundary records $\phi_0$ and $M$ that split at $q^1$ (Lean), with $\phi_0-M$ positive through $q^{128}$. That positivity, Eq.~(1.7) through $q^{128}$ and Eq.~(1.5) through $q^{258}$ are Lean theorems; none is proved in all degrees. Twelve readings from the old chats are repaired onto canonical geometry. Every claim is graded EXACT, DERIVED, MODEL, ANALOGY or REPAIRED, and all 280 Lean theorems pass one public harness. The gluing formula of DT-O5 is not proved here.
+\end{abstract}
+
+\tableofcontents
+\clearpage
+\part{Count Me as One}
+\begin{center}\textbf{Count Me as One}\\[4pt]\large The Figure-Eight Knot, the Trefoil's Turn, and One Trace Ladder:\\ Two Quadratics Behind Gluing, Monodromy and the A-Polynomial\\[6pt]\normalsize Jeromie Beasley\\ 20 November 2026\end{center}
+
+\noindent\small\textit{Every identity stated as a theorem in Part~I is machine-checked in Lean~4, in the library \texttt{FigureEightAnchors} of \texttt{count-me-as-one-lean}, which imports no Mathlib.}\normalsize
+
+\paragraph{Abstract of Part~I.}
+Two quadratics, $z^2-z+1$ and $z^2-z-1$, are the two factors of Thurston's gluing equation for the figure-eight knot complement on the symmetric slice $z=w$. We follow each of them through the classical invariants of the two simplest knots and show that they account for all of the following at once. The first factor is the shape of the regular ideal tetrahedron, the condition for Riley's parabolic representation of the figure-eight knot group, and the characteristic polynomial of the monodromy of the trefoil, which therefore has order six. The second factor fails the regularity test by exactly one sign; its square is the characteristic polynomial of the figure-eight monodromy (the cat map), which is the figure-eight's Alexander polynomial. Used as meridian eigenvalues, the two branches are precisely the ramification points of the figure-eight $A$-polynomial: the golden branch on the slice $L=+1$ and the regular branch on $L=-1$, the two fixed slices of the amphichiral involution $L\mapsto 1/L$. A single trace ladder $t_{k+1}=Tt_k-t_{k-1}$ carries the trefoil ($T=1$, periodic), the band edge ($T=2$, where the two rails merge), the figure-eight ($T=3$, reaching $123=\varphi^{10}+\varphi^{-10}$ at the fifth rung) and the Ap\'ery and Catalan transports ($T=6$, reaching $34$). Chirality is kept as a proved invariant: the figure-eight has an explicit mirror certificate and the trefoil provably has none. Each ingredient is classical; the contribution is the single map that joins them, stated as eighty machine-checked theorems with eighty-two typed relations, each relation witnessed by a theorem, and eleven false controls rejected.
+
+\section{Three working rules}
+This paper is organised by three rules that govern how the author tests ideas.
+\begin{enumerate}[leftmargin=2em]
+\item \emph{Anchor a broken example to established mathematics.} The anchors here are Thurston's ideal triangulation of the figure-eight knot complement, Riley's parabolic representation, and the genus-one Seifert surfaces of the two simplest fibred knots.
+\item \emph{Keep a raw difference as a ruler or a weight; do not renormalise it away.} The branch of the gluing equation that is discarded as non-geometric, and the defect by which a group relation fails, are both kept and measured.
+\item \emph{Preserve the chiral source of asymmetry.} The handedness of the trefoil is kept as a proved invariant and not averaged out.
+\end{enumerate}
+Every result below is graded: \grade{C} classical and cited, \grade{T} a theorem checked in Lean here, \grade{R} a reading that joins classical facts and is checked as an identity here, \grade{O} open.
+
+\section{The symmetric slice of Thurston's gluing equation}
+The complement of the figure-eight knot is glued from two ideal tetrahedra whose shape parameters $z,w$ must satisfy the edge equation \grade{C} \cite{Thurston}\dtag{ \textsf{\small[K1\,$\cdot$\,EXACT]}}
+\begin{equation}\label{eq:edge}
+z(z-1)\,w(w-1)=1 .
+\end{equation}
+
+\begin{theorem}[\lean{Gluing.edge\_symmetric\_factor}]\grade{T}\dtag{ \textsf{\small[K2\,$\cdot$\,EXACT]}\,\textsf{\small[T:\,CMaO:\,\lean{Gluing.\allowbreak{}edge\_\allowbreak{}symmetric\_\allowbreak{}factor}]}}
+In every commutative ring, on the slice $z=w$,
+\[ z^2(z-1)^2-1=(z^2-z+1)(z^2-z-1). \]
+\end{theorem}
+\begin{proof}
+Write $u=z^2-z$. Then $z^2(z-1)^2-1=u^2-1=(u+1)(u-1)$.
+\end{proof}
+
+So the slice has two branches. The first, $z^2-z+1=0$, is solved by $z=e^{\pm i\pi/3}$; the second, $z^2-z-1=0$, by $z=\varphi$ and $z=-1/\varphi$, with $\varphi=(1+\sqrt5)/2$.
+
+\begin{theorem}[\lean{Gluing.regular\_cycle\_fixed}, \lean{cycle\_fixed\_regular}, \lean{golden\_cycle}]\grade{T}\dtag{ \textsf{\small[K3\,$\cdot$\,EXACT]}\,\textsf{\small[T:\,CMaO:\,\lean{Gluing.\allowbreak{}regular\_\allowbreak{}cycle\_\allowbreak{}fixed}, CMaO:\,\lean{Gluing.\allowbreak{}cycle\_\allowbreak{}fixed\_\allowbreak{}regular}, CMaO:\,\lean{Gluing.\allowbreak{}golden\_\allowbreak{}cycle}]}}\dtag{\label{thm:regshape-ref}}
+Let $z$ lie in a commutative ring. Then $z(1-z)=1$ if and only if $z^2-z+1=0$. If $z^2-z-1=0$, then $z(1-z)=-1$.
+\end{theorem}
+\begin{proof}
+$z(1-z)-1=-(z^2-z+1)$ and $z(1-z)+1=-(z^2-z-1)$.
+\end{proof}
+
+The map $z\mapsto 1/(1-z)$ permutes the three dihedral shape parameters of an ideal tetrahedron. A shape fixed by it has all three dihedral parameters equal: that is the regular tetrahedron. The first branch is exactly the regular one. The second branch closes the bare edge equation just as well, but the same test returns $-1$ in place of $+1$. That sign is the first kept difference of the paper, and it carries the rest of the argument.
+
+\begin{theorem}[\lean{Gluing.regular\_half}, \lean{eis\_edge}, \lean{eis\_edge\_conj}]\grade{T}\dtag{ \textsf{\small[K4\,$\cdot$\,EXACT]}\,\textsf{\small[T:\,CMaO:\,\lean{Gluing.\allowbreak{}regular\_\allowbreak{}half}, CMaO:\,\lean{Gluing.\allowbreak{}eis\_\allowbreak{}edge}, CMaO:\,\lean{Gluing.\allowbreak{}eis\_\allowbreak{}edge\_\allowbreak{}conj}]}}
+On the regular branch each tetrahedron contributes $z(z-1)=-1$, and two contribute $(-1)(-1)=1$. In the Eisenstein integers $\mathbb Z[\omega]$, $\omega^2=\omega-1$, the edge equation holds at $z=w=\omega=e^{i\pi/3}$ and at its conjugate $1-\omega=e^{-i\pi/3}$, the mirror structure.
+\end{theorem}
+
+\begin{theorem}[\lean{Gluing.no\_integer\_regular}, \lean{no\_integer\_golden}]\grade{T}\dtag{ \textsf{\small[K5\,$\cdot$\,EXACT]}\,\textsf{\small[T:\,CMaO:\,\lean{Gluing.\allowbreak{}no\_\allowbreak{}integer\_\allowbreak{}regular}, CMaO:\,\lean{Gluing.\allowbreak{}no\_\allowbreak{}integer\_\allowbreak{}golden}]}}
+Neither branch has an integer shape: $n^2-n+1\neq0$ and $n^2-n-1\neq0$ for every integer $n$.
+\end{theorem}
+\begin{proof}
+$n(n-1)\ge 0$ for every integer $n$, which excludes $n(n-1)=-1$; and $n(n-1)$ is always even, which excludes $n(n-1)=1$.
+\end{proof}
+
+\section{One polynomial in three places}
+
+\subsection{Riley's representation}
+The figure-eight knot group has the presentation $\langle a,b\mid wa=bw\rangle$ with $w=a^{-1}bab^{-1}$. Riley \cite{Riley} sends
+\[ a\mapsto A=\begin{pmatrix}1&1\\0&1\end{pmatrix},\qquad b\mapsto B=\begin{pmatrix}1&0\\c&1\end{pmatrix}. \]
+
+\begin{theorem}[\lean{Riley.relation\_defect}, \lean{riley\_iff\_shape}]\grade{T}\dtag{ \textsf{\small[K6\,$\cdot$\,EXACT]}\,\textsf{\small[T:\,CMaO:\,\lean{Riley.\allowbreak{}relation\_\allowbreak{}defect}, CMaO:\,\lean{Riley.\allowbreak{}riley\_\allowbreak{}iff\_\allowbreak{}shape}]}}
+In every commutative ring, with $W=A^{-1}BAB^{-1}$ and $p=c^2-c+1$,
+\[ WA-BW=\begin{pmatrix}0&p\\-cp&0\end{pmatrix}. \]
+Hence the relation holds if and only if $c^2-c+1=0$.
+\end{theorem}
+
+The Riley polynomial of the figure-eight knot is the regular-tetrahedron polynomial \grade{C} \cite{Riley,SilverWilliams}\dtag{ \textsf{\small[K7\,$\cdot$\,EXACT]}}. Keeping the whole defect matrix, and not only the equation $p=0$, is an instance of the second rule: away from the root, the failure of the relation is measured, and it is measured by the same quadratic. Both meridians are parabolic, $\operatorname{tr}A=\operatorname{tr}B=2$ (\lean{A\_parabolic})\dtag{ \textsf{\small[K8\,$\cdot$\,EXACT]}\,\textsf{\small[T:\,CMaO:\,\lean{Riley.\allowbreak{}A\_\allowbreak{}parabolic}, CMaO:\,\lean{Riley.\allowbreak{}B\_\allowbreak{}parabolic}]}}, so they sit exactly on the band edge of Section~5.
+
+\subsection{The trefoil's monodromy}
+A genus-one fibred knot with Seifert matrix $V$ has monodromy $h=V^{-1}V^{T}$ on the homology of its fibre, and its Alexander polynomial is the characteristic polynomial of $h$ \grade{C} \cite{Rolfsen}\dtag{ \textsf{\small[K9\,$\cdot$\,EXACT]}}. For the trefoil and the figure-eight we take
+\[ V_{3_1}=\begin{pmatrix}-1&1\\0&-1\end{pmatrix},\qquad V_{4_1}=\begin{pmatrix}1&-1\\0&-1\end{pmatrix}. \]
+
+\begin{theorem}[\lean{Monodromy.h31\_form}, \lean{h31\_charpoly}, \lean{h31\_cubed}, \lean{h31\_order6}]\grade{T}\dtag{ \textsf{\small[K10\,$\cdot$\,EXACT]}\,\textsf{\small[T:\,CMaO:\,\lean{Monodromy.\allowbreak{}h31\_\allowbreak{}form}, CMaO:\,\lean{Monodromy.\allowbreak{}h31\_\allowbreak{}charpoly}, CMaO:\,\lean{Monodromy.\allowbreak{}h31\_\allowbreak{}cubed}, CMaO:\,\lean{Monodromy.\allowbreak{}h31\_\allowbreak{}order6}, CMaO:\,\lean{Monodromy.\allowbreak{}h31\_\allowbreak{}elliptic}]}}
+$h_{3_1}=\begin{pmatrix}0&1\\-1&1\end{pmatrix}$, with $\operatorname{tr}h_{3_1}=1$, $\det h_{3_1}=1$, and
+\[ h_{3_1}^2=h_{3_1}-I,\qquad h_{3_1}^3=-I,\qquad h_{3_1}^6=I . \]
+\end{theorem}
+
+\begin{corollary}\grade{R}\dtag{ \textsf{\small[K11\,$\cdot$\,EXACT]}}
+The monodromy of the trefoil, the Riley parameter of the figure-eight knot, and the shape of the regular ideal tetrahedron all satisfy $z^2-z+1=0$. In particular the trefoil's monodromy, which is chiral, satisfies the polynomial from which the hyperbolic structure of the amphichiral figure-eight knot is built.
+\end{corollary}
+
+Each of the three facts is classical. The corollary records that they are one polynomial. It does not claim a map between the objects; it is the shared root $e^{i\pi/3}$, a sixth root of unity, that appears in all three. The same sixfold structure appears in the author's Dirac Time programme \cite{DiracTime}: its Theorem DT-T33 states $L=-M^{-6}$ for the admitted trefoil representation, that is $LM^{6}=-1$, while here the homological monodromy closes as $h^3=-I$, $h^6=I$. Both are the $(2,3)$ torus-knot structure seen in two representations; the agreement of the sign $-1$ is recorded as a structural reading only.\dtag{ \textsf{\small[K12\,$\cdot$\,ANALOGY]}}
+
+\section{The kept difference: the golden branch squared}
+
+\begin{theorem}[\lean{Monodromy.h41\_cat}, \lean{h41\_charpoly}, \lean{Ladder.golden\_squared}]\grade{T}\dtag{ \textsf{\small[K13\,$\cdot$\,EXACT]}\,\textsf{\small[T:\,CMaO:\,\lean{Monodromy.\allowbreak{}h41\_\allowbreak{}cat}, CMaO:\,\lean{Monodromy.\allowbreak{}h41\_\allowbreak{}charpoly}, CMaO:\,\lean{Ladder.\allowbreak{}golden\_\allowbreak{}squared}]}}
+$h_{4_1}=\begin{pmatrix}2&1\\1&1\end{pmatrix}$, the cat map, with $h_{4_1}^2=3h_{4_1}-I$. If $z^2-z-1=0$ in a commutative ring, then $x=z^2$ satisfies
+\[ x^2-3x+1=0 , \]
+the characteristic polynomial of $h_{4_1}$ and the Alexander polynomial of the figure-eight knot.
+\end{theorem}
+\begin{proof}
+From $z^2=z+1$: $z^4=(z+1)^2=z^2+2z+1=3z+2$, so $z^4-3z^2+1=3z+2-3z-3+1=0$.
+\end{proof}
+
+So the branch that fails the regularity test by a sign is not waste. Squared, it is the stretch of the figure-eight monodromy, $\lambda_+=\varphi^2$. The corresponding statement for the regular branch is that $z^2$ is a primitive cube root of unity (\lean{Ladder.regular\_squared})\dtag{ \textsf{\small[K14a\,$\cdot$\,EXACT]}\,\textsf{\small[T:\,CMaO:\,\lean{Ladder.\allowbreak{}regular\_\allowbreak{}squared}]}\,\textsf{\small[K14b\,$\cdot$\,EXACT]}} (Lean: $w=z^2$ satisfies $w^2+w+1=0$ in any commutative ring; over $\mathbb C$, $w\neq1$ because $w=1$ would give $3=0$): squaring keeps the regular branch on the circle and sends the golden branch off it.
+
+\begin{theorem}[\lean{Monodromy.h41\_trace5}, \lean{Ladder.fig8\_fifth}]\grade{T}\dtag{ \textsf{\small[K15\,$\cdot$\,EXACT]}\,\textsf{\small[T:\,CMaO:\,\lean{Monodromy.\allowbreak{}h41\_\allowbreak{}trace5}, CMaO:\,\lean{Ladder.\allowbreak{}fig8\_\allowbreak{}fifth}, D28:\,\lean{golden\_\allowbreak{}pow\_\allowbreak{}ten\_\allowbreak{}add\_\allowbreak{}inv}]}}
+$\operatorname{tr}h_{4_1}^5=123$. Equivalently, if $x^2-3x+1=0$ then $x^5+(3-x)^5=123=\varphi^{10}+\varphi^{-10}$.
+\end{theorem}
+
+The number $123$ reappears outside knot theory. Problem~2.1 of the Ramanujan Machine group's Ramanujan Challenge for AI \cite{RMchallenge} is a polynomial continued fraction for $6/(3-\pi)$ (Question~1 of the proofs document \cite{RMproofs}). Its convergence ratio is $(123+55\sqrt5)/2=\varphi^{10}$, whose trace is $123$.\dtag{ \textsf{\small[K16a\,$\cdot$\,EXACT]}\,\textsf{\small[T:\,D28:\,\lean{q1\_\allowbreak{}char\_\allowbreak{}roots}, D28:\,\lean{q1\_\allowbreak{}ratio}, D28:\,\lean{golden\_\allowbreak{}pow\_\allowbreak{}ten}]}\,\textsf{\small[K16b\,$\cdot$\,EXACT]}} It is the same number in $\mathbb Q(\sqrt5)$, recorded as a link and not as a map between the objects (Section~\ref{sec:rm}).\dtag{ \textsf{\small[K17\,$\cdot$\,ANALOGY]}}
+
+\section{One trace ladder}
+
+\begin{theorem}[\lean{Ladder.ladder\_law}]\grade{T}\dtag{ \textsf{\small[K18\,$\cdot$\,EXACT]}\,\textsf{\small[T:\,CMaO:\,\lean{Ladder.\allowbreak{}ladder\_\allowbreak{}law}]}}
+In every commutative ring, if $x+y=T$ and $xy=1$, then $x^k+y^k=t_k$ for all $k\ge0$, where $t_0=2$, $t_1=T$ and $t_{k+1}=Tt_k-t_{k-1}$.
+\end{theorem}
+\begin{proof}
+$x^{k+2}+y^{k+2}=(x+y)(x^{k+1}+y^{k+1})-xy(x^k+y^k)$; induct on $k$.
+\end{proof}
+
+The ladder has three regimes. For $|T|<2$ the two rails $\lambda_\pm=(T\pm\sqrt{T^2-4})/2$ are complex conjugates on the unit circle and the ladder rotates (the \emph{band}). For $|T|>2$ they are real and the ladder stretches (the \emph{gap}). At $|T|=2$ the two rails coincide (\lean{band\_edge\_merge})\dtag{ \textsf{\small[K19\,$\cdot$\,EXACT]}\,\textsf{\small[T:\,CMaO:\,\lean{Ladder.\allowbreak{}band\_\allowbreak{}edge\_\allowbreak{}merge}]}}: this is the exceptional point between the regimes. In the author's rail-angle variables \cite{RailAngle} the angle $\psi$ between the two rails in companion coordinates satisfies $T=2\sec\psi$, the rails are $\sec\psi\pm\tan\psi$, and the stretch per step is $\log\lambda_+=\operatorname{gd}^{-1}(\psi)$, the inverse Gudermannian.\dtag{ \textsf{\small[K20\,$\cdot$\,EXACT]}}
+
+\begin{proposition}[\lean{trefoil\_ladder}, \lean{fig8\_ladder}, \lean{sqrt2\_ladder}]\grade{T}\dtag{ \textsf{\small[K21\,$\cdot$\,EXACT]}\,\textsf{\small[T:\,CMaO:\,\lean{Ladder.\allowbreak{}trefoil\_\allowbreak{}ladder}, CMaO:\,\lean{Ladder.\allowbreak{}fig8\_\allowbreak{}ladder}, CMaO:\,\lean{Ladder.\allowbreak{}sqrt2\_\allowbreak{}ladder}]}}
+\begin{itemize}
+\item $T=1$ (trefoil): $2,1,-1,-2,-1,1,2,\dots$, periodic with period $6$; rotation $60^\circ$ per step.
+\item $T=3$ (figure-eight): $2,3,7,18,47,123,322,\dots$; $\sec\psi=3/2$, $\psi=48.19^\circ$, $\lambda_+=\varphi^2$.
+\item $T=6$: $2,6,34,198,\dots$; $\lambda_+=(1+\sqrt2)^2$.
+\end{itemize}
+\end{proposition}
+
+The rung $34$ of the $T=6$ ladder is the trace of $(1+\sqrt2)^4=17+12\sqrt2$, the dominant root of Ap\'ery's $\zeta(3)$ recurrence, whose limiting polynomial is $\lambda^2-34\lambda+1$ \grade{C} \cite{Apery}\dtag{ \textsf{\small[K22\,$\cdot$\,EXACT]}}. The Catalan transport of the Ramanujan Challenge, Problem~2.5, carries it verbatim:
+\begin{theorem}[\lean{Ladder.catalan\_contains\_apery}, \lean{antipalindromic\_rest}, \lean{saddle\_unit}, \lean{apery\_middle}]\grade{T}\dtag{ \textsf{\small[K23\,$\cdot$\,EXACT]}\,\textsf{\small[T:\,CMaO:\,\lean{Ladder.\allowbreak{}catalan\_\allowbreak{}contains\_\allowbreak{}apery}, CMaO:\,\lean{Ladder.\allowbreak{}antipalindromic\_\allowbreak{}rest}, CMaO:\,\lean{Ladder.\allowbreak{}saddle\_\allowbreak{}unit}, CMaO:\,\lean{Ladder.\allowbreak{}apery\_\allowbreak{}middle}, CMaO:\,\lean{Ladder.\allowbreak{}pell\_\allowbreak{}34}]}}
+\begin{enumerate}[leftmargin=2em]
+\item $\lambda^3-35\lambda^2+35\lambda-1=(\lambda-1)(\lambda^2-34\lambda+1)$; more generally every $\lambda^3-a\lambda^2+a\lambda-1$ equals $(\lambda-1)(\lambda^2-(a-1)\lambda+1)$, so the rest mode $\lambda=1$ is forced.
+\item If $t^2+2t-1=0$, then $t^4(t+2)^4=1$ and $t^4+(t+2)^4=34$.
+\item $34n^3+51n^2+27n+5=(2n+1)(17n^2+17n+5)$.
+\end{enumerate}
+\end{theorem}
+Item 2 is the shared saddle quadratic of Beukers' integral for Ap\'ery's $\zeta(3)$ and of the official proof of Problem~2.5; its root is $\sqrt2-1$ and $t+2=1/t$. The trefoil, the figure-eight, and the two arithmetic transports therefore sit on one ladder, at $T=1$, $3$ and $6\to34$, on the two sides of the band edge.\dtag{ \textsf{\small[K24\,$\cdot$\,DERIVED]}}
+
+\section{The branches are branch points of the A-polynomial}
+The $A$-polynomial of the figure-eight knot is \grade{C} \cite{CCGLS,BorotEynard}\dtag{ \textsf{\small[K25\,$\cdot$\,EXACT]}}
+\[ A(L,M)=M^4L^2+b(M)\,L+M^4,\qquad b(M)=-1+M^2+2M^4+M^6-M^8 . \]
+\begin{theorem}[\lean{APoly.palindromic}]\grade{T}\dtag{ \textsf{\small[K26\,$\cdot$\,EXACT]}\,\textsf{\small[T:\,CMaO:\,\lean{APoly.\allowbreak{}palindromic}]}}
+If $L\,L'=1$ then $L^2A(L',M)=A(L,M)$: $A$ is palindromic in $L$.
+\end{theorem}
+The involution $L\mapsto1/L$ is the amphichiral symmetry of the figure-eight knot on its character curve \cite{BorotEynard}; its fixed slices are $L=+1$ and $L=-1$. The author's earlier paper on this curve \cite{Hessian} showed that this palindromicity is why every singular point lying on $L=\pm1$ has a tangent cone aligned with the meridian and longitude axes.\dtag{ \textsf{\small[K27\,$\cdot$\,DERIVED]}}
+
+\begin{theorem}[\lean{APoly.disc\_split}, \lean{plus\_factor}, \lean{minus\_factor}]\grade{T}\dtag{ \textsf{\small[K28\,$\cdot$\,EXACT]}\,\textsf{\small[T:\,CMaO:\,\lean{APoly.\allowbreak{}disc\_\allowbreak{}split}, CMaO:\,\lean{APoly.\allowbreak{}plus\_\allowbreak{}factor}, CMaO:\,\lean{APoly.\allowbreak{}minus\_\allowbreak{}factor}]}}
+With $a=M^4$ and $x=M^2$,
+\[ b^2-4a^2=(b+2a)(b-2a),\quad b+2a=-(x+1)^2(x^2-3x+1),\quad b-2a=-(x-1)^2(x^2+x+1). \]
+\end{theorem}
+On $L=1$ both $A$ and $\partial_LA$ equal $b+2a$; on $L=-1$ they are $\mp(b-2a)$ (\lean{slice\_plus}, \lean{slice\_minus})\dtag{ \textsf{\small[K29\,$\cdot$\,EXACT]}\,\textsf{\small[T:\,CMaO:\,\lean{APoly.\allowbreak{}slice\_\allowbreak{}plus}, CMaO:\,\lean{APoly.\allowbreak{}slice\_\allowbreak{}minus}, CMaO:\,\lean{APoly.\allowbreak{}node\_\allowbreak{}at\_\allowbreak{}one}]}}. The double factors $(x\pm1)^2$ give the nodes; the simple factors give the four ramification points, in agreement with \cite{BorotEynard}. The simple factors are exactly the two squared branches of Section~4:
+
+\begin{theorem}[\lean{APoly.golden\_ramifies}, \lean{regular\_ramifies}]\grade{T}\dtag{ \textsf{\small[K30\,$\cdot$\,EXACT]}\,\textsf{\small[T:\,CMaO:\,\lean{APoly.\allowbreak{}golden\_\allowbreak{}ramifies}, CMaO:\,\lean{APoly.\allowbreak{}regular\_\allowbreak{}ramifies}]}}
+In every commutative ring:
+\begin{itemize}
+\item if $z^2-z-1=0$ then $A(1,z)=0$ and $\partial_LA(1,z)=0$;
+\item if $z^2-z+1=0$ then $A(-1,z)=0$ and $\partial_LA(-1,z)=0$.
+\end{itemize}
+Used as a meridian eigenvalue $M=z$, the golden shape is a ramification point of the figure-eight $A$-polynomial on $L=+1$, and the regular shape is one on $L=-1$.
+\end{theorem}
+
+The roots $x^2-3x+1=0$ on $L=1$ are the roots of the Alexander polynomial, where the classical theory of Burde and de~Rham places the reducible non-abelian representations \grade{C} \cite{Burde,deRham}\dtag{ \textsf{\small[K31\,$\cdot$\,EXACT]}}. Thurston's two shape branches, squared, are therefore the two families of special points of the character curve: the Alexander roots on the fixed slice $L=+1$ and the cube roots of unity on the fixed slice $L=-1$.
+
+\begin{remark}\label{rem:open}\grade{O}\dtag{ \textsf{\small[K32\,$\cdot$\,ANALOGY]}}
+Why the flat (real-shaped) branch of the symmetric gluing slice lands on the Alexander roots is not derived here. A natural conjecture is that real shape solutions of the slice correspond to the reducible non-abelian representations at $M^2$ a root of $\Delta_{4_1}$. This is untested.
+\end{remark}
+
+\section{Chirality on the Seifert form}
+\begin{theorem}[\lean{Chirality.amphichiral\_41}]\grade{T}\dtag{ \textsf{\small[K33\,$\cdot$\,EXACT]}\,\textsf{\small[T:\,CMaO:\,\lean{Chirality.\allowbreak{}amphichiral\_\allowbreak{}41}, CMaO:\,\lean{Chirality.\allowbreak{}P41\_\allowbreak{}unimodular}]}}
+With $P=\begin{pmatrix}-1&-1\\2&1\end{pmatrix}$, $\det P=1$, one has $P^{T}V_{4_1}P=-V_{4_1}^{T}$, the Seifert matrix of the mirror image. The figure-eight knot is its own mirror image on its Seifert form.
+\end{theorem}
+
+\begin{theorem}[\lean{Chirality.S31\_form}, \lean{chiral\_31}, \lean{chiral\_31\_basic}]\grade{T}\dtag{ \textsf{\small[K34\,$\cdot$\,EXACT]}\,\textsf{\small[T:\,CMaO:\,\lean{Chirality.\allowbreak{}S31\_\allowbreak{}form}, CMaO:\,\lean{Chirality.\allowbreak{}chiral\_\allowbreak{}31}, CMaO:\,\lean{Chirality.\allowbreak{}chiral\_\allowbreak{}31\_\allowbreak{}basic}]}}
+For every unimodular integer $P$, $P^{T}V_{3_1}P\neq-V_{3_1}^{T}$. The trefoil is chiral.
+\end{theorem}
+\begin{proof}
+Let $S=V_{3_1}+V_{3_1}^{T}=\begin{pmatrix}-2&1\\1&-2\end{pmatrix}$. For every nonzero integer vector $(x,y)$,
+\[ (x,y)S(x,y)^{T}=-2(x^2-xy+y^2)<0,\qquad 4(x^2-xy+y^2)=(2x-y)^2+3y^2 . \]
+If $P^TV_{3_1}P=-V_{3_1}^T$, then symmetrising gives $P^TSP=-S$. The top-left entry of $P^TSP$ is the form evaluated at the first column of $P$, which is nonzero because $\det P=\pm1$, so it is negative; the top-left entry of $-S$ is $+2$. Contradiction.
+\end{proof}
+
+The figure-eight form $V_{4_1}+V_{4_1}^T$ is indefinite (signature $0$), so a basis change can reach its negative; the trefoil form is negative definite (signature $-2$), so none can. The asymmetry is an invariant and is kept. The three central polynomial identifications above relate a chiral object (the trefoil's monodromy) to an amphichiral one (the figure-eight's geometry) without removing the chirality of either.
+
+\section{The relation graph and the harness}
+Every theorem of the repository is a node of a graph, tagged with the rule or rules it serves, and every connection stated in this paper is a typed edge. The edge types are \emph{same polynomial}, \emph{same root}, \emph{same value}, \emph{square of}, \emph{kept difference}, \emph{contrast}, \emph{mirror}, \emph{boundary}, \emph{ladder step}, \emph{generalises}, \emph{converse}, \emph{evaluates in}, \emph{proof step}, \emph{anchor}, \emph{external} and \emph{analogy only}. Each edge names the Lean theorem that witnesses it. External edges record links to the author's other work and to the literature and are not proved here; one edge is marked analogy-only and has no theorem behind it.
+
+The verification harness runs, on every push to the public repository \texttt{count-me-as-one-lean}:
+\begin{enumerate}[leftmargin=2em]
+\item \lean{lake build} of every module;
+\item an independent replay of every module in \lean{leanchecker};
+\item an axiom audit: every theorem uses only \lean{propext}, \lean{Classical.choice} and \lean{Quot.sound}, and 32 use no axioms at all;
+\item a source scan for \lean{sorry}, \lean{admit}, \lean{native\_decide} and \lean{axiom};
+\item a theorem inventory, which must equal the expected count in total and in each library;
+\item false controls, each of which must be rejected by Lean proving the false statement false;
+\item the relation graph: every theorem must be a node with a rule tag and at least one edge, every edge end must be a theorem or a declared source, every witness must be an audited theorem, and a forged edge is passed through the same checker and must be rejected;
+\item SHA-256 hashes of every source file and of the graph.
+\end{enumerate}
+For Part~I alone this is 80 theorems, 82 edges and 11 false controls, and the library builds on core Lean~4.34.1 with no dependencies. The whole project of this paper, Part~II included, is 280 theorems, 238 edges and 25 false controls on Lean v4.36.0-rc2 with Mathlib; all eight checks pass on GitHub Actions (Appendix~\ref{app:ci}).\dtag{ \textsf{\small[K35\,$\cdot$\,MODEL]}}
+
+\section{Scope}
+Every identity stated as a theorem is exact and checked. The external links (Question~1's ratio, the Catalan and Ap\'ery transports, the ramification points in the literature, the Dirac Time sixfold structure) are recorded and cited, not proved here. The corollary of Section~3 and the ramification reading of Section~6 join classical facts into one statement; they claim shared polynomials, not maps between the objects. The mechanism of Remark~\ref{rem:open} is open. The point clouds in the plates are rendering samples of computed geometry and carry no density of anything physical.
+
+\clearpage
+\section*{Plates}
+\noindent All plates are frames of one deterministic 3D renderer (\texttt{render\_knots.py}); every moving object is computed from the mathematics it depicts. Gold marks the regular branch and the rotating regime, blue the golden branch and the stretching regime, rose the chiral trefoil.
+
+\begin{figure}[h]\centering
+\includegraphics[width=.47\textwidth]{plates/p1_gluing.jpg}\hfill
+\includegraphics[width=.47\textwidth]{plates/p2_branches.jpg}
+\caption{\textbf{Left:} the figure-eight knot and the two ideal tetrahedra of its complement; each regular tetrahedron contributes $-1$ to the edge equation. \textbf{Right:} the symmetric slice in the complex $z$-plane. Gold: $e^{\pm i\pi/3}$ on the unit circle; blue: $\varphi$ and $-1/\varphi$ on the real line. Moving beads trace $z^{1+s}$, carrying each shape to its square.}
+\end{figure}
+
+\begin{figure}[h]\centering
+\includegraphics[width=.47\textwidth]{plates/p3_trefoil.jpg}\hfill
+\includegraphics[width=.47\textwidth]{plates/p4_catmap.jpg}
+\caption{\textbf{Left:} the trefoil and the orbit of its monodromy $h=\left(\begin{smallmatrix}0&1\\-1&1\end{smallmatrix}\right)$ on its invariant ellipse: six turns and home; the ladder rungs are $2,1,-1,-2,-1,1,2$. \textbf{Right:} points of the torus moved by the exact power $h^s$ of the figure-eight monodromy $h=\left(\begin{smallmatrix}2&1\\1&1\end{smallmatrix}\right)$; the traces of $h^n$ run $2,3,7,18,47,123$.}
+\end{figure}
+
+\begin{figure}[h]\centering
+\includegraphics[width=.47\textwidth]{plates/p5_ladder.jpg}\hfill
+\includegraphics[width=.47\textwidth]{plates/p6_apoly.jpg}
+\caption{\textbf{Left:} the two rails $\lambda_\pm(T)$ of the trace ladder, rising with $T$: on the unit circle for $T<2$ (gold), merged at $T=2$ (the plane), on the real line for $T>2$ (blue, logarithmic scale). \textbf{Right:} real points of the figure-eight $A$-polynomial over $x=M^2$, with the ramification points $x=\varphi^{\pm2}$ on $L=+1$, the node at $x=1$ on $L=-1$, and the complex ramification points $x^2+x+1=0$ on the gold ring.}
+\end{figure}
+
+\begin{figure}[h]\centering
+\includegraphics[width=.47\textwidth]{plates/p7_chirality.jpg}\hfill
+\includegraphics[width=.47\textwidth]{plates/p8_count.jpg}
+\caption{\textbf{Left:} the symmetrised Seifert forms as heights: the figure-eight saddle (signature $0$, both signs) and the trefoil cap (signature $-2$, negative everywhere). White beads: lattice points moved by the mirror certificate $P$. \textbf{Right:} the figure-eight knot; in the Inca knotted-cord records the figure-eight knot in the units position records the digit one \cite{Ascher}\dtag{ \textsf{\small[K36\,$\cdot$\,EXACT]}}.}
+\end{figure}
+
+\clearpage
+
+\part{The Dirac anchor recovered}
+
+\section{What Part II adds and how it is graded}
+Part~I is Count Me as One v1, kept whole. Part~II joins it to the recovered APS and Dirac-anchor work: the recovery sweep of 19--20 November 2026 through the old chats, the audit of the old Dirac builds, the Lean results on chiral $\eta$, Alexander walls and the circle odometer, and the Bringmann--Hikami--Lovejoy (BHL) $\pm2$ trefoil-surgery test with its Lean benchmark. Section~\ref{sec:sbt} states that test as a signed-boundary test for the Dirac Time open problem DT-O5.
+
+\paragraph{Grades.} Every claim of the combined paper carries one tag from the ledger of Section~\ref{sec:ledger}.
+\begin{itemize}[leftmargin=2em]
+\item \textsf{EXACT}: a definition, an exact identity, or a theorem, either proved here (by hand, in exact arithmetic, or in Lean) or used exactly as stated in a cited original source. The tag says which.
+\item \textsf{DERIVED}: follows from cited results by an argument that is not fully proved here, or holds only under a stated convention.
+\item \textsf{MODEL}: a floating-point or software computation (mpmath, NumPy, SnapPy), or a reproduction of a machine run.
+\item \textsf{ANALOGY}: a structural reading, a bridge, a conjecture, or an idea held for later.
+\item \textsf{REPAIRED}: a reading from the old chats that is false as stated. Each one is paired with the exact test it fails and with the repaired statement that keeps what it was reaching for.
+\end{itemize}
+A claim is marked \textsf{[T]} only when a theorem with that exact name exists in the Lean source and states what the claim says. All \textsf{[T]} tags refer to the public repository \texttt{count-me-as-one-lean} at commit \texttt{cee88f2} (Lean v4.36.0-rc2, Mathlib \texttt{e8ba86fa}). It holds 280 theorems in four libraries: the 80 of Part~I (\texttt{FigureEightAnchors}, tags \textsf{CMaO:}), 114 on chiral $\eta$, Alexander walls, the circle odometer and the BHL $q$-series (\texttt{DiracTimeD25}, tags \textsf{D25:}), 7 joining the two (\texttt{CMaOBridge}, tags \textsf{Bridge:}), and 79 bounded identities, counts and arithmetic (\texttt{D28}, tags \textsf{D28:}). Every one of the 118 theorem names used in a tag exists in the source, and each tagged statement was read against its claim. Where a claim is broader than its Lean theorem, the claim is split: the part the theorem states exactly carries the tag (suffix a), and the rest keeps its own grade without a tag (suffix b or c, or the plain id). Bounded Lean results are stated as bounded. When a theorem is a special case or a shorter range of another theorem in the same tag, it is listed under support rather than in the tag.
+
+Part~I keeps its own grades \grade{C}, \grade{T}, \grade{R}, \grade{O}. The ledger tags are added next to them. \grade{C} items become EXACT (cited) or DERIVED, \grade{T} items become EXACT with \textsf{[T]}, the \grade{R} corollary is EXACT as a statement with an ANALOGY reading, and the \grade{O} remark is ANALOGY.
+
+\paragraph{Jeromie's three rules, applied to Part II.} Rule~1 replaces every broken example by a canonical one: Thurston's figure-eight complement, two regular ideal tetrahedra with shape $e^{i\pi/3}$, volume $2.02988\ldots$ Rule~2 keeps raw differences as rulers: the APS difference $\rho_\alpha=\eta(D_\alpha)-\eta(D_0)$, the odometer drift term, and the $q$-series difference $\phi_0-M$. Rule~3 keeps the chiral seed: the unknot folded once into the trefoil, whose handedness is never averaged out.
+
+\section{Method: strawman and breaker}
+Each old claim is first stated in its strongest honest form (the strawman). Then one exact computation or one cited theorem tests it. What survives is rebuilt on a canonical example, with the raw difference kept. Nothing is discarded: a reading that fails is repaired into the statement it was reaching for (Section~\ref{sec:breakers}), and a question still open after one pass is listed in Section~\ref{sec:open} with Jeromie's words attached.
+
+\paragraph{Sources read for Part II.} The APS recovery notes of 19--20 November 2026; the December 2025 \texttt{dirac\_review} chat (its 54 user messages in full, its assistant messages through their index); the Dirac anchor drafts v1 and v4; the four old Dirac builds; the preprint of BHL \cite{BHL}; the Lean source; Dirac Time v3.0.1 \cite{DiracTime}, pp.~36--44 (Section~13); KnotInfo's entries for $3_1$, $8_{19}$, $13a_{3542}$ and $13a_{4018}$ \cite{KnotInfo}.
+
+\subsection{Jeromie's questions that set the work}
+The questions are quoted verbatim. Mathematical symbols that the chat export garbled are typeset as mathematics.
+\begin{enumerate}[leftmargin=2em]
+\item ``we need to be thorough here we need integrity so no cargo cult sciences ,,,do all three we need to be sure and question ourselves always'' (\texttt{sweep/dirac\_review\_ALL\_user\_questions.md}, M015).
+\item ``Compute or estimate the $\eta$-invariant of the Spin$^c$ Dirac operator on the $8_{19}$ knot complement with minimal flux.'' (same file, M043).
+\item ``at this point i am unclear if we are doing ,seeing , or wanting  the same thing,, i wanted everthing to go back to the dirac anchor and the electron how off do you think we are now we seemed to lose our way there'' (M045).
+\item ``bring back our dirac anchor and writw the theorem level statement'' (M047).
+\item ``explicitly state the theorem-level claim this calculation supports (and nothing more).'' (M067, third line of the message).
+\item ``Pull known SnapPy CS data for $8_{19}$'' (M073, second line).
+\item ``or maybe the conjecture is about that mapping knots ,,,mock thetas might help,, its in the memory im sure,,, also why not look at it like a fresnal lens but baswards'' (\texttt{dirac\_builds/chat4\_T043\_45\_57.txt}, Chat~\#4 T043).
+\item ``hope this helps,check all mathand sources yourself,, no model specific data can be usedit will mess our work up'' (\texttt{aps\_recovery/chat1\_96041d3b\_T045\_User.md}, Chat~\#1 T045, opening line).
+\end{enumerate}
+Question~2 is answered in Section~\ref{sec:breakers}: the $8_{19}$ complement is Seifert fibred, so the hyperbolic data the old chats used for it does not exist, and no $\eta$ value can be stated until an operator, a flux and a metric are fixed. Questions~4 and~5 are answered by the theorem-level statements of Sections~\ref{sec:rule1}--\ref{sec:sbt}, each with its grade.
+
+\section{Repairs: old readings and what replaces them}\label{sec:breakers}
+Each row is a reading from the old chats, the exact test it fails, and the statement that repairs it on canonical geometry. The repaired statement keeps what the reading was reaching for.
+\begin{longtable}{@{}L{0.06\textwidth}L{0.34\textwidth}L{0.25\textwidth}L{0.25\textwidth}@{}}
+\toprule
+Id & Old reading and where it appears & Test & Repaired statement\\
+\midrule\endhead
+B1 & ``Simulation of $8_{19}$ yields volume 6.0259, CS$=1/24$'' (\texttt{grok\_\allowbreak{}share\_\allowbreak{}96041d3b\_\allowbreak{}transcript.md}:3725, 4315, 5735); ``vol$(8_{19})\approx10.149$'' (\texttt{chat1\_\allowbreak{}96041d3b\_\allowbreak{}T045\_\allowbreak{}User.md}:10; dirac\_\allowbreak{}review M099); ``$8_{19}$ has CS $=1/24$'' (\texttt{chat4\_\allowbreak{}T047.txt}:149). & $8_{19}=T(3,4)$ is a torus knot, its complement is Seifert fibred and has no hyperbolic structure. SnapPy~3.3.2 returns volume $0$ with flat tetrahedra. DT-N17. & $4_1$ is the hyperbolic anchor, volume $2.0298832128$ (N1, N2); $8_{19}$ enters through its signature walls (N15).\\
+B2 & ``$8_{19}\#3_1$ (trefoil, hyperbolic vol $\sim$2.02988)'', ``composite vol $\sim$8.05576'' (\texttt{chat3\_\allowbreak{}T071.txt}:138; transcript 4315). & $3_1=T(2,3)$ is a torus knot. $2.02988$ is the volume of $4_1$. A connected sum is a satellite, never hyperbolic. & The volume $2.02988$ is that of $4_1$ (N1); $3_1$ enters through its chirality and its walls (N12, N13).\\
+B3 & ``Nonzero $\eta$ (raw $\sim$0.013 for $8_{19}$)'', ``for $8_{19}$ $\eta\approx0.013$ (raw CS/$\pi$)'' (dirac\_\allowbreak{}review M099, lines 1434--1435 of the sweep file; pasted old assistant text). & No operator, flux or metric is fixed, so no $\eta$ is defined. The CS input is from B1. & Fix an operator family first, then measure $\rho$ differences (N18, N23, N24).\\
+B4 & $\eta=\mathrm{CS}/\pi \bmod \mathbb Z$ used as a rule. & The APS variation formula relates $\eta$ to a Chern--Simons term only for a specified family of twisted operators and flat connections, with spectral flow and kernel corrections. & The APS variation formula, with spectral-flow and kernel terms (N23--N25).\\
+B5 & ``reported raw value 1057.54'', ``claimed $\eta\approx48\pm2$'' on the flat torus (\texttt{from\_\allowbreak{}zip/FRAMEWORK\_\allowbreak{}ADDITIONAL\_\allowbreak{}ROOTS.md} \S3). & The sum dropped the sign: it summed $|\lambda|^{-1}$. The full flat-torus operator has $\eta\equiv0$. The divergence $0.7678N$ is square-versus-disc cutoff geometry, $8\operatorname{asinh}1-2\pi$. & The signed sum gives $\eta\equiv0$ (N9, N10); the growth $0.7678N$ is the cutoff constant $8\operatorname{asinh}1-2\pi$.\\
+B6 & ``trefoil $\eta=0$ for all $k$'' (closest located text: ``(CN=3): \dots $\eta\approx0$ (trivial holonomy)'', M099, sweep line 1435). & With a $U(1)$ twist the trefoil's $\rho$ invariant is fixed by its Levine--Tristram signature, $\sigma=-2$ on $(\tfrac16,\tfrac56)$. & With a $U(1)$ twist, $\rho=-\sigma=+2$ on $(\tfrac16,\tfrac56)$ for the right-handed trefoil, in Dirac Time's convention (N17, N18).\\
+B7 & ``$n$ is locally constant except at rational holonomies, where it jumps by $2\,\mathrm{SF}$'' (\texttt{dirac\_\allowbreak{}builds/chat3\_\allowbreak{}T071.txt}:48--50; also ``$\Delta n=2\,$SF'', line 135). & The circle odometer: $\eta$ drifts with no crossing, and $a\mapsto a+1$ has the same $\eta$ but SF$=1$. & The odometer: $\Delta\eta=2(\mathrm{SF}-\Delta a)$, with the drift term $\Delta a$ kept (N20--N22).\\
+B8 & Zero modes of the flat-torus operator sit on rational walls. & $a\sigma_1+b\sigma_2$ is singular only at $a=b=0$: zero modes need both twists integral. & Zero modes only at integer $(\alpha,\beta)$: codimension two (N11).\\
+B9 & ``Spin$^c$ structures are classified by $H^2(X,\mathbb Z)$ \dots\ Which is exactly where your knot flux lives.'' (dirac\_\allowbreak{}review M001, sweep line 271; pasted assistant text). & $H^2(S^3\setminus K;\mathbb Z)=0$, so the knot complement has one Spin$^c$ structure up to isomorphism and the longitude is null-homologous. & One Spin$^c$ structure on the complement; the flux enters through the $U(1)$ character, $H^1=\mathbb Z$ (N6).\\
+B10 & ``The shape of the boundary torus is rigidly locked, possessing a specific modular parameter $\tau=e^{i\pi/3}$'' (\texttt{Dirac\_\allowbreak{}anchor\_\allowbreak{}v4.txt}:175--177). & $e^{i\pi/3}$ is the shape of each ideal tetrahedron. The cusp shape in the meridian--longitude basis is $2\sqrt3\,i$, a rectangular lattice, not the hexagonal one. & Cusp shape $2\sqrt3\,i$ in $\mathbb Q(\sqrt{-3})$; $e^{i\pi/3}$ is the tetrahedron shape (N1, N3).\\
+B11 & Shell capacities $2k^2$ from torus lattice counts (\texttt{chat1\_\allowbreak{}96041d3b\_\allowbreak{}T015\_\allowbreak{}User.md}, Response~1). & The torus box and $L^1$ ring give $(2k+1)^2$ and $4k$. Only the sphere sum gives $2k^2$. & $2k^2$ is the sphere-shell sum $\sum_{l<k}2(2l+1)$ (N41).\\
+B12 & The even-dimensional chiral APS index formula applied unchanged to a 3D self-adjoint operator (\texttt{afa43191}, \texttt{9a2dbd77}, per \texttt{APS\_\allowbreak{}RECOVERY\_\allowbreak{}MASTER\_\allowbreak{}v1.md} Stage~1). & A self-adjoint Fredholm operator has index $0$; in odd dimensions the boundary term is $\xi$, not an index. & In odd dimension the boundary term is $\xi$ and a self-adjoint operator has index $0$ (N23).\\
+\bottomrule
+\end{longtable}
+Shell counts: \dtag{ \textsf{\small[N41a\,$\cdot$\,EXACT]}\,\textsf{\small[T:\,D28:\,\lean{shell\_\allowbreak{}sum}]}\,\textsf{\small[N41b\,$\cdot$\,EXACT]}}. Grades: \textsf{\small[B1\,$\cdot$\,REPAIRED]} \textsf{\small[B2\,$\cdot$\,REPAIRED]} \textsf{\small[B3\,$\cdot$\,REPAIRED]} \textsf{\small[B4\,$\cdot$\,REPAIRED]} \textsf{\small[B5\,$\cdot$\,REPAIRED]} \textsf{\small[B6\,$\cdot$\,REPAIRED]} \textsf{\small[B7\,$\cdot$\,REPAIRED]} \textsf{\small[B8\,$\cdot$\,REPAIRED]} \textsf{\small[B9\,$\cdot$\,REPAIRED]} \textsf{\small[B10\,$\cdot$\,REPAIRED]} \textsf{\small[B11\,$\cdot$\,REPAIRED]} \textsf{\small[B12\,$\cdot$\,REPAIRED]}.
+
+\section{Rule 1: anchor to the figure-eight complement}\label{sec:rule1}
+\begin{proposition}[Thurston]\dtag{\textsf{\small[N1\,$\cdot$\,EXACT]}}
+The complement $S^3\setminus4_1$ is the union of two regular ideal tetrahedra with shape $z=w=e^{i\pi/3}$. Its volume is $2V_{\rm tet}$, where $V_{\rm tet}=3\Lambda(\pi/3)$ and $\Lambda$ is the Lobachevsky function.
+\end{proposition}
+This is the regular branch of Part~I, Section~2. Numerically \dtag{\textsf{\small[N2\,$\cdot$\,MODEL]}}, $V_{\rm tet}=1.014941606409653625$ and $2V_{\rm tet}=2.02988321281930725$ (mpmath, 30 digits). SnapPy~3.3.2 returns volume $2.0298832128$, both shapes $0.50000000000+0.86602540378\,i$, all tetrahedra positively oriented, Chern--Simons $-5.6\times10^{-17}$ (zero to rounding, as amphichirality requires).
+
+\begin{remark}[Cusp shape]\dtag{\textsf{\small[N3\,$\cdot$\,MODEL]}}
+SnapPy gives the cusp shape of $4_1$ in the meridian--longitude basis as $3.4641016151\,i=2\sqrt3\,i$. It lies in $\mathbb Q(\sqrt{-3})=\mathbb Q(e^{i\pi/3})$, the field of the tetrahedral shape, but it is not $e^{i\pi/3}$. This corrects B10.
+\end{remark}
+
+\begin{proposition}\dtag{\textsf{\small[N4\,$\cdot$\,EXACT]} \textsf{\small[N5\,$\cdot$\,EXACT]} \textsf{\small[N6\,$\cdot$\,EXACT]}}
+(i) $3_1=T(2,3)$ and $8_{19}=T(3,4)$ are torus knots. Their complements are Seifert fibred and carry no hyperbolic metric. (ii) A connected sum of two nontrivial knots is a satellite knot and is not hyperbolic. (iii) For every knot $K\subset S^3$, $H_1(S^3\setminus K;\mathbb Z)\cong\mathbb Z$ and $H^2(S^3\setminus K;\mathbb Z)=0$.
+\end{proposition}
+SnapPy returns volume $0$ and ``contains flat tetrahedra'' for both $3_1$ and $8_{19}$. That output is consistent with (i), but it is not a proof. The proof is Thurston's classification \cite{Thurston82}.
+
+\subsection{One polynomial, now also the trefoil's wall}
+Part~I showed that $z^2-z+1$ is the regular shape, the Riley parameter and the trefoil's monodromy. The D25 Lean project and the bridge file add a fourth place: the trefoil's Alexander wall on the unit circle.
+\begin{theorem}[\lean{alex31\_circle}, \lean{alex31\_circle\_eq\_zero\_iff}, \lean{alex31\_poly\_circle\_eq\_zero\_iff}, \lean{alex31\_wall\_at\_sixth}]\dtag{\textsf{\small[N12\,$\cdot$\,EXACT]}\,\textsf{\small[T:\,D25:\,\lean{alex31\_\allowbreak{}circle}, D25:\,\lean{alex31\_\allowbreak{}circle\_\allowbreak{}eq\_\allowbreak{}zero\_\allowbreak{}iff}, D25:\,\lean{alex31\_\allowbreak{}poly\_\allowbreak{}circle\_\allowbreak{}eq\_\allowbreak{}zero\_\allowbreak{}iff}]}}
+$\Delta_{3_1}(e^{2\pi i\alpha})=2\cos2\pi\alpha-1$. It vanishes if and only if $\alpha\equiv\pm\tfrac16\pmod1$. Equivalently, $z=e^{2\pi i\alpha}$ satisfies $z^2-z+1=0$ exactly when $\alpha\equiv\pm\tfrac16$.
+\end{theorem}
+\begin{theorem}[\lean{Bridge.wall\_regular\_poly}, \lean{wall\_solves\_edge}, \lean{wall\_half}, \lean{wall\_cubed}, \lean{sixth\_solves\_edge}]\dtag{\textsf{\small[N13\,$\cdot$\,EXACT]}\,\textsf{\small[T:\,Bridge:\,\lean{wall\_\allowbreak{}regular\_\allowbreak{}poly}, Bridge:\,\lean{wall\_\allowbreak{}solves\_\allowbreak{}edge}, Bridge:\,\lean{wall\_\allowbreak{}half}, Bridge:\,\lean{wall\_\allowbreak{}cubed}, Bridge:\,\lean{sixth\_\allowbreak{}solves\_\allowbreak{}edge}]}}
+If $\Delta_{3_1}(z)=0$ for $z=e^{2\pi i\alpha}$, then $z^2-z+1=0$. Hence $z$ solves Thurston's edge equation on the slice $z=w$, each tetrahedron contributes $z(z-1)=-1$, and $z^3=-1$. The wall at $\alpha=\tfrac16$ solves the edge equation.
+\end{theorem}
+The point where the trefoil's Levine--Tristram signature jumps is $e^{\pm i\pi/3}$, the shape of the regular ideal tetrahedron of the figure-eight complement (Theorem~\ref{thm:regshape-ref}). The bridge file instantiates Part~I's ring-generic \lean{Gluing.regular\_*} theorems at $\mathbb C$ on the D25 walls, so the chiral knot's spectral wall and the amphichiral knot's geometry are joined by proofs.
+\begin{theorem}[\lean{Bridge.alex31\_eq\_seifert}, \lean{alex41\_eq\_seifert}]\dtag{\textsf{\small[N44\,$\cdot$\,EXACT]}\,\textsf{\small[T:\,Bridge:\,\lean{alex31\_\allowbreak{}eq\_\allowbreak{}seifert}, Bridge:\,\lean{alex41\_\allowbreak{}eq\_\allowbreak{}seifert}, CMaO:\,\lean{Chirality.\allowbreak{}alex\_\allowbreak{}31}, CMaO:\,\lean{Chirality.\allowbreak{}alex\_\allowbreak{}41}]}}
+For $t\neq0$, $t\,\Delta_{3_1}(t)$ and $t\,\Delta_{4_1}(t)$, as defined in the D25 project, equal the Alexander polynomials $\det(V-tV^T)$ computed from Part~I's Seifert matrices $V_{3_1}$ and $V_{4_1}$.
+\end{theorem}
+\begin{theorem}[\lean{alex41\_circle}, \lean{one\_le\_alex41\_real}, \lean{alex41\_circle\_ne\_zero}]\dtag{\textsf{\small[N14\,$\cdot$\,EXACT]}\,\textsf{\small[T:\,D25:\,\lean{alex41\_\allowbreak{}circle}, D25:\,\lean{one\_\allowbreak{}le\_\allowbreak{}alex41\_\allowbreak{}real}, D25:\,\lean{alex41\_\allowbreak{}circle\_\allowbreak{}ne\_\allowbreak{}zero}, D25:\,\lean{alex41\_\allowbreak{}poly\_\allowbreak{}circle\_\allowbreak{}ne\_\allowbreak{}zero}]}}
+$\Delta_{4_1}(e^{2\pi i\alpha})=3-2\cos2\pi\alpha\ge1$. The figure-eight has no wall on the unit circle.
+\end{theorem}
+The roots of $\Delta_{4_1}$ are $\varphi^{\pm2}$, the golden branch squared (Part~I, \lean{Ladder.golden\_squared}). They are real, so they miss the circle. The kept difference of Part~I, the sign by which the golden branch fails the regularity test, is the reason the figure-eight has no signature wall.
+
+\section{Rule 2: keep the raw difference as a ruler}\label{sec:rule2}
+\subsection{Chiral pairing kills the flat-torus eta}
+For a Hermitian $n\times n$ matrix $D$ the D25 project defines $\eta(D)=\#\{\lambda>0\}-\#\{\lambda<0\}$, counted with multiplicity (\lean{eta\_eq\_card\_sub\_card}).
+\begin{theorem}[\lean{eta\_eq\_zero\_of\_chiral}, \lean{eta\_eq\_zero\_of\_anticommute}, \lean{eta\_neg}, \lean{eta\_one}]\dtag{\textsf{\small[N7\,$\cdot$\,EXACT]}\,\textsf{\small[T:\,D25:\,\lean{eta\_\allowbreak{}eq\_\allowbreak{}zero\_\allowbreak{}of\_\allowbreak{}chiral}, D25:\,\lean{eta\_\allowbreak{}eq\_\allowbreak{}zero\_\allowbreak{}of\_\allowbreak{}anticommute}, D25:\,\lean{eta\_\allowbreak{}eq\_\allowbreak{}zero\_\allowbreak{}of\_\allowbreak{}unitary\_\allowbreak{}conj}]} \textsf{\small[N8\,$\cdot$\,EXACT]}\,\textsf{\small[T:\,D25:\,\lean{eta\_\allowbreak{}neg}, D25:\,\lean{eta\_\allowbreak{}one}]}}
+If $\Gamma^2=1$ and $\Gamma D\Gamma=-D$, then $\eta(D)=0$. The same holds for any invertible $\Gamma$ with $\Gamma D=-D\Gamma$. In general $\eta(-D)=-\eta(D)$, and $\eta(1_n)=n$, so $\eta$ is not trivially zero.
+\end{theorem}
+\begin{theorem}[\lean{σ₃\_pauliSymbol\_σ₃}, \lean{pauli\_eta\_eq\_zero}]\dtag{\textsf{\small[N9\,$\cdot$\,EXACT]}\,\textsf{\small[T:\,D25:\,\lean{σ₃\_\allowbreak{}pauliSymbol\_\allowbreak{}σ₃}, D25:\,\lean{pauli\_\allowbreak{}eta\_\allowbreak{}eq\_\allowbreak{}zero}]}}
+For real $a,b$, $\sigma_3(a\sigma_1+b\sigma_2)\sigma_3=-(a\sigma_1+b\sigma_2)$, hence $\eta(a\sigma_1+b\sigma_2)=0$.
+\end{theorem}
+The flat-torus operator $D_{\alpha,\beta}=i\sigma^1(\partial_x+\alpha)+i\sigma^2(\partial_y+\beta)$ splits into $2\times2$ Fourier blocks of exactly this form, so its $\eta$ function vanishes identically where it converges and hence after continuation \dtag{\textsf{\small[N10a\,$\cdot$\,EXACT]}\,\textsf{\small[T:\,D28:\,\lean{blockPauli\_\allowbreak{}isHermitian}, D28:\,\lean{blockσ₃\_\allowbreak{}blockPauli}, D28:\,\lean{blockPauli\_\allowbreak{}eta\_\allowbreak{}eq\_\allowbreak{}zero}]}\,\textsf{\small[N10\,$\cdot$\,DERIVED]}}. The checks script of Appendix~\ref{app:checks} confirms this on truncations: over 10 random twists and torus moduli with $|m|,|n|\le20$, $\max\|\sigma_3H\sigma_3+H\|=0$ and $\max|\eta_N|=0$. Zero modes occur only when both twists are integers \dtag{\textsf{\small[N11a\,$\cdot$\,EXACT]}\,\textsf{\small[T:\,D28:\,\lean{pauliSymbol\_\allowbreak{}det}, D28:\,\lean{pauliSymbol\_\allowbreak{}det\_\allowbreak{}eq\_\allowbreak{}zero\_\allowbreak{}iff}]}\,\textsf{\small[N11b\,$\cdot$\,EXACT]}}. The raw ruler that survives is not $\eta$ of this operator, which is zero, but differences of $\eta$ for operators that are not chirally paired.
+
+\subsection{The circle odometer and the missing drift term}
+\begin{theorem}[\lean{odometer\_identity}, \lean{card\_crossings\_eq\_odometer}, \lean{etaCircle\_add\_one}, \lean{floor\_add\_one\_sub\_floor}]\dtag{\textsf{\small[N20\,$\cdot$\,EXACT]}\,\textsf{\small[T:\,D25:\,\lean{odometer\_\allowbreak{}identity}, D25:\,\lean{card\_\allowbreak{}crossings\_\allowbreak{}eq\_\allowbreak{}odometer}, D25:\,\lean{floor\_\allowbreak{}sub\_\allowbreak{}floor\_\allowbreak{}eq\_\allowbreak{}card\_\allowbreak{}crossings}, D25:\,\lean{mem\_\allowbreak{}crossings\_\allowbreak{}iff}, D25:\,\lean{floor\_\allowbreak{}sub\_\allowbreak{}floor\_\allowbreak{}eq}]} \textsf{\small[N21\,$\cdot$\,EXACT]}\,\textsf{\small[T:\,D25:\,\lean{etaCircle\_\allowbreak{}add\_\allowbreak{}one}, D25:\,\lean{floor\_\allowbreak{}add\_\allowbreak{}one\_\allowbreak{}sub\_\allowbreak{}floor}]}}
+For non-integer $a_0\le a_1$ the number of integers strictly between $a_0$ and $a_1$ is
+\[ \lfloor a_1\rfloor-\lfloor a_0\rfloor=(a_1-a_0)+\tfrac12\bigl(\eta(D_{a_1})-\eta(D_{a_0})\bigr), \]
+where $\eta(D_a)=1-2\{a\}$. The endpoints $a$ and $a+1$ have the same $\eta$, and the path between them has spectral flow $1$.
+\end{theorem}
+The Lean file defines \lean{etaCircle} by the formula $1-2\{a\}$ (and $0$ at integers). That this is the spectral $\eta$ of $D_a=-i\,d/dx+a$ is the classical Hurwitz-zeta computation \dtag{\textsf{\small[N19\,$\cdot$\,DERIVED]}}; Lean does not prove it. The identity breaks B7: on $[\tfrac14,\tfrac34]$ there is no crossing but $\Delta\eta=-1$, and on $[\tfrac14,\tfrac54]$ one has $\mathrm{SF}=1$ while $\Delta\eta=0\neq2$ \dtag{\textsf{\small[N22\,$\cdot$\,EXACT]}\,\textsf{\small[T:\,D28:\,\lean{etaCircle\_\allowbreak{}three\_\allowbreak{}quarter}, D28:\,\lean{odometer\_\allowbreak{}no\_\allowbreak{}crossing}, D28:\,\lean{odometer\_\allowbreak{}one\_\allowbreak{}crossing}]}}. The drift term $a_1-a_0$ is the raw difference that the old formula threw away.
+
+\subsection{The APS rho invariant and Levine--Tristram signatures}
+APS define $\rho_\alpha=\eta(D_\alpha)-\eta(D_0)$, the difference between a twisted and an untwisted operator \cite{APS2}. It is the ruler of Rule~2 in its original form: neither $\eta$ is renormalised, only their difference is kept. For the zero surgery $S_K$ on a knot and the $U(1)$ character $\chi_\omega$ sending the meridian to $\omega$, the $\rho$ invariant of the twisted odd signature operator is the Levine--Tristram signature with a sign fixed by convention; Dirac Time v3.0.1, Section~13.4, writes it $\rho(S_K,\chi_\omega)=-\sigma_K(\omega)$ and checks its values against KnotInfo's signature functions \cite{DiracTime,KnotInfo} \dtag{\textsf{\small[N18\,$\cdot$\,DERIVED]}}. Its Theorem~13.2 (DT-T38) uses the character $e^{4\pi i\alpha}$ and finds $\rho=+2$ on $\alpha\in(\tfrac1{12},\tfrac5{12})$ for the trefoil. That is the window $2\alpha\in(\tfrac16,\tfrac56)$ of N17 below, where $\sigma=-2$. In KnotInfo's convention the right-handed trefoil, the closure of the positive braid $\sigma_1^3$, has $\sigma=-2$ on that window; the left-handed one has $+2$, since mirroring negates the signature (N49). So Dirac Time's trefoil is the right-handed one: $\rho=-\sigma=+2$. The signature check of Appendix~\ref{app:sig} recomputes these values from KnotInfo's Seifert matrices. It also explains a sign flip met in the Dirac Time census files: the Seifert matrix that SnapPy builds from a braid or a planar diagram gives minus KnotInfo's signature on every knot and every $\omega$ tested, on the same diagram (same writhe) with the same Alexander polynomial. That flip is a convention of the Seifert matrix, not a change of handedness. BHL's trefoil is the left-handed one (N32), the mirror of Dirac Time's, so in Dirac Time's convention its window carries $\rho=-2$.
+
+\begin{proposition}\dtag{\textsf{\small[N16a\,$\cdot$\,EXACT]}\,\textsf{\small[T:\,D28:\,\lean{lt23\_\allowbreak{}values}, D28:\,\lean{lt34\_\allowbreak{}values}]}\,\textsf{\small[N16b\,$\cdot$\,EXACT]} \textsf{\small[N17a\,$\cdot$\,EXACT]}\,\textsf{\small[T:\,D28:\,\lean{lt23\_\allowbreak{}window}]}\,\textsf{\small[N17b\,$\cdot$\,EXACT]}}
+By Litherland's formula \cite{Litherland}, with the convention $\sigma(\text{right-handed }T(2,3))=-2$: $\sigma_{T(2,3)}(e^{2\pi i\alpha})=-2$ for $\tfrac16<\alpha<\tfrac56$ and $0$ for $0<\alpha<\tfrac16$ or $\tfrac56<\alpha<1$. For $T(3,4)$ the values at $\alpha=\tfrac1{24},\tfrac18,\tfrac14,\tfrac{11}{24},\tfrac12$ are $0,-2,-4,-6,-6$.
+\end{proposition}
+\begin{proof}
+For $T(2,3)$ the pairs $(i,j)$ give $i/2+j/3\in\{\tfrac56,\tfrac76\}$. Each value in $(\alpha,\alpha+1)$ contributes $-1$, each value outside contributes $+1$. For $\tfrac16<\alpha<\tfrac56$ both values are inside. For $\alpha<\tfrac16$, $\tfrac76>\alpha+1$ is outside and the sum is $0$; the case $\alpha>\tfrac56$ is symmetric. The $T(3,4)$ values are the exact rational count of the verification script.
+\end{proof}
+\begin{proposition}\dtag{\textsf{\small[N15a\,$\cdot$\,EXACT]}\,\textsf{\small[T:\,D28:\,\lean{alexT34\_\allowbreak{}torus\_\allowbreak{}formula}, D28:\,\lean{alexT34\_\allowbreak{}factor}, D28:\,\lean{alexT34\_\allowbreak{}cos}, D28:\,\lean{alexT34\_\allowbreak{}circle\_\allowbreak{}eq\_\allowbreak{}zero\_\allowbreak{}iff\_\allowbreak{}fract}]}\,\textsf{\small[N15b\,$\cdot$\,EXACT]}}
+$\Delta_{T(3,4)}(t)=t^6-t^5+t^3-t+1$, and $t^{-3}\Delta(e^{it})=2\cos3t-2\cos2t+1=(2\cos t-1)(4\cos^2t-3)$. The walls on the circle are at $\alpha\in\{\tfrac1{12},\tfrac16,\tfrac5{12},\tfrac7{12},\tfrac56,\tfrac{11}{12}\}$, where the signature of $8_{19}$ steps by $2$.
+\end{proposition}
+The factor $2\cos t-1$ is the trefoil's wall again: $8_{19}=T(3,4)$ shares the root $e^{i\pi/3}$.
+
+\section{Rule 3: keep the chiral seed}\label{sec:rule3}
+The chiral seed is the unknot folded once into the trefoil. The trefoil has unknotting number $1$: one crossing change returns the unknot.\dtag{ \textsf{\small[N46\,$\cdot$\,EXACT]} \cite{KnotInfo}. The figure-eight also has unknotting number $1$ \cite{KnotInfo}.} That one fold breaks mirror symmetry, and it is kept as a proved invariant \dtag{\textsf{\small[N43\,$\cdot$\,ANALOGY]}}:
+\begin{itemize}[leftmargin=2em]
+\item the symmetrised Seifert form of $3_1$ is negative definite, so no unimodular basis change reaches the mirror form (Part~I, \lean{Chirality.chiral\_31});
+\item reversing orientation negates $\eta$ (\lean{eta\_neg}). Reading this sign flip as the spectral face of the Seifert-form chirality above is not proved; no Lean theorem links \lean{eta\_neg} to \lean{chiral\_31} \dtag{\textsf{\small[N45\,$\cdot$\,ANALOGY]}};
+\item the signature window $-2$ on $(\tfrac16,\tfrac56)$ has a sign, and the mirror has $+2$;
+\item mirroring swaps the surgery slope: $S^3_p(\overline K)\cong-S^3_{-p}(K)$.\dtag{ \textsf{\small[N47\,$\cdot$\,EXACT]} \cite[\S1]{StipsiczSzabo}. Reason: a reflection of $S^3$ carrying $\overline K$ to $K$ reverses orientation. On the knot exterior it sends the meridian to the reversed meridian, because linking numbers change sign, and the Seifert longitude to the Seifert longitude. So the slope $p\mu+q\lambda$ goes to $-p\mu+q\lambda$, and the map extends over the filling solid tori.}
+\end{itemize}
+The figure-eight supplies the rigid geometry and cannot supply the chirality: its Chern--Simons invariant is $0$\dtag{ \textsf{\small[N48\,$\cdot$\,MODEL]} (KnotInfo \cite{KnotInfo}; SnapPy \cite{SnapPy} gives $-5.6\times10^{-17}$. Amphichirality alone forces only $\mathrm{CS}\equiv-\mathrm{CS}$ modulo the period, not $\mathrm{CS}=0$, so this value is graded MODEL)} and its signature function is identically $0$.\dtag{ \textsf{\small[N49\,$\cdot$\,EXACT]}: the mirror of a knot with Seifert matrix $V$ has Seifert matrix $-V$ (or $-V^{T}$, depending on convention), so the Levine--Tristram form at $\omega$ becomes minus the original form or minus its complex conjugate, and $\sigma_\omega(\overline K)=-\sigma_\omega(K)$ \cite{Levine,Tristram}. Since $4_1\cong\overline{4_1}$ (K33), $\sigma_\omega(4_1)\equiv0$. KnotInfo agrees \cite{KnotInfo}.} The Dirac anchor needs both: the amphichiral $4_1$ for geometry, the chiral $3_1$ for the sign.
+
+\section{The signed-boundary test for DT-O5}\label{sec:sbt}
+\subsection{Problem statement}
+DT-O5 asks for a gluing formula that carries a boundary record into the zero-surgery $\rho$ invariant, with an exterior APS/Calder\'on Cauchy-data computation (Dirac Time pp.~42, 68, 91). Before such a formula exists, one needs a test case where the boundary record provably carries a sign that the bulk must reproduce. The BHL pair is such a case \cite{BHL}.
+
+\subsection{The pass/fail gate}
+Take one knot, the trefoil. Do $+2$ and $-2$ surgery. Both results have the same knot, the same crossing number $3$, and the same $H_1=\mathbb Z/2$ (SnapPy confirms $H_1=\mathbb Z/2$ for both fillings). They differ only in the sign of the slope. The test passes if the boundary records differ, and the first coefficient where they differ is named. BHL's boundary records are
+\begin{gather*} \phi_0(q)=\sum_{n\ge0}q^n(-q)_{2n+1}=1+2q+2q^2+3q^3+5q^4+\cdots,\\ M(q)=\sum_{n\ge0}q^{2n}(-q)_{2n+1}=1+q+q^2+q^3+2q^4+\cdots. \end{gather*}
+\begin{theorem}[\lean{phi0\_ne\_bhlM}, \lean{rep17\_phi0}, \lean{rep17\_bhlM}, \lean{rep17\_phi0\_sub\_bhlM}]\dtag{\textsf{\small[N29\,$\cdot$\,EXACT]}\,\textsf{\small[T:\,D25:\,\lean{BHL.\allowbreak{}phi0\_\allowbreak{}ne\_\allowbreak{}bhlM}, D25:\,\lean{BHL.\allowbreak{}coeff\_\allowbreak{}one\_\allowbreak{}phi0}, D25:\,\lean{BHL.\allowbreak{}coeff\_\allowbreak{}one\_\allowbreak{}bhlM}, D25:\,\lean{BHL.\allowbreak{}rep17\_\allowbreak{}phi0}, D25:\,\lean{BHL.\allowbreak{}rep17\_\allowbreak{}bhlM}, D25:\,\lean{BHL.\allowbreak{}rep17\_\allowbreak{}phi0\_\allowbreak{}sub\_\allowbreak{}bhlM}]}}
+$[q^1]\phi_0=2\neq1=[q^1]M$, so $\phi_0\neq M$. Through $q^{16}$, $\phi_0-M=(0,1,1,2,3,3,5,7,8,11,15,18,23,28,35,43,53)$.
+\end{theorem}
+The gate passes at $q^1$.
+
+\subsection{What is exact}
+\begin{theorem}[\lean{eq15\_mod\_q49}, \lean{eq15\_iff\_coeff}, \lean{eq17\_mod\_q49}]\dtag{\textsf{\small[N27a\,$\cdot$\,EXACT]}\,\textsf{\small[T:\,D25:\,\lean{BHL.\allowbreak{}eq15\_\allowbreak{}iff\_\allowbreak{}coeff}, D25:\,\lean{BHL.\allowbreak{}lhs15\_\allowbreak{}eq\_\allowbreak{}iff}]}\,\textsf{\small[N27b\,$\cdot$\,EXACT]}\,\textsf{\small[T:\,D28:\,\lean{eq15\_\allowbreak{}mod\_\allowbreak{}q259}, D28:\,\lean{eq15\_\allowbreak{}reduced\_\allowbreak{}le128}]} \textsf{\small[N28\,$\cdot$\,EXACT]}\,\textsf{\small[T:\,D28:\,\lean{eq17\_\allowbreak{}le128}, D25:\,\lean{BHL.\allowbreak{}hasProd\_\allowbreak{}negInf}, D25:\,\lean{BHL.\allowbreak{}hasSum\_\allowbreak{}falseTheta}]}}
+In integer arithmetic, $2q^2\phi_0(q^2)=\psi(q)+\psi(-q)$ holds through $q^{258}$, where $\psi(q)=\sum_{n\ge1}q^{n^2}/(q;q^2)_n$ is Ramanujan's third-order mock theta function. Also $2+2q^2M(q)=(-q)_\infty+\sum_{n\ge0}q^{n(3n+1)/2}(1-q^{2n+1})$ holds through $q^{128}$. Lean proves both over the same bounded ranges: Eq.~(1.5) in every degree $d\le258$, with its reduced form $[q^k]\phi_0=[q^{2k+2}]\psi$ for $k\le128$, and Eq.~(1.7) in every degree $d\le128$. Lean also proves that Eq.~(1.5) is equivalent, in all degrees, to $[q^k]\phi_0=[q^{2k+2}]\psi$ for all $k$. Neither identity is proved in all degrees here: Franklin's involution for Eq.~(1.7) and an all-degree argument for Eq.~(1.5) are not formalised.
+\end{theorem}
+\begin{proposition}[Raw difference ruler]\dtag{\textsf{\small[N30a\,$\cdot$\,EXACT]}\,\textsf{\small[T:\,D25:\,\lean{BHL.\allowbreak{}rep17\_\allowbreak{}phi0\_\allowbreak{}sub\_\allowbreak{}bhlM}, D28:\,\lean{phi0\_\allowbreak{}sub\_\allowbreak{}bhlM\_\allowbreak{}pos}]}\,\textsf{\small[N30b\,$\cdot$\,EXACT]}\,\textsf{\small[T:\,D28:\,\lean{negPoch\_\allowbreak{}eq\_\allowbreak{}prod\_\allowbreak{}Icc}, D28:\,\lean{rawDiff\_\allowbreak{}term}]}\,\textsf{\small[N30c\,$\cdot$\,EXACT]}}
+$\phi_0-M=q+q^2+2q^3+3q^4+3q^5+5q^6+7q^7+\cdots$ has positive coefficients for $1\le k\le128$ (Lean, a bounded range). Each summand $q^n(1-q^n)(-q)_{2n+1}=q^n(1-q^{4n})\prod_{j\le2n+1,\,j\ne n,2n}(1+q^j)$ (Lean, every $n\ge1$) has negative coefficients (exact arithmetic), so positivity is a property of the sum, not of the terms.
+\end{proposition}
+Positivity for all $k$ is open and is listed in the bag file.
+
+\subsection{Controls}
+\begin{itemize}[leftmargin=2em]
+\item Unknot \dtag{\textsf{\small[N33a\,$\cdot$\,EXACT]}\,\textsf{\small[T:\,D28:\,\lean{lens\_\allowbreak{}L21}]}\,\textsf{\small[N33\,$\cdot$\,EXACT]}}: $S^3_{\pm2}(U)=L(2,1)=\mathbb{RP}^3$ for both signs, and $L(2,1)$ has an orientation-reversing self-map ($1^2\equiv-1\bmod2$). The gate cannot split them. This is the unfolded seed.
+\item Figure-eight \dtag{\textsf{\small[N34\,$\cdot$\,EXACT]}}: $4_1$ is amphichiral, so $S^3_{+2}(4_1)\cong-S^3_{-2}(4_1)$. The two records can differ only by orientation reversal, which conjugates the WRT invariant. The gate splits them only by orientation.
+\item Trefoil \dtag{\textsf{\small[N31a\,$\cdot$\,EXACT]}\,\textsf{\small[T:\,D28:\,\lean{moser\_\allowbreak{}fibre\_\allowbreak{}orders}, D28:\,\lean{orbifold\_\allowbreak{}euler}]}\,\textsf{\small[N31\,$\cdot$\,DERIVED]} \textsf{\small[N32\,$\cdot$\,EXACT]}}: by Moser \cite{Moser}, $p$ surgery on the right-handed trefoil has exceptional fibres $2,3,|6-p|$. So $+2$ gives $(2,3,4)$ with base-orbifold Euler characteristic $\tfrac1{12}>0$ (spherical, finite $\pi_1$) and $-2$ gives $(2,3,8)$ with $-\tfrac1{24}<0$ ($\widetilde{SL_2}$ geometry, infinite $\pi_1$). The two manifolds differ as unoriented manifolds. BHL write $M(2,3,8)$ for $+2$ surgery, with trefoil coefficients $C(n)=q^n$. Hikami and Lovejoy, continuing this work, give $C_n=q^{n}$ as the cyclotomic coefficients of the left-handed trefoil $T^*(2,3)$ and state these Seifert manifolds as the $(\pm2)$-surgeries on the left-handed torus knot, $+2\mapsto M(2,3,8)$ \cite{HikamiLovejoy}. So BHL's trefoil is the left-handed one, which is Moser's count with $|-6-2|=8$.
+\end{itemize}
+The three controls are the three rules in one table: the unknot is the seed before the fold, the figure-eight is the geometric anchor that the sign cannot see, and the trefoil is the chiral seed whose sign the boundary record carries.
+
+\subsection{What is cited and not re-proved}
+\begin{itemize}[leftmargin=2em]
+\item The identification of $\phi_0$ and $M$ with the unified WRT invariants (BHL Theorems~1.1 and~1.2) through the Laplace transforms of BHL Eqs.~(2.2)--(2.6) and (3.1)--(3.3) \dtag{\textsf{\small[N26\,$\cdot$\,DERIVED]}}.
+\item Habiro's cyclotomic expansion $J_N(K;q)=\sum_n C_K(n)(q^{1+N})_n(q^{1-N})_n$ with $C_K(n)\in\mathbb Z[q^{\pm1}]$ \cite{Habiro}, and the trefoil coefficients $C(n)=q^n$ of BHL Eq.~(2.5).
+\item That $\phi_0$ is a mock theta function and $M$ is a modular form plus a false theta function (BHL; Zwegers \cite{Zwegers} for the shadow) \dtag{\textsf{\small[N42\,$\cdot$\,DERIVED]}}.
+\item The Dai--Freed gluing law and its integer refinement \cite{DaiFreed,KirkLesch} \dtag{\textsf{\small[N23\,$\cdot$\,EXACT]} \textsf{\small[N24\,$\cdot$\,EXACT]}}, and the Kirk--Klassen--Ruberman splitting \cite{KKR} \dtag{\textsf{\small[N25\,$\cdot$\,EXACT]}}.
+\end{itemize}
+
+\subsection{What the test does not validate}
+It does not compute any $\eta$ or $\rho$ invariant of a Dirac operator. It does not show that $\phi_0-M$ equals, bounds, or generates any spectral quantity. It does not test non-torus knots. It does not test the Dirac Time time-arrow hypotheses. It certifies only that two exact boundary records exist, differ at $q^1$, and are attached to manifolds that differ by the sign of one surgery slope on a chiral knot.
+
+\subsection{Bridge to DT-O5 and DT-O6}
+DT-O5 \dtag{\textsf{\small[N35\,$\cdot$\,ANALOGY]}}: a gluing formula for $\rho$ or $\eta$ that takes the knot exterior and the solid torus glued at slope $\pm2$ must output values that differ between the two slopes, and should reduce to the trefoil's signature data of N17 when the twist is a $U(1)$ character. The record $\phi_0$ versus $M$ is the boundary-side certificate that such a difference exists. \emph{Not proved here.}
+
+DT-O6 \dtag{\textsf{\small[N36\,$\cdot$\,ANALOGY]}}: the same gate applied to a non-torus knot and its mirror, where HOMFLY, Jones, Khovanov and knot Floer data agree and only Levine--Tristram or $\rho$ separate them (the 13-crossing window named in Dirac Time, with the Kirk--Klassen--Ruberman splitting). Dirac Time v3.0.1, Section~13.5, names the pair: $13a_{3542}$ and the mirror of $13a_{4018}$, with common Alexander polynomial $1-7t+23t^2-48t^3+72t^4-83t^5+72t^6-48t^7+23t^8-7t^9+t^{10}$ and a window $\alpha\in(0.10971,0.11522)$ for $\omega=e^{4\pi i\alpha}$, on which $\sigma=-2$ for $13a_{3542}$ and $+2$ for the mirror of $13a_{4018}$. The signature check of Appendix~\ref{app:sig} confirms from KnotInfo's Seifert matrices that both knots have this Alexander polynomial, that its two unit-circle roots in the upper half sit at $\alpha=0.10971$ and $0.11522$, and that between them KnotInfo's $13a_{3542}$ and $13a_{4018}$, as stored, both read $\sigma=-2$: only the mirror of $13a_{4018}$ reads $+2$, so the mirror in the pair is required. The agreement of HOMFLY, Jones, Khovanov and knot Floer data is KnotInfo's and is not recomputed here.
+
+\section{The Dirac builds audit}
+The four old Dirac builds, Chat~\#1 T001, Chat~\#3 T071, Chat~\#4 T009 and Chat~\#4 T047, were read in full in the audit of 19 November 2026. All four reduce to the same flat-torus boundary operator $D_{\alpha,\beta}$, so all four have $\eta\equiv0$ by N9--N10 \dtag{\textsf{\small[N40\,$\cdot$\,DERIVED]}}. Chat~\#4 T047 is the cleanest: it states the 3D bulk operator $D_A=i\gamma^\mu(\nabla_\mu-iA_\mu)$ on $S^3\setminus\gamma$ with APS boundary conditions before it drops back to the torus. The other three add SnapPy numbers that B1 and B2 repair. What survives is the 3D bulk with a chiral knot, a raw $\rho$ difference, and $SU(2)$ holonomy, which are DT-O5, DT-O6 and VOTKP item VK-M5 (as listed in the VOTKP map; not re-checked here). A wider search by the Grok crew (issue~\#1 of \texttt{count-me-as-one-lean}, 20 November 2026) through every chat held on their machine adds two builds. The December 2025 \texttt{dirac\_review} chat builds a $\mathrm{Spin}^c$ operator $D_A$ on $S^3\setminus N(8_{19})$ with APS boundary conditions, the most complete of all, but on three broken premises: $8_{19}$ is not hyperbolic (B1), the boundary $\eta$ is taken on the flat-torus operator, where it is $0$ (N9--N10), and a bulk average is subtracted in place of a $\rho$ difference. The September 2026 circle operator $D_a=-i\,d/d\theta+a$ is correct, and the raw $\eta$ difference that becomes the $\rho$ ruler starts there; it is the operator of the circle odometer, but it carries no knot. The chiral seed and the $\rho$ ruler first meet in Dirac Time v3.0.1, Section~13, which is a paper, not a chat. The ``two or three Dirac builds that really had it all'' were not found in any chat held on the machines searched.
+
+\section{Consistency with Dirac Time v3.0.1}\label{sec:dtcheck}
+\begin{itemize}[leftmargin=2em]
+\item DT-T33 (\S13.1, pp.~36--37), tagged [T within branch] in Dirac Time, states: ``For the admitted trefoil representation, $L=-M^{-6}$.'' Part~I states $LM^6=-1$. For $M\neq0$ these are the same equation \dtag{\textsf{\small[N37\,$\cdot$\,EXACT]}\,\textsf{\small[T:\,D28:\,\lean{dirac\_\allowbreak{}cmao\_\allowbreak{}LM6}]}}. The relation comes from the central element of the trefoil group mapping to $-I$ under an irreducible $SU(2)$ representation \cite{Klassen} \dtag{\textsf{\small[N38\,$\cdot$\,DERIVED]}}; the exponent sign depends on handedness.
+\item DT-T38 (Theorem~13.2): the trefoil window $\rho=+2$ on $(\tfrac1{12},\tfrac5{12})$ for the character $e^{4\pi i\alpha}$ matches N17 after the substitution $2\alpha$, with $\rho=-\sigma$. DT-T39: ``a gluing formula that carries the boundary record into this bulk invariant is not proved here.'' Section~\ref{sec:sbt} does not prove it either. The sign of the window makes Dirac Time's trefoil the right-handed one (N18).
+\item DT-T14 and DT-N11 (flat-torus SF and $\eta$ vanish) are now Lean theorems in their finite-dimensional form (N7--N9). DT-E15 (circle odometer) is a Lean theorem (N20--N21). DT-N17 ($8_{19}=T(3,4)$, ``Do not revive hyperbolic-volume/Mostow arguments for it'') is kept as B1.
+\end{itemize}
+
+\section{The number 123 and the Ramanujan Machine}\label{sec:rm}
+Part~I, Section~4, records that $123$ appears in the Ramanujan Machine Challenge. The source is this \dtag{\textsf{\small[N39\,$\cdot$\,EXACT]} \textsf{\small[K16a\,$\cdot$\,EXACT]}\,\textsf{\small[T:\,D28:\,\lean{q1\_\allowbreak{}char\_\allowbreak{}roots}, D28:\,\lean{q1\_\allowbreak{}ratio}, D28:\,\lean{golden\_\allowbreak{}pow\_\allowbreak{}ten}]}\,\textsf{\small[K16b\,$\cdot$\,EXACT]} \textsf{\small[K17\,$\cdot$\,ANALOGY]}}.
+\begin{itemize}[leftmargin=2em]
+\item The source is the Ramanujan Challenge for AI of the Ramanujan Machine group at the Technion \cite{RMchallenge}, Problem~2.1 (``Question~1'' in the proofs document \cite{RMproofs}): a polynomial continued fraction with $a_n=-220n^3-484n^2-301n-42$, $b_n=4n^2(2n+1)^2(5n-4)(5n+6)$, whose value is $6/(3-\pi)$. It was found from a conservative matrix field of the ${}_2F_1$ function. It is not Ramanujan's own continued fraction for $\pi$. The Ramanujan Machine itself is described in Raayoni et al.\ \cite{Raayoni}.
+\item The proofs document, \S4.4 Eq.~(27), gives the limiting companion roots $\lambda_{s,d}=(-297\pm135\sqrt5)/4$. A note in \S4.5 states the convergence rate $\log_{10}((123+55\sqrt5)/2)\approx2.09$ digits per level. This paper re-derives $|\lambda_d/\lambda_s|=(123+55\sqrt5)/2=\varphi^{10}$ exactly and $\varphi^{10}+\varphi^{-10}=123$.
+\item The challenge documents do not mention knots, monodromy or the figure-eight. The match between $\operatorname{tr}h_{4_1}^5=123$ and the Q1 ratio is a shared number in $\mathbb Q(\sqrt5)$. It is proved nowhere and is graded ANALOGY.
+\item Part~I's ``Problem~2.5'' (Catalan) is Problem~2.5 in the arXiv challenge and Question~5 in the proofs document.
+\end{itemize}
+
+\section{Claim ledger and grade counts}\label{sec:ledger}
+The ledger has 110 claim rows: K1--K36 from Part~I, N1--N49 new in Part~II, B1--B12 repaired readings of the old chats. A claim whose Lean theorem is narrower than the claim is split into parts (suffixes a, b, c); a part carries a tag only when a Lean theorem states it exactly, and an untagged part keeps its own grade. Counts: EXACT 77, DERIVED 10, MODEL 4, ANALOGY 7, REPAIRED 12. Claims with \textsf{[T]}: 46. A reference in the text to a split id (K14, K16, N11, N15, N16, N17, N27, N30, N41) means all of its a/b/c rows together.
+{\small\begin{longtable}{@{}L{0.05\textwidth}L{0.12\textwidth}L{0.26\textwidth}L{0.27\textwidth}L{0.17\textwidth}@{}}
+\toprule Id & Grade & Claim & Lean \textsf{[T]} & Support\\ \midrule\endhead
+K1 & EXACT & Edge equation $z(z-1)w(w-1)=1$ of the figure-eight complement & --- & cited, Thurston ch.~4\\
+K2 & EXACT & $z^2(z-1)^2-1=(z^2-z+1)(z^2-z-1)$ & CMaO:\,\lean{Gluing.\allowbreak{}edge\_\allowbreak{}symmetric\_\allowbreak{}factor} & Lean\\
+K3 & EXACT & $z(1-z)=1\iff z^2-z+1=0$; golden branch gives $-1$ & CMaO:\,\lean{Gluing.\allowbreak{}regular\_\allowbreak{}cycle\_\allowbreak{}fixed}, CMaO:\,\lean{Gluing.\allowbreak{}cycle\_\allowbreak{}fixed\_\allowbreak{}regular}, CMaO:\,\lean{Gluing.\allowbreak{}golden\_\allowbreak{}cycle} & Lean\\
+K4 & EXACT & Regular branch contributes $-1$ per tetrahedron; Eisenstein edge equation and its conjugate & CMaO:\,\lean{Gluing.\allowbreak{}regular\_\allowbreak{}half}, CMaO:\,\lean{Gluing.\allowbreak{}eis\_\allowbreak{}edge}, CMaO:\,\lean{Gluing.\allowbreak{}eis\_\allowbreak{}edge\_\allowbreak{}conj} & Lean\\
+K5 & EXACT & No integer shape on either branch & CMaO:\,\lean{Gluing.\allowbreak{}no\_\allowbreak{}integer\_\allowbreak{}regular}, CMaO:\,\lean{Gluing.\allowbreak{}no\_\allowbreak{}integer\_\allowbreak{}golden} & Lean\\
+K6 & EXACT & Riley defect matrix; relation holds iff $c^2-c+1=0$ & CMaO:\,\lean{Riley.\allowbreak{}relation\_\allowbreak{}defect}, CMaO:\,\lean{Riley.\allowbreak{}riley\_\allowbreak{}iff\_\allowbreak{}shape} & Lean\\
+K7 & EXACT & Riley polynomial of $4_1$ is the regular-tetrahedron polynomial & --- & cited, Riley 1975; Silver--Williams\\
+K8 & EXACT & Riley meridians are parabolic, trace 2 & CMaO:\,\lean{Riley.\allowbreak{}A\_\allowbreak{}parabolic}, CMaO:\,\lean{Riley.\allowbreak{}B\_\allowbreak{}parabolic} & Lean\\
+K9 & EXACT & Genus-one fibred knot: monodromy $V^{-1}V^T$, Alexander polynomial is its characteristic polynomial & --- & cited, Rolfsen\\
+K10 & EXACT & Trefoil monodromy $h_{3_1}$: form, $h^2=h-I$, $h^3=-I$, $h^6=I$ & CMaO:\,\lean{Monodromy.\allowbreak{}h31\_\allowbreak{}form}, CMaO:\,\lean{Monodromy.\allowbreak{}h31\_\allowbreak{}charpoly}, CMaO:\,\lean{Monodromy.\allowbreak{}h31\_\allowbreak{}cubed}, CMaO:\,\lean{Monodromy.\allowbreak{}h31\_\allowbreak{}order6}, CMaO:\,\lean{Monodromy.\allowbreak{}h31\_\allowbreak{}elliptic} & Lean\\
+K11 & EXACT & Trefoil monodromy, Riley parameter and regular shape share $z^2-z+1$ (statement); the unifying reading is ANALOGY & --- & conjunction of K3, K6, K10; no single Lean theorem\\
+K12 & ANALOGY & Sixfold structure $h^3=-I$ versus $LM^6=-1$ in Dirac Time; agreement of the sign $-1$ & --- & structural reading only\\
+K13 & EXACT & $h_{4_1}$ is the cat map; golden root squared satisfies $x^2-3x+1=0$ & CMaO:\,\lean{Monodromy.\allowbreak{}h41\_\allowbreak{}cat}, CMaO:\,\lean{Monodromy.\allowbreak{}h41\_\allowbreak{}charpoly}, CMaO:\,\lean{Ladder.\allowbreak{}golden\_\allowbreak{}squared} & Lean\\
+K14a & EXACT & If $z^2-z+1=0$ in a commutative ring, then $w=z^2$ satisfies $w^2+w+1=0$ & CMaO:\,\lean{Ladder.\allowbreak{}regular\_\allowbreak{}squared} & Lean (any commutative ring; primitivity not stated)\\
+K14b & EXACT & Over $\mathbb C$, $z=e^{\pm i\pi/3}$ and $z^2=e^{\pm2\pi i/3}$ is a primitive cube root of unity ($w^2+w+1=0$ and $w\neq1$) & --- & by hand: $w=1$ would give $3=0$; not in Lean\\
+K15 & EXACT & $\operatorname{tr}h_{4_1}^5=123=\varphi^{10}+\varphi^{-10}$ & CMaO:\,\lean{Monodromy.\allowbreak{}h41\_\allowbreak{}trace5}, CMaO:\,\lean{Ladder.\allowbreak{}fig8\_\allowbreak{}fifth}, D28:\,\lean{golden\_\allowbreak{}pow\_\allowbreak{}ten\_\allowbreak{}add\_\allowbreak{}inv} & Lean\\
+K16a & EXACT & The roots of $\lambda^2+\tfrac{297}{2}\lambda-\tfrac{729}{4}$ are $(-297\pm135\sqrt5)/4$; $(297+135\sqrt5)/(135\sqrt5-297)=(123+55\sqrt5)/2=\varphi^{10}$ (over $\mathbb R$) & D28:\,\lean{q1\_\allowbreak{}char\_\allowbreak{}roots}, D28:\,\lean{q1\_\allowbreak{}ratio}, D28:\,\lean{golden\_\allowbreak{}pow\_\allowbreak{}ten} & Lean\\
+K16b & EXACT & These are the companion roots of Ramanujan Challenge Q1 (Problem 2.1), and $|\lambda_d/\lambda_s|$ is the quotient of K16a & --- & roots cited from RM proofs Eq.~(27); sign step by hand; checks script \S\,A\\
+K17 & ANALOGY & The $123$ of the figure-eight monodromy and the $123$ of Q1 are one number in $\mathbb Q(\sqrt5)$; no map between them & --- & not proved anywhere\\
+K18 & EXACT & Trace ladder law $x^k+y^k=t_k$ & CMaO:\,\lean{Ladder.\allowbreak{}ladder\_\allowbreak{}law} & Lean\\
+K19 & EXACT & Band edge: $x+y=2$, $xy=1$ forces $x=y=1$ (integers) & CMaO:\,\lean{Ladder.\allowbreak{}band\_\allowbreak{}edge\_\allowbreak{}merge} & Lean\\
+K20 & EXACT & Rail angle: $T=2\sec\psi$, rails $\sec\psi\pm\tan\psi$, $\log\lambda_+=\operatorname{gd}^{-1}\psi$ & --- & identities checked by hand here; source RailAngle manuscript\\
+K21 & EXACT & Ladders $T=1,3,6$: $2,1,-1,-2,-1,1,2$; $2,3,7,18,47,123,322$; $2,6,34,198$ & CMaO:\,\lean{Ladder.\allowbreak{}trefoil\_\allowbreak{}ladder}, CMaO:\,\lean{Ladder.\allowbreak{}fig8\_\allowbreak{}ladder}, CMaO:\,\lean{Ladder.\allowbreak{}sqrt2\_\allowbreak{}ladder} & Lean\\
+K22 & EXACT & Ap\'ery $\zeta(3)$ recurrence limiting polynomial $\lambda^2-34\lambda+1$ & --- & cited, Ap\'ery 1979\\
+K23 & EXACT & Catalan cubic contains the Ap\'ery quadratic; saddle unit; $34n^3+\dots$ factorisation & CMaO:\,\lean{Ladder.\allowbreak{}catalan\_\allowbreak{}contains\_\allowbreak{}apery}, CMaO:\,\lean{Ladder.\allowbreak{}antipalindromic\_\allowbreak{}rest}, CMaO:\,\lean{Ladder.\allowbreak{}saddle\_\allowbreak{}unit}, CMaO:\,\lean{Ladder.\allowbreak{}apery\_\allowbreak{}middle}, CMaO:\,\lean{Ladder.\allowbreak{}pell\_\allowbreak{}34} & Lean\\
+K24 & DERIVED & Beukers' integral and the official Problem~2.5 proof share the saddle quadratic $t^2+2t-1$ & --- & cited; not re-read in this pass\\
+K25 & EXACT & $A$-polynomial of $4_1$ & --- & cited, CCGLS; Borot--Eynard\\
+K26 & EXACT & $A$ is palindromic in $L$ & CMaO:\,\lean{APoly.\allowbreak{}palindromic} & Lean\\
+K27 & DERIVED & $L\mapsto1/L$ is the amphichiral symmetry; tangent cones on $L=\pm1$ axis-aligned & --- & cited, Borot--Eynard; author's Hessian manuscript\\
+K28 & EXACT & Discriminant split $b\pm2a$ factorisations & CMaO:\,\lean{APoly.\allowbreak{}disc\_\allowbreak{}split}, CMaO:\,\lean{APoly.\allowbreak{}plus\_\allowbreak{}factor}, CMaO:\,\lean{APoly.\allowbreak{}minus\_\allowbreak{}factor} & Lean\\
+K29 & EXACT & Slice values of $A$ and $\partial_LA$ on $L=\pm1$ & CMaO:\,\lean{APoly.\allowbreak{}slice\_\allowbreak{}plus}, CMaO:\,\lean{APoly.\allowbreak{}slice\_\allowbreak{}minus}, CMaO:\,\lean{APoly.\allowbreak{}node\_\allowbreak{}at\_\allowbreak{}one} & Lean\\
+K30 & EXACT & Golden shape ramifies on $L=1$, regular shape on $L=-1$ & CMaO:\,\lean{APoly.\allowbreak{}golden\_\allowbreak{}ramifies}, CMaO:\,\lean{APoly.\allowbreak{}regular\_\allowbreak{}ramifies} & Lean\\
+K31 & EXACT & Reducible non-abelian representations at roots of $\Delta$ & --- & cited, Burde 1967; de~Rham 1967\\
+K32 & ANALOGY & Remark~\ref{rem:open}: real shapes correspond to reducible representations (conjecture, untested) & --- & open\\
+K33 & EXACT & Mirror certificate $P^TV_{4_1}P=-V_{4_1}^T$ & CMaO:\,\lean{Chirality.\allowbreak{}amphichiral\_\allowbreak{}41}, CMaO:\,\lean{Chirality.\allowbreak{}P41\_\allowbreak{}unimodular} & Lean\\
+K34 & EXACT & No unimodular $P$ with $P^TV_{3_1}P=-V_{3_1}^T$: trefoil chiral & CMaO:\,\lean{Chirality.\allowbreak{}S31\_\allowbreak{}form}, CMaO:\,\lean{Chirality.\allowbreak{}chiral\_\allowbreak{}31}, CMaO:\,\lean{Chirality.\allowbreak{}chiral\_\allowbreak{}31\_\allowbreak{}basic} & Lean\\
+K35 & MODEL & Harness: Part~I 80 theorems, 82 edges, 11/11 false controls; whole project 280 theorems, 238 edges, 25/25 false controls; all checks pass & --- & GitHub Actions run on commit cee88f2 (Appendix~\ref{app:ci})\\
+K36 & EXACT & In Inca knotted-cord records a figure-eight knot in the units position records one & --- & cited, Ascher and Ascher\\
+N1 & EXACT & $S^3\setminus4_1$ is two regular ideal tetrahedra, shapes $e^{i\pi/3}$, volume $2V_{\rm tet}$ & --- & cited, Thurston ch.~4\\
+N2 & MODEL & $2V_{\rm tet}=2.0298832128\ldots$; SnapPy: both shapes $0.5+0.8660i$, all positively oriented & --- & mpmath 30 digits; SnapPy 3.3.2 (checks script \S\,F)\\
+N3 & MODEL & Cusp shape of $4_1$ in the meridian--longitude basis is $2\sqrt3\,i\approx3.4641i$, in $\mathbb Q(\sqrt{-3})$; not $e^{i\pi/3}$ & --- & SnapPy 3.3.2 (checks script \S\,F)\\
+N4 & EXACT & $3_1=T(2,3)$ and $8_{19}=T(3,4)$ are torus knots, complements Seifert fibred, not hyperbolic & --- & cited, Thurston 1982; SnapPy returns volume 0 with flat tetrahedra (MODEL support)\\
+N5 & EXACT & A connected sum of two nontrivial knots is not hyperbolic & --- & cited, Thurston 1982 (satellite case)\\
+N6 & EXACT & $H_1(S^3\setminus K;\mathbb Z)=\mathbb Z$ and $H^2(S^3\setminus K;\mathbb Z)=0$ & --- & Alexander duality, classical\\
+N7 & EXACT & Finite-dimensional chiral killing law: $\Gamma^2=1$, $\Gamma D\Gamma=-D$ $\Rightarrow$ $\eta(D)=0$; also for any invertible anticommuting $\Gamma$ & D25:\,\lean{eta\_\allowbreak{}eq\_\allowbreak{}zero\_\allowbreak{}of\_\allowbreak{}chiral}, D25:\,\lean{eta\_\allowbreak{}eq\_\allowbreak{}zero\_\allowbreak{}of\_\allowbreak{}anticommute}, D25:\,\lean{eta\_\allowbreak{}eq\_\allowbreak{}zero\_\allowbreak{}of\_\allowbreak{}unitary\_\allowbreak{}conj} & Lean; eta\_\allowbreak{}eq\_\allowbreak{}zero\_\allowbreak{}of\_\allowbreak{}unitary\_\allowbreak{}chiral (special case of eta\_\allowbreak{}eq\_\allowbreak{}zero\_\allowbreak{}of\_\allowbreak{}chiral)\\
+N8 & EXACT & Orientation flip $\eta(-D)=-\eta(D)$; non-vacuity $\eta(1_n)=n$ & D25:\,\lean{eta\_\allowbreak{}neg}, D25:\,\lean{eta\_\allowbreak{}one} & Lean\\
+N9 & EXACT & Flat-torus symbol: $\sigma_3(a\sigma_1+b\sigma_2)\sigma_3=-(a\sigma_1+b\sigma_2)$ and $\eta=0$ & D25:\,\lean{σ₃\_\allowbreak{}pauliSymbol\_\allowbreak{}σ₃}, D25:\,\lean{pauli\_\allowbreak{}eta\_\allowbreak{}eq\_\allowbreak{}zero} & Lean\\
+N10a & EXACT & Every finite block sum $\bigoplus_{k<m}(a_k\sigma_1+b_k\sigma_2)$ ($m\in\mathbb N$, real $a_k,b_k$) is Hermitian and has $\eta=0$, with grading $\bigoplus\sigma_3$ & D28:\,\lean{blockPauli\_\allowbreak{}isHermitian}, D28:\,\lean{blockσ₃\_\allowbreak{}blockPauli}, D28:\,\lean{blockPauli\_\allowbreak{}eta\_\allowbreak{}eq\_\allowbreak{}zero} & Lean (blocks indexed by Fin $m$)\\
+N10 & DERIVED & Full flat-torus operator: every Fourier block is N9, so $\eta(D_{\alpha,\beta})\equiv0$ for all twists & --- & infinite block sum plus analytic continuation, by hand; finite truncations are N10a\\
+N11a & EXACT & The symbol $a\sigma_1+b\sigma_2$ ($a,b$ real) has $\det=-(a^2+b^2)$, so it is singular iff $a=b=0$ & D28:\,\lean{pauliSymbol\_\allowbreak{}det}, D28:\,\lean{pauliSymbol\_\allowbreak{}det\_\allowbreak{}eq\_\allowbreak{}zero\_\allowbreak{}iff} & Lean\\
+N11b & EXACT & Hence flat-torus zero modes need $(\alpha,\beta)\in\mathbb Z^2$: codimension two, not walls & --- & by hand from N11a with $a=m+\alpha$, $b=n+\beta$\\
+N12 & EXACT & $\Delta_{3_1}(e^{2\pi i\alpha})=2\cos2\pi\alpha-1$, zero iff $\alpha\equiv\pm1/6$ & D25:\,\lean{alex31\_\allowbreak{}circle}, D25:\,\lean{alex31\_\allowbreak{}circle\_\allowbreak{}eq\_\allowbreak{}zero\_\allowbreak{}iff}, D25:\,\lean{alex31\_\allowbreak{}poly\_\allowbreak{}circle\_\allowbreak{}eq\_\allowbreak{}zero\_\allowbreak{}iff} & Lean; alex31\_\allowbreak{}wall\_\allowbreak{}at\_\allowbreak{}sixth (the instance $\alpha=\tfrac16$)\\
+N13 & EXACT & Every trefoil wall $z=e^{2\pi i\alpha}$ on $S^1$ is a root of $z^2-z+1$, so it solves the edge equation on $z=w$, contributes $-1$ per tetrahedron and has $z^3=-1$; non-vacuous at $\alpha=\tfrac16$ & Bridge:\,\lean{wall\_\allowbreak{}regular\_\allowbreak{}poly}, Bridge:\,\lean{wall\_\allowbreak{}solves\_\allowbreak{}edge}, Bridge:\,\lean{wall\_\allowbreak{}half}, Bridge:\,\lean{wall\_\allowbreak{}cubed}, Bridge:\,\lean{sixth\_\allowbreak{}solves\_\allowbreak{}edge} & Lean, CMaOBridge\\
+N14 & EXACT & $\Delta_{4_1}(e^{2\pi i\alpha})=3-2\cos2\pi\alpha\ge1$: no walls & D25:\,\lean{alex41\_\allowbreak{}circle}, D25:\,\lean{one\_\allowbreak{}le\_\allowbreak{}alex41\_\allowbreak{}real}, D25:\,\lean{alex41\_\allowbreak{}circle\_\allowbreak{}ne\_\allowbreak{}zero}, D25:\,\lean{alex41\_\allowbreak{}poly\_\allowbreak{}circle\_\allowbreak{}ne\_\allowbreak{}zero} & Lean\\
+N15a & EXACT & $P=t^6-t^5+t^3-t+1$ satisfies $P\,(t^3-1)(t^4-1)=(t^{12}-1)(t-1)$ and $P=(t^2-t+1)(t^4-t^2+1)$ in $\mathbb Z[t]$; $2\cos3x-2\cos2x+1=(2\cos x-1)(4\cos^2x-3)$; $P(e^{2\pi i\alpha})=0$ iff $\{\alpha\}\in\{\tfrac1{12},\tfrac16,\tfrac5{12},\tfrac7{12},\tfrac56,\tfrac{11}{12}\}$ & D28:\,\lean{alexT34\_\allowbreak{}torus\_\allowbreak{}formula}, D28:\,\lean{alexT34\_\allowbreak{}factor}, D28:\,\lean{alexT34\_\allowbreak{}cos}, D28:\,\lean{alexT34\_\allowbreak{}circle\_\allowbreak{}eq\_\allowbreak{}zero\_\allowbreak{}iff\_\allowbreak{}fract} & Lean\\
+N15b & EXACT & $P=\Delta_{T(3,4)}$ (torus-knot formula) and $e^{-3ix}P(e^{ix})=2\cos3x-2\cos2x+1$ & --- & classical formula cited (Rolfsen); symmetrisation by hand; checks script \S\,D\\
+N16a & EXACT & Litherland's count $\mathrm{lt}(p,q,\alpha)$: $T(2,3)$: $0,-2,-2,-2,0$ at $\tfrac1{12},\tfrac14,\tfrac12,\tfrac34,\tfrac{11}{12}$; $T(3,4)$: $0,-2,-4,-6,-6$ at $\tfrac1{24},\tfrac18,\tfrac14,\tfrac{11}{24},\tfrac12$ & D28:\,\lean{lt23\_\allowbreak{}values}, D28:\,\lean{lt34\_\allowbreak{}values} & Lean (count only)\\
+N16b & EXACT & The count equals the Levine--Tristram signature $\sigma_{T(p,q)}(e^{2\pi i\alpha})$, so N16a gives the signatures & --- & cited, Litherland 1979; checks script \S\,E\\
+N17a & EXACT & For rational $0<\alpha<1$, $\alpha\ne\tfrac16,\tfrac56$: $\mathrm{lt}(2,3,\alpha)=-2$ on $(\tfrac16,\tfrac56)$ and $0$ otherwise & D28:\,\lean{lt23\_\allowbreak{}window} & Lean ($\alpha\in\mathbb Q$)\\
+N17b & EXACT & $\sigma_{T(2,3)}(e^{2\pi i\alpha})=-2$ on $(\tfrac16,\tfrac56)$ and $0$ on the rest of the circle minus walls, for real $\alpha$ & --- & by hand from Litherland's count (N16b); real $\alpha$ not in Lean\\
+N18 & DERIVED & APS $\rho$ of zero surgery with a $U(1)$ twist is $\rho(S_K,\chi_\omega)=-\sigma_K(\omega)$ in Dirac Time's convention; the DT-T38 window ($\rho=+2$ on $(\tfrac1{12},\tfrac5{12})$ for $\chi_{e^{4\pi i\alpha}}$) is N17 at $2\alpha$, so Dirac Time's trefoil is right-handed, the mirror of BHL's (N32) & --- & cited, APS II, DT Section~13.4; handedness from KnotInfo's Seifert matrix, App.~\ref{app:sig}\\
+N19 & DERIVED & Circle operator $D_a=-i\,d/dx+a$: $\eta(D_a)=1-2\{a\}$ for $a\notin\mathbb Z$ & --- & Hurwitz zeta, cited (DT-E15); Lean defines etaCircle by this formula\\
+N20 & EXACT & Odometer identity: $\lfloor a_1\rfloor-\lfloor a_0\rfloor=(a_1-a_0)+\tfrac12(\eta(D_{a_1})-\eta(D_{a_0}))$, and this is the crossing count & D25:\,\lean{odometer\_\allowbreak{}identity}, D25:\,\lean{card\_\allowbreak{}crossings\_\allowbreak{}eq\_\allowbreak{}odometer}, D25:\,\lean{floor\_\allowbreak{}sub\_\allowbreak{}floor\_\allowbreak{}eq\_\allowbreak{}card\_\allowbreak{}crossings}, D25:\,\lean{mem\_\allowbreak{}crossings\_\allowbreak{}iff}, D25:\,\lean{floor\_\allowbreak{}sub\_\allowbreak{}floor\_\allowbreak{}eq} & Lean (with etaCircle as defined)\\
+N21 & EXACT & $a$ and $a+1$: same $\eta$, spectral flow $1$ & D25:\,\lean{etaCircle\_\allowbreak{}add\_\allowbreak{}one}, D25:\,\lean{floor\_\allowbreak{}add\_\allowbreak{}one\_\allowbreak{}sub\_\allowbreak{}floor} & Lean\\
+N22 & EXACT & Smooth drift: $\eta(\tfrac34)=-\tfrac12$; on $[\tfrac14,\tfrac34]$ no crossing ($\lfloor\cdot\rfloor$ interval empty) but $\Delta\eta=-1$; full loop $[\tfrac14,\tfrac54]$: SF$=\lfloor\tfrac54\rfloor-\lfloor\tfrac14\rfloor=1$, $\Delta\eta=0\neq2\,$SF & D28:\,\lean{etaCircle\_\allowbreak{}three\_\allowbreak{}quarter}, D28:\,\lean{odometer\_\allowbreak{}no\_\allowbreak{}crossing}, D28:\,\lean{odometer\_\allowbreak{}one\_\allowbreak{}crossing} & Lean; SF as floor difference = crossing count by N20\\
+N23 & EXACT & APS index formula $\operatorname{ind}=\int I_{\rm loc}-\xi$, $\xi=(\eta+h)/2$; a self-adjoint Fredholm operator has index $0$ & --- & cited, APS I\\
+N24 & EXACT & Dai--Freed: $e^{2\pi i\xi}$ lies in the inverse determinant line of the boundary; gluing law. Integer part: Kirk--Lesch Maslov triple index & --- & cited, Dai--Freed 1994; Kirk--Lesch 2004\\
+N25 & EXACT & Kirk--Klassen--Ruberman: spectral flow is not determined by the boundary restriction when the path of flat connections is singular; the knot-versus-unknot difference is a classical signature & --- & cited, KKR 1994 (introduction read this run)\\
+N26 & DERIVED & BHL Thm~1.1/1.2: unified WRT of $M(2,3,8)$ is $\sqrt2q^{1/4}(1-q)^{-1}\phi_0(-q^{1/2})$, of $M(2,3,4)$ is $\sqrt2q^{1/4}(1-q)^{-1}M(-q^{1/2})$ & --- & cited, BHL; Laplace transform derivation Eqs.~(2.2)--(2.6), (3.1)--(3.3) not re-proved\\
+N27a & EXACT & Eq.~(1.5) $2q^2\phi_0(q^2)=\psi(q)+\psi(-q)$ is equivalent, in all degrees, to $[q^k]\phi_0=[q^{2k+2}]\psi$ for all $k$ & D25:\,\lean{BHL.\allowbreak{}eq15\_\allowbreak{}iff\_\allowbreak{}coeff}, D25:\,\lean{BHL.\allowbreak{}lhs15\_\allowbreak{}eq\_\allowbreak{}iff} & Lean\\
+N27b & EXACT & Eq.~(1.5) holds coefficientwise in every degree $d\le258$ (through $q^{258}$, bounded), and the reduced identity $[q^k]\phi_0=[q^{2k+2}]\psi$ holds for $k\le128$ (bounded) & D28:\,\lean{eq15\_\allowbreak{}mod\_\allowbreak{}q259}, D28:\,\lean{eq15\_\allowbreak{}reduced\_\allowbreak{}le128} & Lean and integer arithmetic (checks script \S\,C), both to $q^{258}$; weaker Lean corollaries eq15\_\allowbreak{}mod\_\allowbreak{}q49, eq15\_\allowbreak{}reduced\_\allowbreak{}le23, eq15\_\allowbreak{}reduced\_\allowbreak{}le64 not listed\\
+N28 & EXACT & Eq.~(1.7) $2+2q^2M(q)=(-q)_\infty+\sum q^{n(3n+1)/2}(1-q^{2n+1})$ holds in every degree $d\le128$ (bounded) & D28:\,\lean{eq17\_\allowbreak{}le128}, D25:\,\lean{BHL.\allowbreak{}hasProd\_\allowbreak{}negInf}, D25:\,\lean{BHL.\allowbreak{}hasSum\_\allowbreak{}falseTheta} & Lean and integer arithmetic (checks script \S\,C), both to $d\le128$; weaker Lean corollary eq17\_\allowbreak{}mod\_\allowbreak{}q49 ($d<49$)\\
+N29 & EXACT & Boundary records split at $q^1$: $[q^1]\phi_0=2\neq1=[q^1]M$; first 17 coefficients of $\phi_0$, $M$, $\phi_0-M$ & D25:\,\lean{BHL.\allowbreak{}phi0\_\allowbreak{}ne\_\allowbreak{}bhlM}, D25:\,\lean{BHL.\allowbreak{}coeff\_\allowbreak{}one\_\allowbreak{}phi0}, D25:\,\lean{BHL.\allowbreak{}coeff\_\allowbreak{}one\_\allowbreak{}bhlM}, D25:\,\lean{BHL.\allowbreak{}rep17\_\allowbreak{}phi0}, D25:\,\lean{BHL.\allowbreak{}rep17\_\allowbreak{}bhlM}, D25:\,\lean{BHL.\allowbreak{}rep17\_\allowbreak{}phi0\_\allowbreak{}sub\_\allowbreak{}bhlM} & Lean\\
+N30a & EXACT & Raw difference $\phi_0-M=q+q^2+2q^3+3q^4+3q^5+5q^6+\dots$ (first 17 coefficients) has positive coefficients for $1\le k\le128$ (bounded) & D25:\,\lean{BHL.\allowbreak{}rep17\_\allowbreak{}phi0\_\allowbreak{}sub\_\allowbreak{}bhlM}, D28:\,\lean{phi0\_\allowbreak{}sub\_\allowbreak{}bhlM\_\allowbreak{}pos} & Lean and verify script \S1, both to $k\le128$\\
+N30b & EXACT & For $n\ge1$: $q^n(1-q^n)(-q)_{2n+1}=q^n(1-q^{4n})\prod_{j\in[1,2n+1]\setminus\{n,2n\}}(1+q^j)$ & D28:\,\lean{negPoch\_\allowbreak{}eq\_\allowbreak{}prod\_\allowbreak{}Icc}, D28:\,\lean{rawDiff\_\allowbreak{}term} & Lean\\
+N30c & EXACT & The summands of N30b are not coefficientwise positive & --- & exact arithmetic, checks script \S\,B\\
+N31a & EXACT & Arithmetic of N31: $|2\cdot3\cdot1-2|=4$, $|2\cdot3\cdot1+2|=8$; $2-\sum(1-1/a_i)=\tfrac1{12}$ for $(2,3,4)$ and $-\tfrac1{24}$ for $(2,3,8)$ & D28:\,\lean{moser\_\allowbreak{}fibre\_\allowbreak{}orders}, D28:\,\lean{orbifold\_\allowbreak{}euler} & Lean (numbers only)\\
+N31 & DERIVED & $\pm2$ surgery on the right-handed trefoil: fibres $(2,3,4)$, $\chi=\tfrac1{12}$ (spherical) and $(2,3,8)$, $\chi=-\tfrac1{24}$ ($\widetilde{SL_2}$); $H_1=\mathbb Z/2$ for both & --- & Moser 1971 cited; arithmetic is N31a; SnapPy homology MODEL\\
+N32 & EXACT & BHL's trefoil is the left-handed one: $C(n)=q^n$ and $+2\mapsto M(2,3,8)$ & --- & cited, Hikami--Lovejoy (left-handed $T^*(2,2t+1)$ at $t=1$); agrees with Moser, $|-6-2|=8$\\
+N33a & EXACT & $1^2+1\equiv0\pmod2$: the criterion $q^2\equiv-1\pmod p$ for $(p,q)=(2,1)$ & D28:\,\lean{lens\_\allowbreak{}L21} & Lean (congruence only)\\
+N33 & EXACT & Unknot control: $S^3_{\pm2}(U)=L(2,1)=\mathbb{RP}^3$ for both signs, and $L(2,1)\cong-L(2,1)$ & --- & classical lens-space facts; congruence is N33a\\
+N34 & EXACT & Figure-eight control: $4_1$ amphichiral, so $S^3_{+2}(4_1)\cong-S^3_{-2}(4_1)$ & --- & from the mirror formula N47 and K33\\
+N35 & ANALOGY & $\phi_0$ versus $M$ is a signed boundary record that a bulk $\rho$/$\eta$ invariant must carry (DT-O5 bridge) & --- & not proved here\\
+N36 & ANALOGY & DT-O6 bridge: the gate generalises to non-torus pairs where only Levine--Tristram/$\rho$ separate; the pair is $13a_{3542}$ and the mirror of $13a_{4018}$ & --- & bridge not computed; Alexander polynomial, window and signs checked from KnotInfo, App.~\ref{app:sig}\\
+N37 & EXACT & DT-T33 $L=-M^{-6}$ is equivalent to CMaO's $LM^6=-1$ for $M\neq0$ (any field) & D28:\,\lean{dirac\_\allowbreak{}cmao\_\allowbreak{}LM6} & Lean\\
+N38 & DERIVED & For an irreducible $SU(2)$ representation of the trefoil group the central element maps to $-I$, giving $L=-M^{-6}$ (exponent sign set by handedness) & --- & cited, Klassen 1991; DT \S13.1\\
+N39 & EXACT & Q1 of the Ramanujan Challenge is a polynomial continued fraction for $6/(3-\pi)$ found from a conservative matrix field; it is not Ramanujan's own continued fraction; the challenge texts do not mention knots & --- & read this run: RM proofs PDF \S4; arXiv:2607.09721\\
+N40 & DERIVED & All four old Dirac builds (\#1 T001, \#3 T071, \#4 T009, \#4 T047) reduce to the same flat-torus boundary operator & --- & audit of the four turns (dirac\_\allowbreak{}builds\_\allowbreak{}audit\_\allowbreak{}v1.md)\\
+N41a & EXACT & $\sum_{l<n}2(2l+1)=2n^2$ for $n\in\mathbb N$ ($S^2$ shells) & D28:\,\lean{shell\_\allowbreak{}sum} & Lean\\
+N41b & EXACT & The $T^2$ counts are $(2k+1)^2$ and $4k$, not $2k^2$ & --- & checks script \S\,I\\
+N42 & DERIVED & Zwegers: a mock theta function has a shadow $g$ with $\hat f-f=g^*$; $\phi_0$ is mock (BHL), $M$ is modular plus false theta & --- & cited, Zwegers 2002; BHL\\
+N43 & ANALOGY & The chiral seed: the trefoil is the unknot folded once (unknotting number 1); the fold breaks mirror symmetry while $4_1$ supplies the rigid geometry & --- & reading; unknotting number cited as N46\\
+N44 & EXACT & D25's symmetrised $\Delta_{3_1}$, $\Delta_{4_1}$ equal CMaO's Seifert-matrix Alexander polynomials $\det(V-tV^T)$ & Bridge:\,\lean{alex31\_\allowbreak{}eq\_\allowbreak{}seifert}, Bridge:\,\lean{alex41\_\allowbreak{}eq\_\allowbreak{}seifert}, CMaO:\,\lean{Chirality.\allowbreak{}alex\_\allowbreak{}31}, CMaO:\,\lean{Chirality.\allowbreak{}alex\_\allowbreak{}41} & Lean, CMaOBridge\\
+N45 & ANALOGY & The orientation flip $\eta(-D)=-\eta(D)$ is the spectral face of the trefoil's Seifert-form chirality & --- & not proved; no Lean theorem links eta\_\allowbreak{}neg to chiral\_\allowbreak{}31\\
+N46 & EXACT & Unknotting numbers: $u(3_1)=1$ and $u(4_1)=1$ & --- & cited, KnotInfo (Livingston--Moore), read 20 Nov 2026\\
+N47 & EXACT & Mirror formula: $S^3_r(\overline K)\cong-S^3_{-r}(K)$ as oriented manifolds & --- & cited, Stipsicz--Szab\'o 2021, \S1; reflection argument in Section~\ref{sec:rule3}\\
+N48 & MODEL & Chern--Simons invariant of the $4_1$ complement is $0$ & --- & KnotInfo value $0$ and SnapPy $-5.6\times10^{-17}$ (checks script \S\,F); amphichirality alone gives only $\mathrm{CS}\equiv-\mathrm{CS}$ modulo the period, not $0$\\
+N49 & EXACT & The Levine--Tristram signature function of $4_1$ is identically $0$ & --- & by hand from amphichirality (mirror Seifert matrix $-V^{T}$); agrees with KnotInfo\\
+B1 & REPAIRED & ``$8_{19}$ hyperbolic, vol 6.0259 / 10.149, CS $=1/24$'' & --- & $8_{19}=T(3,4)$, N4; DT-N17\\
+B2 & REPAIRED & ``$3_1$ hyperbolic vol 2.02988'', ``composite vol 8.05576'' & --- & N1, N4, N5\\
+B3 & REPAIRED & ``$\eta\approx0.013$ for $8_{19}$ (raw CS/$\pi$)'' & --- & no operator, flux or metric fixed; B1 removes the CS input\\
+B4 & REPAIRED & ``$\eta=\mathrm{CS}/\pi\bmod\mathbb Z$'' stated without hypotheses & --- & N23, N24: needs a specified operator family and flat connection\\
+B5 & REPAIRED & Summing $|\lambda|^{-1}$ (unsigned) as $\eta$: ``1057.54''; ``$\eta\approx48\pm2$'' on flat $T^2$ & --- & N9, N10; cutoff term $8N\operatorname{asinh}1$\\
+B6 & REPAIRED & ``trefoil $\eta=0$ for all $k$'' (closest located text: ``$\eta\approx0$ (trivial holonomy)'') & --- & N17: twisted signature $-2$ on $(\tfrac16,\tfrac56)$\\
+B7 & REPAIRED & ``$n$ jumps by $2\,$SF'', ``$\eta(D_1)-\eta(D_0)=2\,$SF'' with no drift term & --- & N20, N21, N22\\
+B8 & REPAIRED & Flat-$T^2$ zero modes on codimension-one rational walls & --- & N11\\
+B9 & REPAIRED & ``Spin$^c(X)\leftrightarrow H^2(X,\mathbb Z)$, which is exactly where your knot flux lives'' & --- & N6\\
+B10 & REPAIRED & ``$\tau=e^{i\pi/3}$'' as the modular parameter of the $4_1$ boundary torus & --- & N3\\
+B11 & REPAIRED & $2k^2$ atomic shells derived from $T^2$ lattice counts & --- & N41\\
+B12 & REPAIRED & Even-dimensional chiral APS index formula transplanted onto a 3D self-adjoint operator & --- & N23\\
+\bottomrule\end{longtable}}
+
+
+\section{Open items}\label{sec:open}
+These are handed forward, each with the question that set it.
+\begin{itemize}[leftmargin=2em]
+\item DT-O5: a gluing formula that carries the boundary record into the zero-surgery $\rho$ invariant (Section~\ref{sec:sbt}).
+\item DT-O6: the same gate on a non-torus knot and its mirror; DT-O12: bulk sign selection for the actual 3D operator.
+\item Part~I, Remark~\ref{rem:open}: why the flat golden branch lands on the Alexander roots. N14 gives half of it: those roots are real, so the figure-eight has no wall on the circle.
+\item Positivity of $\phi_0-M$ in every degree, and Eqs.~(1.5) and (1.7) in every degree in Lean (both are checked here through $q^{258}$ and $q^{128}$); the WRT link, BHL Eqs.~(2.1)--(2.6), is not formalised.
+\item The ``two or three Dirac builds that really had it all'' (Jeromie's words) were not found in any chat held on the machines searched; they are most likely in older chats held elsewhere.
+\item The HOMFLY, Jones, Khovanov and knot Floer agreement of the DT-O6 pair, recomputed rather than read from KnotInfo.
+\end{itemize}
+
+\section{Scope of the combined paper}
+Every \textsf{[T]} tag names a theorem in the Lean source of \texttt{count-me-as-one-lean} at \texttt{cee88f2}, where the whole harness passes on GitHub Actions. Cited theorems are not re-proved. SnapPy and mpmath values are floating point. Every number in Part~II that is not a Lean theorem was re-computed for this paper by the checks script of Appendix~\ref{app:checks}. BHL's journal version is Adv.\ Appl.\ Math.\ 46 (2011) 86--93; the preprint of 9 February 2010 was read. The handedness of N18 and the signature window of the DT-O6 pair are checked from KnotInfo's Seifert matrices in Appendix~\ref{app:sig}; the other DT-O6 invariants are KnotInfo's. An earlier local run of the same harness by the Grok crew at commit \texttt{3a4902c} also passed (280 theorems, 25 false controls, 280 nodes, 238 edges), but it reused a prebuilt Mathlib and rebuilt only the project's own modules; the public run of Appendix~\ref{app:ci} builds everything from the pinned toolchain and is the full check. The Lean libraries of Part~II were written at commits \texttt{cb2f1b2} (D25), \texttt{6c34d2c} (D27), \texttt{f4e3726} (combined port and bridge) and \texttt{aa1464b} to \texttt{3a4902c} (D28) of the Grok crew's working tree.
+
+\clearpage
+\section*{Plates of Part II}
+\noindent Frames of the same deterministic 3D renderer as Part~I (\texttt{plates\_part2.py}); every object is computed from the mathematics it depicts. Gold marks the regular branch and the count, blue the figure-eight and the drift, rose the chiral trefoil.
+
+\begin{figure}[h]\centering
+\includegraphics[width=.47\textwidth]{plates/p9_wall.jpg}\hfill
+\includegraphics[width=.47\textwidth]{plates/p10_odometer.jpg}
+\caption{\textbf{Left:} the Alexander functions of the two knots on the unit circle (white). The trefoil's $2\cos2\pi\alpha-1$ (rose) crosses zero exactly at $e^{\pm i\pi/3}$ (gold beads), the shape of the regular ideal tetrahedron (N12, N13); the figure-eight's $3-2\cos2\pi\alpha$ (blue) stays at or above $1$ and has no wall (N14). \textbf{Right:} the circle odometer from $a_0=\tfrac14$: the crossing count $\lfloor a_1\rfloor-\lfloor a_0\rfloor$ (gold) is the drift $a_1-a_0$ (blue) plus $\tfrac12(\eta(a_1)-\eta(a_0))$ (rose) at every $a_1$ (N20--N22).}
+\end{figure}
+
+\begin{figure}[h]\centering
+\includegraphics[width=.47\textwidth]{plates/p11_ruler.jpg}
+\caption{The boundary ruler $\phi_0-M$: gold bars are the square roots of its coefficients of $q^1,\dots,q^{60}$, all positive (positive through $q^{128}$, N30a); blue marks the signs of the coefficients of the single summand $q(1-q)(-q)_3$, which are mixed (N30c).}
+\end{figure}
+
+\clearpage
+\begin{thebibliography}{99}\small
+\bibitem{Thurston} W.~P.~Thurston, \emph{The Geometry and Topology of Three-Manifolds}, Princeton lecture notes, ch.~4.
+\bibitem{Riley} R.~Riley, A quadratic parabolic group, \emph{Math.\ Proc.\ Cambridge Philos.\ Soc.}\ 77 (1975) 281--288.
+\bibitem{SilverWilliams} D.~S.~Silver and S.~G.~Williams, Dynamics of twisted Alexander invariants, arXiv:0801.2118.
+\bibitem{Rolfsen} D.~Rolfsen, \emph{Knots and Links}, Publish or Perish, 1976.
+\bibitem{CCGLS} D.~Cooper, M.~Culler, H.~Gillet, D.~D.~Long and P.~B.~Shalen, Plane curves associated to character varieties of 3-manifolds, \emph{Invent.\ Math.}\ 118 (1994) 47--84.
+\bibitem{BorotEynard} G.~Borot and B.~Eynard, All-order asymptotics of hyperbolic knot invariants from non-perturbative topological recursion of A-polynomials, arXiv:1205.2261.
+\bibitem{Burde} G.~Burde, Darstellungen von Knotengruppen, \emph{Math.\ Ann.}\ 173 (1967) 24--33.
+\bibitem{deRham} G.~de~Rham, Introduction aux polyn\^omes d'un n\oe ud, \emph{Enseign.\ Math.}\ 13 (1967) 187--194.
+\bibitem{Apery} R.~Ap\'ery, Irrationalit\'e de $\zeta(2)$ et $\zeta(3)$, \emph{Ast\'erisque} 61 (1979) 11--13.
+\bibitem{RMproofs} The Ramanujan Machine group, Ramanujan Challenge Proofs, Technion, August 2026.\dtag{ \url{https://ramanujanmachine.com/wp-content/uploads/2026/08/Ramanujan_Challenge_Proofs_02_08.pdf} (read 20 November 2026).}
+\bibitem{Ascher} M.~Ascher and R.~Ascher, \emph{Mathematics of the Incas: Code of the Quipu}, Dover, 1997.
+\bibitem{DiracTime} J.~Beasley, The Dirac Time of the Gigantefermion: Memory First, Projector Geometry, Retained History, and the Cost of an Arrow, Zenodo, doi:10.5281/zenodo.22978631.
+\bibitem{RailAngle} J.~Beasley, The Angle Between the Rails, research manuscript, 31 August 2026.
+\bibitem{Hessian} J.~Beasley, Axis-Aligned Tangent Cones at the Singular Points of the Figure-Eight A-Polynomial, and the Amphichiral Involution, research manuscript, 8 August 2026.
+\bibitem{RMchallenge} The Ramanujan Machine Group, The Ramanujan Challenge for AI, arXiv:2607.09721 (2026).
+\bibitem{Raayoni} G.~Raayoni, S.~Gottlieb, Y.~Manor, G.~Pisha, Y.~Harris, U.~Mendlovic, D.~Haviv, Y.~Hadad and I.~Kaminer, Generating conjectures on fundamental constants with the Ramanujan Machine, \emph{Nature} 590 (2021) 67--73, doi:10.1038/s41586-021-03229-4.
+\bibitem{APS1} M.~F.~Atiyah, V.~K.~Patodi and I.~M.~Singer, Spectral asymmetry and Riemannian geometry.~I, \emph{Math.\ Proc.\ Cambridge Philos.\ Soc.}\ 77 (1975) 43--69, doi:10.1017/S0305004100049410.
+\bibitem{APS2} M.~F.~Atiyah, V.~K.~Patodi and I.~M.~Singer, Spectral asymmetry and Riemannian geometry.~II, \emph{Math.\ Proc.\ Cambridge Philos.\ Soc.}\ 78 (1975) 405--432, doi:10.1017/S0305004100051872.
+\bibitem{Thurston82} W.~P.~Thurston, Three-dimensional manifolds, Kleinian groups and hyperbolic geometry, \emph{Bull.\ Amer.\ Math.\ Soc.\ (N.S.)} 6 (1982) 357--381.
+\bibitem{HikamiLovejoy} K.~Hikami and J.~Lovejoy, Hecke-type formulas for families of unified Witten--Reshetikhin--Turaev invariants, preprint, \url{https://lovejoy.perso.math.cnrs.fr/WRTpaper_final.pdf}; see also K.~Hikami and J.~Lovejoy, Torus knots and quantum modular forms, \emph{Res.\ Math.\ Sci.}\ 2 (2015) 2, doi:10.1186/s40687-014-0016-3.
+\bibitem{BHL} K.~Bringmann, K.~Hikami and J.~Lovejoy, On the modularity of the unified WRT invariants of certain Seifert manifolds, \emph{Adv.\ in Appl.\ Math.}\ 46 (2011) 86--93, doi:10.1016/j.aam.2009.12.004. Preprint read: dated 9 February 2010.
+\bibitem{Habiro} K.~Habiro, A unified Witten--Reshetikhin--Turaev invariant for integral homology spheres, \emph{Invent.\ Math.}\ 171 (2008) 1--81, doi:10.1007/s00222-007-0071-0.
+\bibitem{Litherland} R.~A.~Litherland, Signatures of iterated torus knots, in \emph{Topology of Low-Dimensional Manifolds}, Lecture Notes in Math.\ 722, Springer, 1979, 71--84, doi:10.1007/BFb0063191.
+\bibitem{Levine} J.~Levine, Knot cobordism groups in codimension two, \emph{Comment.\ Math.\ Helv.}\ 44 (1969) 229--244.
+\bibitem{Tristram} A.~G.~Tristram, Some cobordism invariants for links, \emph{Proc.\ Cambridge Philos.\ Soc.}\ 66 (1969) 251--264.
+\bibitem{KKR} P.~Kirk, E.~Klassen and D.~Ruberman, Splitting the spectral flow and the Alexander matrix, \emph{Comment.\ Math.\ Helv.}\ 69 (1994) 375--416.
+\bibitem{DaiFreed} X.~Dai and D.~S.~Freed, $\eta$-invariants and determinant lines, \emph{J.\ Math.\ Phys.}\ 35 (1994) 5155--5194, doi:10.1063/1.530747.
+\bibitem{KirkLesch} P.~Kirk and M.~Lesch, The $\eta$-invariant, Maslov index, and spectral flow for Dirac-type operators on manifolds with boundary, \emph{Forum Math.}\ 16 (2004) 553--629, doi:10.1515/form.2004.027.
+\bibitem{Moser} L.~Moser, Elementary surgery along a torus knot, \emph{Pacific J.\ Math.}\ 38 (1971) 737--745, doi:10.2140/pjm.1971.38.737.
+\bibitem{Klassen} E.~P.~Klassen, Representations of knot groups in $SU(2)$, \emph{Trans.\ Amer.\ Math.\ Soc.}\ 326 (1991) 795--828.
+\bibitem{LawrenceZagier} R.~Lawrence and D.~Zagier, Modular forms and quantum invariants of 3-manifolds, \emph{Asian J.\ Math.}\ 3 (1999) 93--108.
+\bibitem{Zwegers} S.~Zwegers, \emph{Mock theta functions}, PhD thesis, Universiteit Utrecht, 2002.
+\bibitem{SnapPy} M.~Culler, N.~M.~Dunfield, M.~Goerner and J.~R.~Weeks, SnapPy, a computer program for studying the geometry and topology of 3-manifolds, version 3.3.2, \url{https://snappy.computop.org}.
+\bibitem{KnotInfo} C.~Livingston and A.~H.~Moore, \emph{KnotInfo: Table of Knot Invariants}, \url{https://knotinfo.org}, accessed 20 November 2026 (entries $3_1$, $4_1$, $8_{19}$, $13a_{3542}$ and $13a_{4018}$: Seifert matrix, braid and PD notation, unknotting number, signature, signature function, symmetry type, Chern--Simons invariant; read from the \texttt{database\_knotinfo} package, version 2026.11.2).
+\bibitem{StipsiczSzabo} A.~I.~Stipsicz and Z.~Szab\'o, Purely cosmetic surgeries and pretzel knots, \emph{Pacific J.\ Math.}\ 313 (2021) 195--211, doi:10.2140/pjm.2021.313.195, arXiv:2006.06765. Section~1 states $S^3_r(m(K))=-S^3_{-r}(K)$.
+\end{thebibliography}
+
+\appendix
+\section{Lean source}
+The complete Lean source of \texttt{count-me-as-one-lean} at commit \texttt{cee88f2}: Lean v4.36.0-rc2, Mathlib \texttt{e8ba86fa}. Theorem names in the text refer to these files. The Part~I library imports no Mathlib.
+\subsection*{Part I: FigureEightAnchors}
+\subsubsection*{Eisenstein.lean}\VerbatimInput{lean/Eisenstein.lean}
+\subsubsection*{Gluing.lean}\VerbatimInput{lean/Gluing.lean}
+\subsubsection*{Riley.lean}\VerbatimInput{lean/Riley.lean}
+\subsubsection*{Chirality.lean}\VerbatimInput{lean/Chirality.lean}
+\subsubsection*{Monodromy.lean}\VerbatimInput{lean/Monodromy.lean}
+\subsubsection*{Ladder.lean}\VerbatimInput{lean/Ladder.lean}
+\subsubsection*{APoly.lean}\VerbatimInput{lean/APoly.lean}
+\subsection*{Part II: DiracTimeD25}
+\subsubsection*{ChiralEta.lean}\VerbatimInput{lean/ChiralEta.lean}
+\subsubsection*{AlexanderWall.lean}\VerbatimInput{lean/AlexanderWall.lean}
+\subsubsection*{CircleOdometer.lean}\VerbatimInput{lean/CircleOdometer.lean}
+\subsubsection*{BhlBoundaryTest.lean}\VerbatimInput{lean/BhlBoundaryTest.lean}
+\subsection*{The bridge: CMaOBridge.lean}\VerbatimInput{lean/CMaOBridge.lean}
+\subsection*{D28: bounded identities, counts and arithmetic}
+\subsubsection*{Easy.lean}\VerbatimInput{lean/Easy.lean}
+\subsubsection*{Algebra.lean}\VerbatimInput{lean/Algebra.lean}
+\subsubsection*{RawDiff.lean}\VerbatimInput{lean/RawDiff.lean}
+\subsubsection*{FastModel.lean}\VerbatimInput{lean/FastModel.lean}
+\subsubsection*{FastPsi.lean}\VerbatimInput{lean/FastPsi.lean}
+\subsubsection*{Qq2Table.lean}\VerbatimInput{lean/Qq2Table.lean}
+\subsubsection*{Eq15.lean}\VerbatimInput{lean/Eq15.lean}
+\subsubsection*{Eq17.lean}\VerbatimInput{lean/Eq17.lean}
+\subsubsection*{RawDiffPos.lean}\VerbatimInput{lean/RawDiffPos.lean}
+\section{False controls}
+Each file states something false and must be rejected by Lean for a mathematical reason.
+\VerbatimInput{lean/FalseControls.txt}
+\section{Verification harness}
+\VerbatimInput{lean/verify.py}
+\section{The GitHub Actions run}\label{app:ci}
+Workflow \texttt{Lean proof check} on commit \texttt{cee88f2} of \texttt{dicipler-pixel/count-me-as-one-lean}, run 20 November 2026, 23:36--23:46 UTC. The harness output:
+\VerbatimInput{ci_output.txt}
+\section{Checks script}\label{app:checks}
+Script \texttt{cmao\_checks\_v1.py} (sympy and integer arithmetic exact; mpmath and SnapPy~3.3.2 floating point) and its output, run 20 November 2026.
+\VerbatimInput{cmao_checks_v1.py}
+\subsection*{Output}
+\VerbatimInput{cmao_checks_v1_output.txt}
+\section{Signature convention check}\label{app:sig}
+The script below reads KnotInfo's stored Seifert matrices, braids and planar diagrams for $3_1$, $8_{19}$, $13a_{3542}$ and $13a_{4018}$ and computes Levine--Tristram signatures at $\omega=e^{2\pi i t}$ both from KnotInfo's matrix and from the Seifert matrix SnapPy builds from the same diagram. Why it proves what it claims: if the two matrices give opposite signatures at every $t$ while the writhe and the Alexander polynomial agree, the knot is the same and only the sign convention differs; if the signatures disagreed somewhere without being opposite, or the Alexander polynomials differed, a chirality or diagram error would show instead.
+\VerbatimInput{sig_flip_check_v1.py}
+\noindent Output:
+\VerbatimInput{sig_flip_check_v1_output.txt}
+
+\end{document}

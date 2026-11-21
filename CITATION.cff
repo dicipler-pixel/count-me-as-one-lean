@@ -4,8 +4,8 @@ title: "Count Me as One, with the Dirac Anchor Recovered"
 authors:
   - family-names: Beasley
     given-names: Jeromie
-date-released: 2026-11-20
-version: "v5"
+date-released: 2026-11-21
+version: "v5.1"
 license: MIT
 repository-code: "https://github.com/dicipler-pixel/count-me-as-one-lean"
 keywords:
