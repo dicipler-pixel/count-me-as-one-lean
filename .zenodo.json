@@ -1,11 +1,13 @@
 {
-  "title": "Count Me as One: the figure-eight knot, the trefoil, and the machine-checked anchors that bind them (paper, Lean proofs, mixer, film, and the article Tying the Knot)",
+  "title": "Count Me as One, with the Dirac Anchor Recovered: The Figure-Eight Knot, the Trefoil's Turn and One Trace Ladder, joined to APS Rulers, the Chiral Seed and a Signed Boundary Test",
   "upload_type": "publication",
   "publication_type": "preprint",
   "creators": [
-    {"name": "Beasley, Jeromie"}
+    {
+      "name": "Beasley, Jeromie"
+    }
   ],
-  "description": "<p><b>Count Me as One</b> by Jeromie Beasley: the paper (PDF and HTML), the 3D mixer, the film of the moving knot, and the figure-eight anchors Lean 4 library behind it.</p><p>The Lean library is core Lean 4 (v4.34.1, no Mathlib): 80 theorems, 0 sorry, 11 false controls rejected, and an 80-node / 82-edge relations graph whose every edge carries a witness theorem. It covers Thurston's gluing equation for the figure-eight knot complement and its factorisation on the symmetric slice into the regular (z^2 - z + 1) and golden (z^2 - z - 1) branches, Riley's representation, the chirality of the trefoil and the amphichirality of the figure-eight, the monodromies and their trace ladders, and the A-polynomial.</p><p>Included with it is the public article <b>Tying the Knot: What Every Culture Binds, and Why</b>: the knot ceremonies and symbols of each culture, the Inka khipu as accounts and memory, the history of the loom, the women who wove the Apollo core rope memory, and what the mathematics of knots says about them.</p>",
+  "description": "<p>Paper (PDF and TeX), Lean 4 proofs (280 theorems, 25 false controls, relations graph of 280 nodes and 238 edges, all checks passing on GitHub Actions), checks script, film and plates renderer, and the public article Tying the Knot, by Jeromie Beasley.</p><p>AI-assisted: the research direction, the questions and the three working rules are Jeromie Beasley's; Part I was written with Claude (Anthropic); Part II was assembled by Ink Between the Stars (a Grok bot) and completed with Claude.</p>",
   "keywords": [
     "figure-eight knot",
     "trefoil knot",

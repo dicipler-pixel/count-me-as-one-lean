@@ -1,0 +1,31 @@
+PASS A1 roots are (-297 +- 135 sqrt5)/4
+PASS A2 |lam_d/lam_s| = (123+55 sqrt5)/2 = phi^10
+PASS A3 phi^10 + phi^-10 = 123
+PASS B1 [q^1] phi0 = 2, [q^1] M = 1
+PASS B2 phi0 - M through q^16  [0, 1, 1, 2, 3, 3, 5, 7, 8, 11, 15, 18, 23, 28, 35, 43, 53]
+PASS B3 phi0 - M positive for 1 <= k <= 128
+PASS B4 summands are not coefficientwise positive  n=1 min coeff -1
+PASS C1 Eq (1.5) 2q^2 phi0(q^2) = psi(q)+psi(-q) through q^258
+PASS C2 Eq (1.7) 2+2q^2 M(q) = (-q)_inf + false theta through q^128
+PASS D1 P (t^3-1)(t^4-1) = (t^12-1)(t-1)
+PASS D2 P = (t^2-t+1)(t^4-t^2+1)
+PASS D3 walls at 1/12,1/6,5/12,7/12,5/6,11/12  [1/12, 1/6, 5/12, 7/12, 5/6, 11/12]
+PASS E1 T(2,3) at 1/12,1/4,1/2,3/4,11/12
+PASS E2 T(3,4) at 1/24,1/8,1/4,11/24,1/2
+PASS F1 V_tet and 2 V_tet  2V = 2.02988321281930725
+PASS F2 SnapPy vol(4_1)  2.0298832128
+PASS F3 shapes e^{i pi/3}
+PASS F4 cusp shape 2 sqrt3 i  (-2.664535259100378e-15+3.4641016151377566j)
+PASS F5 CS(4_1) ~ 0  -5.6244555 E-17
+PASS F6 3_1 not hyperbolic (volume 0)
+PASS F6 8_19 not hyperbolic (volume 0)
+PASS F7 H1 of (+2)-surgery on 3_1 is Z/2
+PASS F7 H1 of (-2)-surgery on 3_1 is Z/2
+PASS G1 sigma3 H sigma3 + H = 0 on every block
+PASS G2 eta of every block = 0
+PASS H1 (square - disc)/N -> 8 asinh 1 - 2 pi  0.7766 vs 0.7678
+PASS I1 sphere shells sum 2(2l+1) = 2n^2
+PASS I2 torus box (2k+1)^2 and L1 ring 4k
+PASS I3 Moser fibres |6-2| = 4, |6+2| = 8
+PASS I4 orbifold Euler 1/12 and -1/24
+ALL CHECKS PASS

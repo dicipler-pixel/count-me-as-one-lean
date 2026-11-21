@@ -30,15 +30,17 @@ Release `v1` of this repository is the original 80-theorem core-Lean package (Le
 
 | File | What it is |
 |---|---|
-| [`paper/Count_Me_as_One_v1_20261120.pdf`](paper/Count_Me_as_One_v1_20261120.pdf) | **Count Me as One** — the paper (PDF, for sharing) |
-| [`paper/Count_Me_as_One_v1_20261120.html`](paper/Count_Me_as_One_v1_20261120.html) | The same paper as a web page, with the 3D models |
+| [`paper/Count_Me_as_One_Dirac_Anchor_Recovered_v5.pdf`](paper/Count_Me_as_One_Dirac_Anchor_Recovered_v5.pdf) | **Count Me as One, with the Dirac Anchor Recovered** (v5): Part I is Count Me as One; Part II joins it to the APS rulers, the chiral seed and the signed boundary test. Every claim graded; every [T] tag names a theorem in this repository |
+| [`paper/v5/`](paper/v5/) | Its source: the .tex, the plates and the record of the GitHub Actions run it cites |
+| [`checks/cmao_checks_v1.py`](checks/cmao_checks_v1.py) | Re-run of every number in the paper that is not a Lean theorem (exact arithmetic, sympy, mpmath, SnapPy), with its [output](checks/cmao_checks_v1_output.txt) |
+| [`film/source/`](film/source/) | The deterministic 3D renderer for the film and every plate (`render_knots.py`, `plates_part2.py`) |
+| [`paper/Count_Me_as_One_v1_20261120.pdf`](paper/Count_Me_as_One_v1_20261120.pdf) | Count Me as One v1, the paper of Part I on its own |
+| [`paper/Count_Me_as_One_v1_20261120.html`](paper/Count_Me_as_One_v1_20261120.html) | The same as a web page, with the 3D models |
 | [`paper/Count_Me_as_One_Mixer_v1_20261120.html`](paper/Count_Me_as_One_Mixer_v1_20261120.html) | The 3D mixer: move the knots and the gluing yourself |
 | [`paper/Count_Me_as_One_The_Moving_Knot_v1_20261120.mp4`](paper/Count_Me_as_One_The_Moving_Knot_v1_20261120.mp4) | The film of the moving knot |
-| [`article/Tying_the_Knot_v1_20261120.md`](article/Tying_the_Knot_v1_20261120.md) | **Tying the Knot: What Every Culture Binds, and Why** — the public article: the knot ceremonies and symbols of each culture, the Inka khipu as accounts and memory, the loom, the women who wove Apollo's core rope memory, and what the mathematics of knots says about them |
+| [`article/Tying_the_Knot_v1_20261120.md`](article/Tying_the_Knot_v1_20261120.md) | **Tying the Knot: What Every Culture Binds, and Why**, the public article |
 
 To open the HTML files as pages rather than source, download them and open them in a browser.
-
-**Read `RELATIONS.html` first** — the map of how every result connects, rendered from the same `RELATIONS.json` the harness checks.
 
 ## Count Me as One v1: what the core library proves
 
